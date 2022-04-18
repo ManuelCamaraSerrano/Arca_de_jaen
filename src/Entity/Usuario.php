@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsuarioRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -66,6 +68,34 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=20)
      */
     private $telefono;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Reserva::class, mappedBy="usuario")
+     */
+    private $reservas;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Solicitud::class, mappedBy="usuario")
+     */
+    private $solicitudes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Adopcion::class, mappedBy="usuario")
+     */
+    private $adopciones;
+
+    /**
+     * @ORM\OneToMany(targetEntity=AnimalPerdido::class, mappedBy="usuario")
+     */
+    private $animalPerdidos;
+
+    public function __construct()
+    {
+        $this->reservas = new ArrayCollection();
+        $this->solicitudes = new ArrayCollection();
+        $this->adopciones = new ArrayCollection();
+        $this->animalPerdidos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -224,6 +254,126 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTelefono(string $telefono): self
     {
         $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reserva>
+     */
+    public function getReservas(): Collection
+    {
+        return $this->reservas;
+    }
+
+    public function addReserva(Reserva $reserva): self
+    {
+        if (!$this->reservas->contains($reserva)) {
+            $this->reservas[] = $reserva;
+            $reserva->setUsuario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReserva(Reserva $reserva): self
+    {
+        if ($this->reservas->removeElement($reserva)) {
+            // set the owning side to null (unless already changed)
+            if ($reserva->getUsuario() === $this) {
+                $reserva->setUsuario(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Solicitud>
+     */
+    public function getSolicitudes(): Collection
+    {
+        return $this->solicitudes;
+    }
+
+    public function addSolicitude(Solicitud $solicitude): self
+    {
+        if (!$this->solicitudes->contains($solicitude)) {
+            $this->solicitudes[] = $solicitude;
+            $solicitude->setUsuario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSolicitude(Solicitud $solicitude): self
+    {
+        if ($this->solicitudes->removeElement($solicitude)) {
+            // set the owning side to null (unless already changed)
+            if ($solicitude->getUsuario() === $this) {
+                $solicitude->setUsuario(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Adopcion>
+     */
+    public function getAdopciones(): Collection
+    {
+        return $this->adopciones;
+    }
+
+    public function addAdopcione(Adopcion $adopcione): self
+    {
+        if (!$this->adopciones->contains($adopcione)) {
+            $this->adopciones[] = $adopcione;
+            $adopcione->setUsuario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdopcione(Adopcion $adopcione): self
+    {
+        if ($this->adopciones->removeElement($adopcione)) {
+            // set the owning side to null (unless already changed)
+            if ($adopcione->getUsuario() === $this) {
+                $adopcione->setUsuario(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, AnimalPerdido>
+     */
+    public function getAnimalPerdidos(): Collection
+    {
+        return $this->animalPerdidos;
+    }
+
+    public function addAnimalPerdido(AnimalPerdido $animalPerdido): self
+    {
+        if (!$this->animalPerdidos->contains($animalPerdido)) {
+            $this->animalPerdidos[] = $animalPerdido;
+            $animalPerdido->setUsuario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnimalPerdido(AnimalPerdido $animalPerdido): self
+    {
+        if ($this->animalPerdidos->removeElement($animalPerdido)) {
+            // set the owning side to null (unless already changed)
+            if ($animalPerdido->getUsuario() === $this) {
+                $animalPerdido->setUsuario(null);
+            }
+        }
 
         return $this;
     }
