@@ -1,0 +1,28 @@
+{% block body %}
+    <h1>Register</h1>
+
+    {{ form_start(registrationForm) }}
+
+        {{ form_row(registrationForm.email) }}
+
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Contraseña'
+        }) }}
+
+        {{ form_row(registrationForm.dni, {'attr':{'class':'form-control'}}) }}
+
+        {{ form_row(registrationForm.nombre, {'attr':{'class':'form-control'}}) }}
+
+        {{ form_row(registrationForm.ap1, {'attr':{'class':'form-control'}}) }}
+
+        {{ form_row(registrationForm.ap2, {'attr':{'class':'form-control'}}) }}
+
+        {{ form_row(registrationForm.telefono, {'attr':{'class':'form-control'}}) }}
+
+        {{ form_row(registrationForm.foto, {'attr':{'class':'form-control'}})}}
+
+        <button type="submit" class="btn">Register</button>
+
+    {{ form_end(registrationForm) }}
+
+{% endblock %}
