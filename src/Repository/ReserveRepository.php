@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Cita;
+use App\Entity\Reserve;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Cita|null find($id, $lockMode = null, $lockVersion = null)
- * @method Cita|null findOneBy(array $criteria, array $orderBy = null)
- * @method Cita[]    findAll()
- * @method Cita[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Reserve|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Reserve|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Reserve[]    findAll()
+ * @method Reserve[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CitaRepository extends ServiceEntityRepository
+class ReserveRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Cita::class);
+        parent::__construct($registry, Reserve::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Cita $entity, bool $flush = true): void
+    public function add(Reserve $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class CitaRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Cita $entity, bool $flush = true): void
+    public function remove(Reserve $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class CitaRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Cita[] Returns an array of Cita objects
+    //  * @return Reserve[] Returns an array of Reserve objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
+            ->orderBy('r.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class CitaRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Cita
+    public function findOneBySomeField($value): ?Reserve
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

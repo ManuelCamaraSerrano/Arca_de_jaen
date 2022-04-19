@@ -47,7 +47,7 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=70)
      */
-    private $nombre;
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -62,32 +62,34 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $foto;
+    private $photo;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $telefono;
+    private $phone;
 
     /**
-     * @ORM\OneToMany(targetEntity=Reserva::class, mappedBy="usuario")
+     * @ORM\OneToMany(targetEntity=Reserve::class, mappedBy="usuario")
      */
-    private $reservas;
+    private $reserves;
 
     /**
-     * @ORM\OneToMany(targetEntity=Solicitud::class, mappedBy="usuario")
+     * @ORM\OneToMany(targetEntity=Request::class, mappedBy="usuario")
      */
-    private $solicitudes;
+    private $requests;
 
     /**
-     * @ORM\OneToMany(targetEntity=Adopcion::class, mappedBy="usuario")
+     * @ORM\OneToMany(targetEntity=Adoption::class, mappedBy="usuario")
      */
-    private $adopciones;
+    private $adoptions;
 
     /**
-     * @ORM\OneToMany(targetEntity=AnimalPerdido::class, mappedBy="usuario")
+     * @ORM\OneToMany(targetEntity=LostAnimal::class, mappedBy="usuario")
      */
-    private $animalPerdidos;
+    private $lostAnimals;
+
+
 
     public function __construct()
     {
@@ -95,6 +97,10 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
         $this->solicitudes = new ArrayCollection();
         $this->adopciones = new ArrayCollection();
         $this->animalPerdidos = new ArrayCollection();
+        $this->reserves = new ArrayCollection();
+        $this->requests = new ArrayCollection();
+        $this->adoptions = new ArrayCollection();
+        $this->lostAnimals = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -198,14 +204,14 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getNombre(): ?string
+    public function getName(): ?string
     {
-        return $this->nombre;
+        return $this->name;
     }
 
-    public function setNombre(string $nombre): self
+    public function setName(string $name): self
     {
-        $this->nombre = $nombre;
+        $this->name = $name;
 
         return $this;
     }
@@ -234,54 +240,54 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getFoto(): ?string
+    public function getPhoto(): ?string
     {
-        return $this->foto;
+        return $this->photo;
     }
 
-    public function setFoto(string $foto): self
+    public function setPhoto(string $photo): self
     {
-        $this->foto = $foto;
+        $this->photo = $photo;
 
         return $this;
     }
 
-    public function getTelefono(): ?string
+    public function getPhone(): ?string
     {
-        return $this->telefono;
+        return $this->phone;
     }
 
-    public function setTelefono(string $telefono): self
+    public function setPhone(string $phone): self
     {
-        $this->telefono = $telefono;
+        $this->phone = $phone;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Reserva>
+     * @return Collection<int, Reserve>
      */
-    public function getReservas(): Collection
+    public function getReserves(): Collection
     {
-        return $this->reservas;
+        return $this->reserves;
     }
 
-    public function addReserva(Reserva $reserva): self
+    public function addReserf(Reserve $reserf): self
     {
-        if (!$this->reservas->contains($reserva)) {
-            $this->reservas[] = $reserva;
-            $reserva->setUsuario($this);
+        if (!$this->reserves->contains($reserf)) {
+            $this->reserves[] = $reserf;
+            $reserf->setUsuario($this);
         }
 
         return $this;
     }
 
-    public function removeReserva(Reserva $reserva): self
+    public function removeReserf(Reserve $reserf): self
     {
-        if ($this->reservas->removeElement($reserva)) {
+        if ($this->reserves->removeElement($reserf)) {
             // set the owning side to null (unless already changed)
-            if ($reserva->getUsuario() === $this) {
-                $reserva->setUsuario(null);
+            if ($reserf->getUsuario() === $this) {
+                $reserf->setUsuario(null);
             }
         }
 
@@ -289,29 +295,29 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Solicitud>
+     * @return Collection<int, Request>
      */
-    public function getSolicitudes(): Collection
+    public function getRequests(): Collection
     {
-        return $this->solicitudes;
+        return $this->requests;
     }
 
-    public function addSolicitude(Solicitud $solicitude): self
+    public function addRequest(Request $request): self
     {
-        if (!$this->solicitudes->contains($solicitude)) {
-            $this->solicitudes[] = $solicitude;
-            $solicitude->setUsuario($this);
+        if (!$this->requests->contains($request)) {
+            $this->requests[] = $request;
+            $request->setUsuario($this);
         }
 
         return $this;
     }
 
-    public function removeSolicitude(Solicitud $solicitude): self
+    public function removeRequest(Request $request): self
     {
-        if ($this->solicitudes->removeElement($solicitude)) {
+        if ($this->requests->removeElement($request)) {
             // set the owning side to null (unless already changed)
-            if ($solicitude->getUsuario() === $this) {
-                $solicitude->setUsuario(null);
+            if ($request->getUsuario() === $this) {
+                $request->setUsuario(null);
             }
         }
 
@@ -319,29 +325,29 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Adopcion>
+     * @return Collection<int, Adoption>
      */
-    public function getAdopciones(): Collection
+    public function getAdoptions(): Collection
     {
-        return $this->adopciones;
+        return $this->adoptions;
     }
 
-    public function addAdopcione(Adopcion $adopcione): self
+    public function addAdoption(Adoption $adoption): self
     {
-        if (!$this->adopciones->contains($adopcione)) {
-            $this->adopciones[] = $adopcione;
-            $adopcione->setUsuario($this);
+        if (!$this->adoptions->contains($adoption)) {
+            $this->adoptions[] = $adoption;
+            $adoption->setUsuario($this);
         }
 
         return $this;
     }
 
-    public function removeAdopcione(Adopcion $adopcione): self
+    public function removeAdoption(Adoption $adoption): self
     {
-        if ($this->adopciones->removeElement($adopcione)) {
+        if ($this->adoptions->removeElement($adoption)) {
             // set the owning side to null (unless already changed)
-            if ($adopcione->getUsuario() === $this) {
-                $adopcione->setUsuario(null);
+            if ($adoption->getUsuario() === $this) {
+                $adoption->setUsuario(null);
             }
         }
 
@@ -349,32 +355,34 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, AnimalPerdido>
+     * @return Collection<int, LostAnimal>
      */
-    public function getAnimalPerdidos(): Collection
+    public function getLostAnimals(): Collection
     {
-        return $this->animalPerdidos;
+        return $this->lostAnimals;
     }
 
-    public function addAnimalPerdido(AnimalPerdido $animalPerdido): self
+    public function addLostAnimal(LostAnimal $lostAnimal): self
     {
-        if (!$this->animalPerdidos->contains($animalPerdido)) {
-            $this->animalPerdidos[] = $animalPerdido;
-            $animalPerdido->setUsuario($this);
+        if (!$this->lostAnimals->contains($lostAnimal)) {
+            $this->lostAnimals[] = $lostAnimal;
+            $lostAnimal->setUsuario($this);
         }
 
         return $this;
     }
 
-    public function removeAnimalPerdido(AnimalPerdido $animalPerdido): self
+    public function removeLostAnimal(LostAnimal $lostAnimal): self
     {
-        if ($this->animalPerdidos->removeElement($animalPerdido)) {
+        if ($this->lostAnimals->removeElement($lostAnimal)) {
             // set the owning side to null (unless already changed)
-            if ($animalPerdido->getUsuario() === $this) {
-                $animalPerdido->setUsuario(null);
+            if ($lostAnimal->getUsuario() === $this) {
+                $lostAnimal->setUsuario(null);
             }
         }
 
         return $this;
     }
+
+    
 }

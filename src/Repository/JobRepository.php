@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Raza;
+use App\Entity\Job;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Raza|null find($id, $lockMode = null, $lockVersion = null)
- * @method Raza|null findOneBy(array $criteria, array $orderBy = null)
- * @method Raza[]    findAll()
- * @method Raza[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Job|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Job|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Job[]    findAll()
+ * @method Job[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RazaRepository extends ServiceEntityRepository
+class JobRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Raza::class);
+        parent::__construct($registry, Job::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Raza $entity, bool $flush = true): void
+    public function add(Job $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class RazaRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Raza $entity, bool $flush = true): void
+    public function remove(Job $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class RazaRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Raza[] Returns an array of Raza objects
+    //  * @return Job[] Returns an array of Job objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+        return $this->createQueryBuilder('j')
+            ->andWhere('j.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
+            ->orderBy('j.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class RazaRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Raza
+    public function findOneBySomeField($value): ?Job
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+        return $this->createQueryBuilder('j')
+            ->andWhere('j.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

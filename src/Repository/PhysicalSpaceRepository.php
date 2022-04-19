@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Adopcion;
+use App\Entity\PhysicalSpace;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Adopcion|null find($id, $lockMode = null, $lockVersion = null)
- * @method Adopcion|null findOneBy(array $criteria, array $orderBy = null)
- * @method Adopcion[]    findAll()
- * @method Adopcion[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method PhysicalSpace|null find($id, $lockMode = null, $lockVersion = null)
+ * @method PhysicalSpace|null findOneBy(array $criteria, array $orderBy = null)
+ * @method PhysicalSpace[]    findAll()
+ * @method PhysicalSpace[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AdopcionRepository extends ServiceEntityRepository
+class PhysicalSpaceRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Adopcion::class);
+        parent::__construct($registry, PhysicalSpace::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Adopcion $entity, bool $flush = true): void
+    public function add(PhysicalSpace $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class AdopcionRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Adopcion $entity, bool $flush = true): void
+    public function remove(PhysicalSpace $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class AdopcionRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Adopcion[] Returns an array of Adopcion objects
+    //  * @return PhysicalSpace[] Returns an array of PhysicalSpace objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
+            ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class AdopcionRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Adopcion
+    public function findOneBySomeField($value): ?PhysicalSpace
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Tramo;
+use App\Entity\Request;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Tramo|null find($id, $lockMode = null, $lockVersion = null)
- * @method Tramo|null findOneBy(array $criteria, array $orderBy = null)
- * @method Tramo[]    findAll()
- * @method Tramo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Request|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Request|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Request[]    findAll()
+ * @method Request[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TramoRepository extends ServiceEntityRepository
+class RequestRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Tramo::class);
+        parent::__construct($registry, Request::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Tramo $entity, bool $flush = true): void
+    public function add(Request $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class TramoRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Tramo $entity, bool $flush = true): void
+    public function remove(Request $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class TramoRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Tramo[] Returns an array of Tramo objects
+    //  * @return Request[] Returns an array of Request objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
+            ->orderBy('r.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class TramoRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Tramo
+    public function findOneBySomeField($value): ?Request
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

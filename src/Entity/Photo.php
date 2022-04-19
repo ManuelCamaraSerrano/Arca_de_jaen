@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\FotosRepository;
+use App\Repository\PhotoRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=FotosRepository::class)
+ * @ORM\Entity(repositoryClass=PhotoRepository::class)
  */
-class Fotos
+class Photo
 {
     /**
      * @ORM\Id
@@ -20,10 +20,10 @@ class Fotos
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $foto;
+    private $photo;
 
     /**
-     * @ORM\ManyToOne(targetEntity=animal::class, inversedBy="fotos")
+     * @ORM\ManyToOne(targetEntity=animal::class, inversedBy="photos")
      */
     private $animal;
 
@@ -32,14 +32,14 @@ class Fotos
         return $this->id;
     }
 
-    public function getFoto(): ?string
+    public function getPhoto(): ?string
     {
-        return $this->foto;
+        return $this->photo;
     }
 
-    public function setFoto(string $foto): self
+    public function setPhoto(string $photo): self
     {
-        $this->foto = $foto;
+        $this->photo = $photo;
 
         return $this;
     }

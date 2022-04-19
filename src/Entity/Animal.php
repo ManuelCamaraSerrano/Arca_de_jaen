@@ -22,83 +22,83 @@ class Animal
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $nombre;
+    private $name;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $fechanac;
+    private $birthDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity=tipo::class, inversedBy="animals")
+     * @ORM\ManyToOne(targetEntity=type::class, inversedBy="animals")
      */
-    private $tipo;
+    private $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity=raza::class, inversedBy="animals")
+     * @ORM\ManyToOne(targetEntity=race::class, inversedBy="animals")
      */
-    private $raza;
+    private $race;
 
     /**
-     * @ORM\Column(type="string", length=60)
+     * @ORM\Column(type="string", length=30)
      */
-    private $sexo;
+    private $sex;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $peso;
+    private $weigth;
 
     /**
-     * @ORM\Column(type="string", length=60)
+     * @ORM\Column(type="string", length=50)
      */
-    private $color;
+    private $colour;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=70)
      */
     private $chip;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $descripcion;
+    private $description;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $altura;
+    private $height;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $fechaentrada;
+    private $entryDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity=espacioFisico::class, inversedBy="animals")
+     * @ORM\ManyToOne(targetEntity=physicalSpace::class, inversedBy="animals")
      */
-    private $espaciofisico;
+    private $physicalSpace;
 
     /**
-     * @ORM\OneToMany(targetEntity=Fotos::class, mappedBy="animal")
+     * @ORM\OneToMany(targetEntity=Photo::class, mappedBy="animal")
      */
-    private $fotos;
+    private $photos;
 
     /**
-     * @ORM\OneToMany(targetEntity=Solicitud::class, mappedBy="animal")
+     * @ORM\OneToMany(targetEntity=Request::class, mappedBy="animal")
      */
-    private $solicitudes;
+    private $requests;
 
     /**
-     * @ORM\OneToMany(targetEntity=Adopcion::class, mappedBy="animal")
+     * @ORM\OneToMany(targetEntity=Adoption::class, mappedBy="animal")
      */
-    private $adopciones;
+    private $adoptions;
 
     public function __construct()
     {
-        $this->fotos = new ArrayCollection();
-        $this->solicitudes = new ArrayCollection();
-        $this->adopciones = new ArrayCollection();
+        $this->photos = new ArrayCollection();
+        $this->requests = new ArrayCollection();
+        $this->adoptions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -106,86 +106,86 @@ class Animal
         return $this->id;
     }
 
-    public function getNombre(): ?string
+    public function getName(): ?string
     {
-        return $this->nombre;
+        return $this->name;
     }
 
-    public function setNombre(string $nombre): self
+    public function setName(string $name): self
     {
-        $this->nombre = $nombre;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getFechanac(): ?\DateTimeInterface
+    public function getBirthDate(): ?\DateTimeInterface
     {
-        return $this->fechanac;
+        return $this->birthDate;
     }
 
-    public function setFechanac(\DateTimeInterface $fechanac): self
+    public function setBirthDate(\DateTimeInterface $birthDate): self
     {
-        $this->fechanac = $fechanac;
+        $this->birthDate = $birthDate;
 
         return $this;
     }
 
-    public function getTipo(): ?tipo
+    public function getType(): ?type
     {
-        return $this->tipo;
+        return $this->type;
     }
 
-    public function setTipo(?tipo $tipo): self
+    public function setType(?type $type): self
     {
-        $this->tipo = $tipo;
+        $this->type = $type;
 
         return $this;
     }
 
-    public function getRaza(): ?raza
+    public function getRace(): ?race
     {
-        return $this->raza;
+        return $this->race;
     }
 
-    public function setRaza(?raza $raza): self
+    public function setRace(?race $race): self
     {
-        $this->raza = $raza;
+        $this->race = $race;
 
         return $this;
     }
 
-    public function getSexo(): ?string
+    public function getSex(): ?string
     {
-        return $this->sexo;
+        return $this->sex;
     }
 
-    public function setSexo(string $sexo): self
+    public function setSex(string $sex): self
     {
-        $this->sexo = $sexo;
+        $this->sex = $sex;
 
         return $this;
     }
 
-    public function getPeso(): ?int
+    public function getWeigth(): ?int
     {
-        return $this->peso;
+        return $this->weigth;
     }
 
-    public function setPeso(int $peso): self
+    public function setWeigth(int $weigth): self
     {
-        $this->peso = $peso;
+        $this->weigth = $weigth;
 
         return $this;
     }
 
-    public function getColor(): ?string
+    public function getColour(): ?string
     {
-        return $this->color;
+        return $this->colour;
     }
 
-    public function setColor(string $color): self
+    public function setColour(string $colour): self
     {
-        $this->color = $color;
+        $this->colour = $colour;
 
         return $this;
     }
@@ -202,78 +202,78 @@ class Animal
         return $this;
     }
 
-    public function getDescripcion(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descripcion;
+        return $this->description;
     }
 
-    public function setDescripcion(string $descripcion): self
+    public function setDescription(string $description): self
     {
-        $this->descripcion = $descripcion;
+        $this->description = $description;
 
         return $this;
     }
 
-    public function getAltura(): ?int
+    public function getHeight(): ?int
     {
-        return $this->altura;
+        return $this->height;
     }
 
-    public function setAltura(int $altura): self
+    public function setHeight(int $height): self
     {
-        $this->altura = $altura;
+        $this->height = $height;
 
         return $this;
     }
 
-    public function getFechaentrada(): ?\DateTimeInterface
+    public function getEntryDate(): ?\DateTimeInterface
     {
-        return $this->fechaentrada;
+        return $this->entryDate;
     }
 
-    public function setFechaentrada(\DateTimeInterface $fechaentrada): self
+    public function setEntryDate(\DateTimeInterface $entryDate): self
     {
-        $this->fechaentrada = $fechaentrada;
+        $this->entryDate = $entryDate;
 
         return $this;
     }
 
-    public function getEspaciofisico(): ?espacioFisico
+    public function getPhysicalSpace(): ?physicalSpace
     {
-        return $this->espaciofisico;
+        return $this->physicalSpace;
     }
 
-    public function setEspaciofisico(?espacioFisico $espaciofisico): self
+    public function setPhysicalSpace(?physicalSpace $physicalSpace): self
     {
-        $this->espaciofisico = $espaciofisico;
+        $this->physicalSpace = $physicalSpace;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Fotos>
+     * @return Collection<int, Photo>
      */
-    public function getFotos(): Collection
+    public function getPhotos(): Collection
     {
-        return $this->fotos;
+        return $this->photos;
     }
 
-    public function addFoto(Fotos $foto): self
+    public function addPhoto(Photo $photo): self
     {
-        if (!$this->fotos->contains($foto)) {
-            $this->fotos[] = $foto;
-            $foto->setAnimal($this);
+        if (!$this->photos->contains($photo)) {
+            $this->photos[] = $photo;
+            $photo->setAnimal($this);
         }
 
         return $this;
     }
 
-    public function removeFoto(Fotos $foto): self
+    public function removePhoto(Photo $photo): self
     {
-        if ($this->fotos->removeElement($foto)) {
+        if ($this->photos->removeElement($photo)) {
             // set the owning side to null (unless already changed)
-            if ($foto->getAnimal() === $this) {
-                $foto->setAnimal(null);
+            if ($photo->getAnimal() === $this) {
+                $photo->setAnimal(null);
             }
         }
 
@@ -281,29 +281,29 @@ class Animal
     }
 
     /**
-     * @return Collection<int, Solicitud>
+     * @return Collection<int, Request>
      */
-    public function getSolicitudes(): Collection
+    public function getRequests(): Collection
     {
-        return $this->solicitudes;
+        return $this->requests;
     }
 
-    public function addSolicitude(Solicitud $solicitude): self
+    public function addRequest(Request $request): self
     {
-        if (!$this->solicitudes->contains($solicitude)) {
-            $this->solicitudes[] = $solicitude;
-            $solicitude->setAnimal($this);
+        if (!$this->requests->contains($request)) {
+            $this->requests[] = $request;
+            $request->setAnimal($this);
         }
 
         return $this;
     }
 
-    public function removeSolicitude(Solicitud $solicitude): self
+    public function removeRequest(Request $request): self
     {
-        if ($this->solicitudes->removeElement($solicitude)) {
+        if ($this->requests->removeElement($request)) {
             // set the owning side to null (unless already changed)
-            if ($solicitude->getAnimal() === $this) {
-                $solicitude->setAnimal(null);
+            if ($request->getAnimal() === $this) {
+                $request->setAnimal(null);
             }
         }
 
@@ -311,29 +311,29 @@ class Animal
     }
 
     /**
-     * @return Collection<int, Adopcion>
+     * @return Collection<int, Adoption>
      */
-    public function getAdopciones(): Collection
+    public function getAdoptions(): Collection
     {
-        return $this->adopciones;
+        return $this->adoptions;
     }
 
-    public function addAdopcione(Adopcion $adopcione): self
+    public function addAdoption(Adoption $adoption): self
     {
-        if (!$this->adopciones->contains($adopcione)) {
-            $this->adopciones[] = $adopcione;
-            $adopcione->setAnimal($this);
+        if (!$this->adoptions->contains($adoption)) {
+            $this->adoptions[] = $adoption;
+            $adoption->setAnimal($this);
         }
 
         return $this;
     }
 
-    public function removeAdopcione(Adopcion $adopcione): self
+    public function removeAdoption(Adoption $adoption): self
     {
-        if ($this->adopciones->removeElement($adopcione)) {
+        if ($this->adoptions->removeElement($adoption)) {
             // set the owning side to null (unless already changed)
-            if ($adopcione->getAnimal() === $this) {
-                $adopcione->setAnimal(null);
+            if ($adoption->getAnimal() === $this) {
+                $adoption->setAnimal(null);
             }
         }
 

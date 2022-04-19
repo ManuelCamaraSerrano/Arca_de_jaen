@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Tipo;
+use App\Entity\Adoption;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Tipo|null find($id, $lockMode = null, $lockVersion = null)
- * @method Tipo|null findOneBy(array $criteria, array $orderBy = null)
- * @method Tipo[]    findAll()
- * @method Tipo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Adoption|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Adoption|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Adoption[]    findAll()
+ * @method Adoption[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TipoRepository extends ServiceEntityRepository
+class AdoptionRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Tipo::class);
+        parent::__construct($registry, Adoption::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Tipo $entity, bool $flush = true): void
+    public function add(Adoption $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class TipoRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Tipo $entity, bool $flush = true): void
+    public function remove(Adoption $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class TipoRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Tipo[] Returns an array of Tipo objects
+    //  * @return Adoption[] Returns an array of Adoption objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
+            ->orderBy('a.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class TipoRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Tipo
+    public function findOneBySomeField($value): ?Adoption
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

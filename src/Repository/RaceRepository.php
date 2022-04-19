@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Reserva;
+use App\Entity\Race;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Reserva|null find($id, $lockMode = null, $lockVersion = null)
- * @method Reserva|null findOneBy(array $criteria, array $orderBy = null)
- * @method Reserva[]    findAll()
- * @method Reserva[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Race|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Race|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Race[]    findAll()
+ * @method Race[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ReservaRepository extends ServiceEntityRepository
+class RaceRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Reserva::class);
+        parent::__construct($registry, Race::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Reserva $entity, bool $flush = true): void
+    public function add(Race $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class ReservaRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Reserva $entity, bool $flush = true): void
+    public function remove(Race $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,7 +46,7 @@ class ReservaRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Reserva[] Returns an array of Reserva objects
+    //  * @return Race[] Returns an array of Race objects
     //  */
     /*
     public function findByExampleField($value)
@@ -63,7 +63,7 @@ class ReservaRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Reserva
+    public function findOneBySomeField($value): ?Race
     {
         return $this->createQueryBuilder('r')
             ->andWhere('r.exampleField = :val')

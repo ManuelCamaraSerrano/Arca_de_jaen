@@ -22,11 +22,11 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email',   TextType::class, array('label'=>'Correo',          'attr'=> array('class'=>'input-control')))
             ->add('dni',   TextType::class, array('label'=>'Dni',          'attr'=> array('class'=>'input-control')))
-            ->add('nombre',   TextType::class, array('label'=>'Nombre',          'attr'=> array('class'=>'input-control')))
+            ->add('name',   TextType::class, array('label'=>'Nombre',          'attr'=> array('class'=>'input-control')))
             ->add('ap1',   TextType::class, array('label'=>'1º Apellido',          'attr'=> array('class'=>'input-control')))
             ->add('ap2',   TextType::class, array('label'=>'2º Apellido',          'attr'=> array('class'=>'input-control')))
-            ->add('telefono',   TextType::class, array('label'=>'Teléfono',          'attr'=> array('class'=>'input-control')))
-            ->add('foto', FileType::class)
+            ->add('phone',   TextType::class, array('label'=>'Teléfono',          'attr'=> array('class'=>'input-control')))
+            ->add('photo', FileType::class)
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller

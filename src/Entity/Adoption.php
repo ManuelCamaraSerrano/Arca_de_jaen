@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\AdopcionRepository;
+use App\Repository\AdoptionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=AdopcionRepository::class)
+ * @ORM\Entity(repositoryClass=AdoptionRepository::class)
  */
-class Adopcion
+class Adoption
 {
     /**
      * @ORM\Id
@@ -18,29 +18,29 @@ class Adopcion
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="adopciones")
+     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="adoptions")
      */
     private $usuario;
 
     /**
-     * @ORM\ManyToOne(targetEntity=animal::class, inversedBy="adopciones")
+     * @ORM\ManyToOne(targetEntity=animal::class, inversedBy="adoptions")
      */
     private $animal;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $fecha;
+    private $adoptionDate;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $contrato;
+    private $contract;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $estado;
+    private $state;
 
     public function getId(): ?int
     {
@@ -71,38 +71,38 @@ class Adopcion
         return $this;
     }
 
-    public function getFecha(): ?\DateTimeInterface
+    public function getAdoptionDate(): ?\DateTimeInterface
     {
-        return $this->fecha;
+        return $this->adoptionDate;
     }
 
-    public function setFecha(\DateTimeInterface $fecha): self
+    public function setAdoptionDate(\DateTimeInterface $adoptionDate): self
     {
-        $this->fecha = $fecha;
+        $this->adoptionDate = $adoptionDate;
 
         return $this;
     }
 
-    public function getContrato(): ?string
+    public function getContract(): ?string
     {
-        return $this->contrato;
+        return $this->contract;
     }
 
-    public function setContrato(?string $contrato): self
+    public function setContract(?string $contract): self
     {
-        $this->contrato = $contrato;
+        $this->contract = $contract;
 
         return $this;
     }
 
-    public function getEstado(): ?string
+    public function getState(): ?string
     {
-        return $this->estado;
+        return $this->state;
     }
 
-    public function setEstado(string $estado): self
+    public function setState(string $state): self
     {
-        $this->estado = $estado;
+        $this->state = $state;
 
         return $this;
     }

@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\EspacioFisico;
+use App\Entity\Photo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method EspacioFisico|null find($id, $lockMode = null, $lockVersion = null)
- * @method EspacioFisico|null findOneBy(array $criteria, array $orderBy = null)
- * @method EspacioFisico[]    findAll()
- * @method EspacioFisico[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Photo|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Photo|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Photo[]    findAll()
+ * @method Photo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EspacioFisicoRepository extends ServiceEntityRepository
+class PhotoRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, EspacioFisico::class);
+        parent::__construct($registry, Photo::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(EspacioFisico $entity, bool $flush = true): void
+    public function add(Photo $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class EspacioFisicoRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(EspacioFisico $entity, bool $flush = true): void
+    public function remove(Photo $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class EspacioFisicoRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return EspacioFisico[] Returns an array of EspacioFisico objects
+    //  * @return Photo[] Returns an array of Photo objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
+            ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class EspacioFisicoRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?EspacioFisico
+    public function findOneBySomeField($value): ?Photo
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\RazaRepository;
+use App\Repository\RaceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=RazaRepository::class)
+ * @ORM\Entity(repositoryClass=RaceRepository::class)
  */
-class Raza
+class Race
 {
     /**
      * @ORM\Id
@@ -22,22 +22,22 @@ class Raza
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $nombre;
+    private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Animal::class, mappedBy="raza")
+     * @ORM\OneToMany(targetEntity=Animal::class, mappedBy="race")
      */
     private $animals;
 
     /**
-     * @ORM\OneToMany(targetEntity=AnimalPerdido::class, mappedBy="raza")
+     * @ORM\OneToMany(targetEntity=LostAnimal::class, mappedBy="race")
      */
-    private $animalPerdidos;
+    private $lostAnimals;
 
     public function __construct()
     {
         $this->animals = new ArrayCollection();
-        $this->animalPerdidos = new ArrayCollection();
+        $this->lostAnimals = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -45,14 +45,14 @@ class Raza
         return $this->id;
     }
 
-    public function getNombre(): ?string
+    public function getName(): ?string
     {
-        return $this->nombre;
+        return $this->name;
     }
 
-    public function setNombre(string $nombre): self
+    public function setName(string $name): self
     {
-        $this->nombre = $nombre;
+        $this->name = $name;
 
         return $this;
     }
@@ -69,7 +69,7 @@ class Raza
     {
         if (!$this->animals->contains($animal)) {
             $this->animals[] = $animal;
-            $animal->setRaza($this);
+            $animal->setRace($this);
         }
 
         return $this;
@@ -79,8 +79,8 @@ class Raza
     {
         if ($this->animals->removeElement($animal)) {
             // set the owning side to null (unless already changed)
-            if ($animal->getRaza() === $this) {
-                $animal->setRaza(null);
+            if ($animal->getRace() === $this) {
+                $animal->setRace(null);
             }
         }
 
@@ -88,29 +88,29 @@ class Raza
     }
 
     /**
-     * @return Collection<int, AnimalPerdido>
+     * @return Collection<int, LostAnimal>
      */
-    public function getAnimalPerdidos(): Collection
+    public function getLostAnimals(): Collection
     {
-        return $this->animalPerdidos;
+        return $this->lostAnimals;
     }
 
-    public function addAnimalPerdido(AnimalPerdido $animalPerdido): self
+    public function addLostAnimal(LostAnimal $lostAnimal): self
     {
-        if (!$this->animalPerdidos->contains($animalPerdido)) {
-            $this->animalPerdidos[] = $animalPerdido;
-            $animalPerdido->setRaza($this);
+        if (!$this->lostAnimals->contains($lostAnimal)) {
+            $this->lostAnimals[] = $lostAnimal;
+            $lostAnimal->setRace($this);
         }
 
         return $this;
     }
 
-    public function removeAnimalPerdido(AnimalPerdido $animalPerdido): self
+    public function removeLostAnimal(LostAnimal $lostAnimal): self
     {
-        if ($this->animalPerdidos->removeElement($animalPerdido)) {
+        if ($this->lostAnimals->removeElement($lostAnimal)) {
             // set the owning side to null (unless already changed)
-            if ($animalPerdido->getRaza() === $this) {
-                $animalPerdido->setRaza(null);
+            if ($lostAnimal->getRace() === $this) {
+                $lostAnimal->setRace(null);
             }
         }
 

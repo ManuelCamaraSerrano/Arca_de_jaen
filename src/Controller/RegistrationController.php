@@ -35,8 +35,8 @@ class RegistrationController extends AbstractController
             $user->setDni(
                 $form->get('dni')->getData()
             );
-            $user->setNombre(
-                $form->get('nombre')->getData()
+            $user->setName(
+                $form->get('name')->getData()
             );
             $user->setAp1(
                 $form->get('ap1')->getData()
@@ -46,12 +46,12 @@ class RegistrationController extends AbstractController
                 $form->get('ap2')->getData()
             );
 
-            $user->setFoto(
-                $form->get('foto')->getData()
+            $user->setPhoto(
+                $form->get('photo')->getData()
             );
             
-            $user->setTelefono(
-                $form->get('telefono')->getData()
+            $user->setPhone(
+                $form->get('phone')->getData()
             );
 
             $user->setRoles(['ROLE_USER']);
