@@ -30,12 +30,12 @@ class Animal
     private $birthDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity=type::class, inversedBy="animals")
+     * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="animals")
      */
     private $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity=race::class, inversedBy="animals")
+     * @ORM\ManyToOne(targetEntity=Race::class, inversedBy="animals")
      */
     private $race;
 
@@ -75,7 +75,7 @@ class Animal
     private $entryDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity=physicalSpace::class, inversedBy="animals")
+     * @ORM\ManyToOne(targetEntity=PhysicalSpace::class, inversedBy="animals")
      */
     private $physicalSpace;
 

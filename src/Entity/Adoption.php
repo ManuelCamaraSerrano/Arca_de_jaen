@@ -18,12 +18,12 @@ class Adoption
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="adoptions")
+     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="adoptions")
      */
     private $usuario;
 
     /**
-     * @ORM\ManyToOne(targetEntity=animal::class, inversedBy="adoptions")
+     * @ORM\ManyToOne(targetEntity=Animal::class, inversedBy="adoptions")
      */
     private $animal;
 

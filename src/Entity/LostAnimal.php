@@ -28,12 +28,12 @@ class LostAnimal
     private $colour;
 
     /**
-     * @ORM\ManyToOne(targetEntity=race::class, inversedBy="lostAnimals")
+     * @ORM\ManyToOne(targetEntity=Race::class, inversedBy="lostAnimals")
      */
     private $race;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="lostAnimals")
+     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="lostAnimals")
      */
     private $usuario;
 
@@ -48,7 +48,7 @@ class LostAnimal
     private $photo;
 
     /**
-     * @ORM\ManyToOne(targetEntity=type::class, inversedBy="lostAnimals")
+     * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="lostAnimals")
      */
     private $type;
 

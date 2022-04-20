@@ -20,7 +20,7 @@ class Request
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="requests")
+     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="requests")
      */
     private $usuario;
 
@@ -35,7 +35,7 @@ class Request
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=animal::class, inversedBy="requests")
+     * @ORM\ManyToOne(targetEntity=Animal::class, inversedBy="requests")
      */
     private $animal;
 

@@ -18,7 +18,7 @@ class Appointment
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=request::class, inversedBy="appointments")
+     * @ORM\ManyToOne(targetEntity=Request::class, inversedBy="appointments")
      */
     private $request;
 

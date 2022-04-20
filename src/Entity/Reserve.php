@@ -18,17 +18,17 @@ class Reserve
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="reserves")
+     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="reserves")
      */
     private $usuario;
 
     /**
-     * @ORM\ManyToOne(targetEntity=job::class, inversedBy="reserves")
+     * @ORM\ManyToOne(targetEntity=Job::class, inversedBy="reserves")
      */
     private $job;
 
     /**
-     * @ORM\ManyToOne(targetEntity=stretch::class, inversedBy="reserves")
+     * @ORM\ManyToOne(targetEntity=Stretch::class, inversedBy="reserves")
      */
     private $stretch;
 
