@@ -27,10 +27,6 @@ class Appointment
      */
     private $date;
 
-    /**
-     * @ORM\Column(type="time")
-     */
-    private $hour;
 
     public function getId(): ?int
     {
@@ -61,15 +57,4 @@ class Appointment
         return $this;
     }
 
-    public function getHour(): ?\DateTimeInterface
-    {
-        return $this->hour;
-    }
-
-    public function setHour(\DateTimeInterface $hour): self
-    {
-        $this->hour = $hour;
-
-        return $this;
-    }
 }

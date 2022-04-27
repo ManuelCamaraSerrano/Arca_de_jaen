@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 
 class AppointmentCrudController extends AbstractCrudController
 {
@@ -22,9 +23,7 @@ class AppointmentCrudController extends AbstractCrudController
 
             AssociationField::new("request")->setLabel("Solicitud"),
 
-            Datefield::new("date")->setLabel("Fecha"),
-
-            TimeField::new("hour")->setLabel("Hora"),
+            DateTimeField::new("date")->setLabel("Fecha"),
 
         ];
     }

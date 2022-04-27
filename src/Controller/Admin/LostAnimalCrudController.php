@@ -4,6 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\LostAnimal;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField as FieldTextField;
 
 class LostAnimalCrudController extends AbstractCrudController
 {
@@ -12,14 +15,23 @@ class LostAnimalCrudController extends AbstractCrudController
         return LostAnimal::class;
     }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            AssociationField::new("type")->setLabel("Tipo"),
+
+            AssociationField::new("race")->setLabel("Raza"),
+
+            AssociationField::new("usuario")->setLabel("Usuario"),
+
+            FieldTextField::new('Name')->setLabel("Nombre"),
+
+            FieldTextField::new('colour')->setLabel("Color"),
+
+            TextareaField::new("description")->setLabel("Descripción"),      
+
         ];
     }
-    */
+    
 }

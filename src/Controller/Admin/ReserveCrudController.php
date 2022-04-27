@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Reserve;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 
 class ReserveCrudController extends AbstractCrudController
 {
@@ -12,14 +14,21 @@ class ReserveCrudController extends AbstractCrudController
         return Reserve::class;
     }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+           
+            AssociationField::new("usuario")->setLabel("Usuario"),
+
+            AssociationField::new("job")->setLabel("Tarea"),
+
+            AssociationField::new("stretch")->setLabel("Tramo"),
+
+            Datefield::new("date")->setLabel("Fecha"),
+
+
         ];
     }
-    */
+    
 }

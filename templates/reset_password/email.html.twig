@@ -1,0 +1,9 @@
+<h1>Bienvenido a Arca de Jaén</h1>
+
+<p>Cambie su contraseña para poder iniciar sesión</p>
+
+<a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+
+<p>Este link expira en {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+<p>Un saludo.</p>

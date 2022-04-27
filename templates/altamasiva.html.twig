@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alta masiva{% endblock %}
+        
+{% block body %}
+
+</script>
+    <div class="container">
+        <div class="register">
+            {{ form_start(altamasivaForm, {'attr':{'class':'p-5 contact-form'}}) }}
+            <h1 class="navbar-brand">Alta Masiva</h1>
+                {{ form_row(altamasivaForm.dni, {'attr':{'class':'form-control'}}) }}
+
+                <button type="submit" class="btn btn-primary py-3 px-5">Registrarse</button>
+            {{ form_end(altamasivaForm) }}
+        </div>
+    </div>
+{% endblock %}
