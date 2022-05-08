@@ -73,4 +73,28 @@ class RaceRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+
+   /**
+     * @return Race[]
+     */
+    public function raceForType(string $tipo): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $type = intval($tipo);
+
+        $query = $entityManager->createQuery(
+            "SELECT r
+            FROM App\Entity\Race r
+            WHERE r.type = ".$tipo
+        );
+        
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+
+
+
 }

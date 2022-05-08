@@ -7,16 +7,39 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+    <section class="account-section section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="account-form-wrap row justify-content-center">
+                                <div class="col-lg-12 text-center">
+                                    <img src="{{ asset('estilos/assets/images/logo.png') }}" alt="">
+                                </div>
+                                <div class="col-lg-7 col-7">
+                                <form action="{{ path('login') }}" id="account-form" method="post">
+                                        <div class="form-group mb-4">
+                                            <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" placeholder="Correo electrónico"/>
+                                        </div>
+                                        <div class="form-group mb-5">
+                                         <input type="password" id="password" name="_password" placeholder="Contraseña" class="form-control"/>
+                                        </div>
+                                        <div class="form-group account-info-group mb-5 justify-content-center">
+                                            <div class="rememberme-account text-center">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password"/>
-
-        {# If you want to control the URL the user is redirected to on success
-        <input type="hidden" name="_target_path" value="/account"/> #}
-
-        <button type="submit">login</button>
-    </form>
+                                                <a class="lost-password" href="#/">¿Olvidastes tu contraseña?</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary w-100">login</button>
+                                            <p class="register-now mt-5">¿No tienes una cuenta? <a href="account-register.html">Regístrate</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    
 {% endblock %}
+

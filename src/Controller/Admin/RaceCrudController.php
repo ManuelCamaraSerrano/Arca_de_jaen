@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Race;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField as FieldTextField;
 
 class RaceCrudController extends AbstractCrudController
@@ -19,6 +20,7 @@ class RaceCrudController extends AbstractCrudController
         return [
 
             FieldTextField::new('Name')->setLabel("Nombre"),
+            AssociationField::new("type"),
 
         ];
     }

@@ -34,6 +34,11 @@ class Race
      */
     private $lostAnimals;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="races")
+     */
+    private $type;
+
     public function __construct()
     {
         $this->animals = new ArrayCollection();
@@ -120,5 +125,17 @@ class Race
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getType(): ?type
+    {
+        return $this->type;
+    }
+
+    public function setType(?type $type): self
+    {
+        $this->type = $type;
+
+        return $this;
     }
 }

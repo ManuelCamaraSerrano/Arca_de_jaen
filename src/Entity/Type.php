@@ -34,10 +34,16 @@ class Type
      */
     private $lostAnimals;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Race::class, mappedBy="type")
+     */
+    private $races;
+
     public function __construct()
     {
         $this->animals = new ArrayCollection();
         $this->lostAnimals = new ArrayCollection();
+        $this->races = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -121,5 +127,35 @@ class Type
     public function __toString()
     {
         return $this->name;
+    }
+
+    /**
+     * @return Collection<int, Race>
+     */
+    public function getRaces(): Collection
+    {
+        return $this->races;
+    }
+
+    public function addRace(Race $race): self
+    {
+        if (!$this->races->contains($race)) {
+            $this->races[] = $race;
+            $race->setType($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRace(Race $race): self
+    {
+        if ($this->races->removeElement($race)) {
+            // set the owning side to null (unless already changed)
+            if ($race->getType() === $this) {
+                $race->setType(null);
+            }
+        }
+
+        return $this;
     }
 }

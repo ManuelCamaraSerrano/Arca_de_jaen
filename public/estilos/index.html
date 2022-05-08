@@ -1,467 +1,586 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
+<html class="no-js" lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Savest - Animal Shelter Website Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="Savest - Animal Shelter Website Template" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="keywords" content="Animal Protection HTML Template, charity website template, charity foundation website template" />
+    <meta name="author" content="codecarnival" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.png">
+
+    <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
+
+    <!-- Font CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS (Bootstrap & Icon Font) -->
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css">
+
+    <!-- Plugins CSS (All Plugins Files) -->
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/icofont.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fancybox.min.css">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+           <header> <!--== Start: Header Top ==-->
+            <div class="header-bottom sticky-header">
+                <div class="container-fluid header-container-fluid">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img class="logo-main" src="assets/images/logo.png" width="108" height="38" alt="Logo" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <div class="header-navigation">
+                                <ul class="main-nav justify-content-center">
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="about-us.html">Acerca de</a></li>
+                                    <!-- <li class="has-submenu"><a href="causes.html">Causes</a>
+                <ul class="submenu-nav">
+                  <li><a href="causes.html">Causes</a></li>
+                  <li><a href="causes-details.html">Causes Details</a></li>
+                </ul>
+              </li> -->
+                                    <li class="has-submenu"><a href="causes.html">Qué puedes hacer</a>
+                                        <ul class="submenu-nav">
+                                            <li><a href="causes-details.html">Adopta</a></li>
+                                            <li><a href="causes-details.html">Donaciones</a></li>
+                                            <li><a href="causes-details.html">Hazte voluntario</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu"><a href="events.html">Animales perdidos</a>
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+                                    </li>
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+                                    <li><a href="contact.html">Galería</a></li>
 
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Cár<span>mara</span></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Acerca de</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-	          <li class="nav-item"><a href="contact.html" class="icon-user nav-link"></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
-          <div class="col-lg-8 ftco-animate">
-          	<div class="text w-100 text-center mb-md-5 pb-md-5">
-	            <h1 class="mb-4">Alquila un vehículo rápido y sencillo con Cármara</h1>
-	            <p style="font-size: 18px;">Contamos con todo tipo de vehiculos que se adaptan a las necesidades de nuestros clientes.</p>
-	            <a href="https://vimeo.com/45830194" class="icon-wrap popup-vimeo d-flex align-items-center mt-4 justify-content-center">
-	            	<div class="icon d-flex align-items-center justify-content-center">
-	            		<span class="ion-ios-play"></span>
-	            	</div>
-	            	<div class="heading-title ml-5">
-		            	<span>Easy steps for renting a car</span>
-	            	</div>
-	            </a>
+                                    <li><a href="contact.html">Contacto</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-auto d-flex align-items-center gap-6 gap-lg-0">
+                            <a class="btn btn-primary header-donate-btn" href="donate.html">Donate Now</a>
+                            <button class="btn-menu d-flex d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <!--== End: Header Top ==-->
+        </header>
+        <!--== End: Header Wrapper ==-->
+
+        <main class="main-content">
+            <!--== Start: Hero Section Wrapper ==-->
+            <div class="hero-slider-section position-relative">
+                <div class="swiper hero-slider-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide hero-slide-item">
+                            <div class="container-fluid">
+                                <div class="hero-slide-content">
+                                    <h2 class="hero-slide-sub-title">Arca de Jaén</h2>
+                                    <h1 class="hero-slide-title">Proporcionando hogar a todos los animales durante años.</h1>
+                                    <p class="hero-slide-desc">That necetate robust ecommerce platform populars that with the release store.</p>
+                                </div>
+                            </div>
+                            <div class="hero-slide-shape-one" data-bg-img="assets/images/slider/slide-bg-color1.jpg"></div>
+                            <div class="hero-slide-thumb">
+                                <img src="assets/images/slider/slider1.jpg" width="1208" height="804" alt="Image">
+                                <a data-fancybox data-type="iframe" href="https://player.vimeo.com/video/172601404?autoplay=1" class="hero-video-popup video-popup">
+                                    <i class="icofont-ui-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide hero-slide-item">
+                            <div class="container-fluid">
+                                <div class="hero-slide-content">
+                                    <h2 class="hero-slide-sub-title">PROTECT OUR ANIMAL</h2>
+                                    <h1 class="hero-slide-title">Wanting to save the animal.</h1>
+                                    <p class="hero-slide-desc">That necetate robust ecommerce platform populars that with the release store.</p>
+                                    <a class="btn btn-primary btn-icon-right" href="about-us.html"><span>Learn more</span> <i class="icofont-double-right icon"></i></a>
+                                </div>
+                            </div>
+                            <div class="hero-slide-shape-one" data-bg-img="assets/images/slider/slide-bg-color1.jpg"></div>
+                            <div class="hero-slide-thumb">
+                                <img src="assets/images/slider/slider2.jpg" width="1208" height="804" alt="Image">
+                                <a data-fancybox data-type="iframe" href="https://player.vimeo.com/video/172601404?autoplay=1" class="hero-video-popup video-popup">
+                                    <i class="icofont-ui-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--== End: Hero Section Wrapper ==-->
+
+            <!--== Start: Feature Section Wrapper ==-->
+            <div class="feature-section section section-padding section-margin-t">
+                <div class="container">
+                    <div class="row row-gutter-45 mb-n6">
+                        <!--== Start Feature Item ==-->
+                        <div class="col-md-6 col-lg-4 mb-6">
+                            <div class="feature-item">
+                                <span class="icon">
+                                <svg class="bg" data-name="bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 135">
+                                <path d="M67.5,0A67.5,67.5,0,1,1,0,67.5,67.5,67.5,0,0,1,67.5,0Z" fill="currentColor" fill-rule="evenodd"/>
+                                </svg>
+                                <img class="svg-inject" src="assets/images/icons/feature-1.svg" width="63" height="56" alt="Save Animal Life">
+                            </span>
+                                <h4 class="title">Adopta un animal</h4>
+                                <p class="desc">Para ayudar a una mascota que lo necesita, bríndele un lugar seguro junto a ti</p>
+                            </div>
+                        </div>
+                        <!--== End Feature Item ==-->
+
+                        <!--== Start Feature Item ==-->
+                        <div class="col-md-6 col-lg-4 mb-6">
+                            <div class="feature-item">
+                                <span class="icon">
+                                    <svg class="bg" data-name="bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 135">
+                                    <path d="M67.5,0A67.5,67.5,0,1,1,0,67.5,67.5,67.5,0,0,1,67.5,0Z" fill="currentColor" fill-rule="evenodd"/>
+                                    </svg>
+                                    <img class="svg-inject" src="assets/images/icons/feature-2.svg" width="63" height="56" alt="Join Volunteer">
+                                </span>
+                                <h4 class="title">Hazte voluntario</h4>
+                                <p class="desc">Puedes ayudarnos realizando distintos tipos de tareas en el centro cómo cuidado y limpieza</p>
+                            </div>
+                        </div>
+                        <!--== End Feature Item ==-->
+
+                        <!--== Start Feature Item ==-->
+                        <div class="col-md-6 col-lg-4 mb-6">
+                            <div class="feature-item">
+                                <span class="icon">
+                                    <svg class="bg" data-name="bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 135">
+                                    <path d="M67.5,0A67.5,67.5,0,1,1,0,67.5,67.5,67.5,0,0,1,67.5,0Z" fill="currentColor" fill-rule="evenodd"/>
+                                    </svg>
+                                    <img class="svg-inject" src="assets/images/icons/feature-3.svg" width="63" height="56" alt="Fund Raising">
+                                </span>
+                                <h4 class="title">Donaciones</h4>
+                                <p class="desc">Cualquier tipo de donación mejorará la calidad de vida de nuestros animales</p>
+                            </div>
+                        </div>
+                        <!--== End Feature Item ==-->
+                    </div>
+                </div>
+                <div class="section-bg-color-shape section-bg-color-shape-style1"></div>
+                <div class="section-pattern-img section-pattern-img-style1 pattern-img-zoom">
+                    <img src="assets/images/shape/1.png" width="127" height="125" alt="Image">
+                </div>
+            </div>
+            <!--== End: Feature Section Wrapper ==-->
+
+            <!--== Start: About Section Wrapper ==-->
+            <div class="about-section section section-margin pt-0 pb-0 pt-xl-5 pb-xl-5">
+                <div class="container">
+                    <div class="row mt-n1 pt-0 pt-lg-5 pt-xl-10 pb-6 pb-md-10 pb-lg-5 pb-xl-10 mb-5 mb-lg-0">
+                        <div class="col-lg-5">
+                            <!--== Section Title Start ==-->
+                            <div class="section-title-2 mb-0">
+                                <h6 class="sub-title">SAVE ANIMAL FOR EARTH</h6>
+                                <h2 class="title">Save animals, Save future.</h2>
+                                <p>It is a long established fact that reader will be distracted by the readable content of a page when looking at it layout using normal distribution opposed.</p>
+                                <p>It is a long established fact that reader will be distracted by the readable content of a page when looking at it layout using normal distribution opposed.</p>
+                            </div>
+                            <!--== Section Title End ==-->
+                        </div>
+                    </div>
+                </div>
+                <div class="section-bg-img section-bg-img-style1" data-bg-img="assets/images/photos/about1.jpg"></div>
+                <div class="section-pattern-img section-pattern-img-style2 pattern-img-move">
+                    <img src="assets/images/shape/2.png" width="148" height="190" alt="Image">
+                </div>
+            </div>
+            <!--== End: About Section Wrapper ==-->
+
+            <!--== Start: Campaign Section Wrapper ==-->
+            <div class="campaign-section section section-padding">
+                <div class="container">
+                    <!--== Start Section Title ==-->
+                    <div class="section-title center mt-n3">
+                        <h2 class="title">Nuestros animales</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry page when looking</p>
+                        <span class="shape"><img src="assets/images/shape/section-title.png" width="99" height="7" alt="Section Title Shape"></span>
+                    </div>
+                    <!--== End Section Title ==-->
+
+                    <div class="row row-gutter-60 mb-n8">
+                        <!--== Start Campaign Item ==-->
+                        <div class="col-md-6 col-lg-4 mb-8">
+                            <div class="campaign-item ">
+                                <a href="causes-details.html" class="image">
+                                    <img src="assets/images/campaign/campaign-1.jpg" width="350" height="250" alt="Save for animal’s">
+                                </a>
+                                <div class="content">
+                                    <h4 class="title"><a href="causes-details.html">Save for animal’s</a></h4>
+
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text has roots in a piece</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--== End Campaign Item ==-->
+
+                        <!--== Start Campaign Item ==-->
+                        <div class="col-md-6 col-lg-4 mb-8">
+                            <div class="campaign-item ">
+                                <a href="causes-details.html" class="image">
+                                    <img src="assets/images/campaign/campaign-2.jpg" width="350" height="250" alt="Unlock doors to earth">
+                                </a>
+                                <div class="content">
+                                    <h4 class="title"><a href="causes-details.html">Unlock doors to earth</a></h4>
+
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text has roots in a piece</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--== End Campaign Item ==-->
+
+                        <!--== Start Campaign Item ==-->
+                        <div class="col-md-6 col-lg-4 mb-8">
+                            <div class="campaign-item ">
+                                <a href="causes-details.html" class="image">
+                                    <img src="assets/images/campaign/campaign-3.jpg" width="350" height="250" alt="Save for forest">
+                                </a>
+                                <div class="content">
+                                    <h4 class="title"><a href="causes-details.html">Save for forest</a></h4>
+
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text has roots in a piece</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--== End Campaign Item ==-->
+
+
+                    </div>
+                </div>
+                <div class="section-bg-color-shape section-bg-color-shape-style2"></div>
+                <div class="section-pattern-img section-pattern-img-style3 pattern-img-move">
+                    <img src="assets/images/shape/3.png" width="107" height="170" alt="Image">
+                </div>
+            </div>
+            <!--== End: Campaign Section Wrapper ==-->
+
+            <!--== Start: Team Section Wrapper ==-->
+            <div class="team-section section section-padding">
+                <div class="container-fluid team-container-fluid">
+                    <div class="row align-items-center justify-content-space-between">
+                        <div class="col-lg-6 team-item-wrap">
+                            <div class="row row-gutter-40 mb-n6 mb-xl-n8">
+                                <!--== Team Start ==-->
+                                <div class="col-sm-6 col-lg-6 mb-6 mb-xl-8">
+                                    <div class="team-item">
+                                        <div class="image">
+                                            <img src="assets/images/team/team-1.jpg" width="280" height="280" alt="Ceyda Ciftci">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="name">Ceyda Ciftci</h4>
+                                            <span class="title">Senior Volunteer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--== Team End ==-->
+
+                                <!--== Team Start ==-->
+                                <div class="col-sm-6 col-lg-6 mb-6 mb-xl-8">
+                                    <div class="team-item">
+                                        <div class="image">
+                                            <img src="assets/images/team/team-2.jpg" width="280" height="280" alt="Jonah Brown">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="name">Jonah Brown</h4>
+                                            <span class="title">Senior Volunteer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--== Team End ==-->
+
+                                <!--== Team Start ==-->
+                                <div class="col-sm-6 col-lg-6 mb-6 mb-xl-8">
+                                    <div class="team-item">
+                                        <div class="image">
+                                            <img src="assets/images/team/team-3.jpg" width="280" height="280" alt="dusan jovic">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="name">dusan jovic</h4>
+                                            <span class="title">Senior Volunteer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--== Team End ==-->
+
+                                <!--== Team Start ==-->
+                                <div class="col-sm-6 col-lg-6 mb-6 mb-xl-8">
+                                    <div class="team-item">
+                                        <div class="image">
+                                            <img src="assets/images/team/team-4.jpg" width="280" height="280" alt="Anna Bratiychuk">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="name">Anna Bratiychuk</h4>
+                                            <span class="title">Senior Volunteer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--== Team End ==-->
+                            </div>
+                        </div>
+                        <div class="col-lg-6 team-content-wrap">
+                            <!--== Section Title Start ==-->
+                            <div class="section-title-2 mb-0">
+                                <h6 class="sub-title">Voluntarios</h6>
+                                <h2 class="title">Contamos con un gran grupo de voluntarios.</h2>
+                                <span class="shape"><img src="assets/images/shape/section-title.png" width="99" height="7" alt="Section Title Shape"></span>
+                                <p>It is a long established fact that reader will be distracted by the readable content of a page when looking at it layout using normal distribution opposed.</p>
+                            </div>
+                            <!--== Section Title End ==-->
+                        </div>
+                    </div>
+                </div>
+                <div class="section-bg-img section-bg-img-style2" data-bg-img="assets/images/slider/slide-bg-color1.jpg"></div>
+            </div>
+            <!--== End: Team Section Wrapper ==-->
+
+            
+
+            <!--== Start: News Post Section Wrapper ==-->
+            <div class="blog-post-section section section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 text-center text-sm-start">
+                            <!--== Start: Section Title ==-->
+                            <div class="section-title mt-n1">
+                                <h2 class="sub-title">Noticias</h2>
+                                <h2 class="title mb-n3">Últimas Noticias</h2>
+                            </div>
+                            <!--== End: Section Title ==-->
+                        </div>
+                        
+                    </div>
+
+                    <div class="row row-gutter-60 mb-n6">
+                        <!--== Start: News Post Item ==-->
+                        <div class="col-md-6 mb-6">
+                            <div class="post-item">
+                                <a href="blog-details.html" class="image">
+                                    <img src="assets/images/blog/image-7.jpg" width="475" height="475" alt="News Post Image">
+                                </a>
+                                <div class="content">
+                                    <ul class="post-meta">
+                                        <li class="post-date"><span>Fecha:</span> 15 Abril, 2022</li>
+
+                                    </ul>
+                                    <h4 class="title"><a href="https://www.hola.com/mascotas/20211021198129/cuantos-perros-gatos-abandonados-espana-provincias-dn/">Provincias con mayor índice de abandono de animales</a></h4>
+                                    <p>Cada 5 minutos en España se abandona a 3 animales, el principal motivo es el rechazo de los dueños a cuidar a los animales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--== End: News Post Item ==-->
+
+                        <!--== Start: News Post Item ==-->
+                        <div class="col-md-6 mb-6">
+                            <div class="post-item">
+                                <a href="blog-details.html" class="image">
+                                    <img src="assets/images/blog/image-2.jpg" width="475" height="475" alt="News Post Image">
+                                </a>
+                                <div class="content">
+                                    <ul class="post-meta">
+                                        <li class="post-date"><span>Fecha:</span> 04 Abril, 2022</li>
+                                    </ul>
+                                    <h4 class="title"><a href="https://www.lasexta.com/noticias/solidaridad/un-incendio-destruye-la-protectora-burrolandia-en-madrid-piden-ayuda-para-rehabilitar-el-espacio_201804045ac502610cf2bc677fc80eed.html">Un incendio destruye la protectora Burrolandia en Madrid</a></h4>
+                                    <p>Burrolandia, ha pedido ayuda para recuperar el material que ardió el domingo por la noche en las instalaciones y que no afectó a las cuadras donde dormían los animales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--== End: News Post Item ==-->
+                    </div>
+                </div>
+                
+            </div>
+            <!--== End: News Post Section Wrapper ==-->
+
+            
+        </main>
+
+        <!--== Start: Footer Section Wrapper ==-->
+        <footer class="footer-section section">
+            <!--== Start: Footer Main ==-->
+            <div class="footer-main section-padding bg-img" data-bg-img="assets/images/photos/bg2.jpg">
+                <div class="container mb-n3">
+                    <div class="row justify-content-center">
+                        <div class="col-md-5 col-lg-3 mb-8 mb-md-0 text-center">
+                            <!--== Start: Footer Widget ==-->
+                            <div class="footer-widget text-center">
+                                <a class="footer-widget-logo me-auto me-md-0 ms-auto ms-md-0" href="index.html">
+                                    <img src="assets/images/logo_white_large.png" width="178" height="58" alt="Logo" />
+                                </a>
+                                <p class="footer-widget-desc me-auto me-md-0 ms-auto ms-md-0">Traiga a casa una mascota para hacer de su hogar un lugar mejor.</p>
+                            </div>
+
+                            <ul class="ftco-footer-social list-unstyled text-center">
+                                <li class="ftco-animate"><a href="https://twitter.com/cochesnet?lang=es"><span class="icofont-instagram"></span></a></li>
+                                <li class="ftco-animate"><a href="https://es-es.facebook.com/Coches.net/"><span class="icofont-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="https://www.instagram.com/cochesnetoficial/?hl=es"><span class="icofont-twitter"></span></a></li>
+                              </ul>
+
+            
+                            <!--== Start: Footer Widget ==-->
+                        </div>
+                        <div class="col-md-12 col-lg-9">
+                            <!--== Start: Footer Widget ==-->
+                            <div class="footer-widget">
+                                <div class="row">
+                                    <div class="col-md-4 footer-widget-nav1">
+                                        <h4 class="footer-widget-title">Recursos</h4>
+                                        <h4 class="collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-1" aria-expanded="false">Resources</h4>
+                                        <div id="dividerId-1" class="widget-collapse-body collapse">
+                                            <ul class="footer-widget-nav">
+                                                <li><a href="">Contrato de adopción</a></li>
+                                                <li><a href="about-us.html">CSR Made Simple</a></li>
+                                                <li><a href="about-us.html">Corporate Resources</a></li>
+                                                <li><a href="about-us.html">Start an Application</a></li>
+                                                <li><a href="about-us.html">Corporate Gift Cards</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 footer-widget-nav2">
+                                        <h4 class="footer-widget-title">Qtuick Links</h4>
+                                        <h4 class="collapsed-title collapsed mt-2" data-bs-toggle="collapse" data-bs-target="#dividerId-2" aria-expanded="false">Qtuick Links</h4>
+                                        <div id="dividerId-2" class="widget-collapse-body collapse">
+                                            <ul class="footer-widget-nav">
+                                                <li><a href="about-us.html">Start Donating</a></li>
+                                                <li><a href="about-us.html">Become a Volunteer</a></li>
+                                                <li><a href="about-us.html">Quick Fundraising</a></li>
+                                                <li><a href="about-us.html">Save for Animal</a></li>
+                                                <li><a href="about-us.html">Get Daily Updates</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 footer-widget">
+                                        <h4 class="footer-widget-title mb-5 mb-xl-10 pb-1">Contacto</h4>
+                                        <h4 class="collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-3" aria-expanded="false">Contact Us</h4>
+                                        <div id="dividerId-3" class="widget-collapse-body collapse">
+                                            <ul class="footer-widget-info">
+                                                <li>
+                                                    <i class="icofont-ui-call"></i>
+                                                    <a href="tel://5123602763">953 23 34 67</a>
+                                                </li>
+                                                <li>
+                                                    <i class="icofont-envelope-open"></i>
+                                                    <a href="mailto://support@gamil.com">support@gamil.com</a>
+                                                </li>
+                                                <li>
+                                                    <i class="icofont-location-pin"></i>
+                                                    <p>(303) 420-8143 Arvada, Colorado(CO)</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--== Start: Footer Widget ==-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--== End: Footer Main ==-->
+
+        </footer>
+        <!--== End: Footer Section Wrapper ==-->
+
+        <!--== Scroll Button ==-->
+        <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
+
+        <!--== Start: Aside Menu ==-->
+        <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h6 class="d-none" id="offcanvasExampleLabel">Aside Menu</h6>
+                <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-rounded-left"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="mobile-menu-action">
+                    <!-- Mobile Menu Start -->
+                    <div class="mobile-menu-items">
+                        <ul class="nav-menu">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="about-us.html">Acerca de</a></li>
+                            <li><a href="#">Qué puedes hacer</a>
+                                <ul class="sub-menu">
+                                    <li><a href="causes-details.html">Adopta</a></li>
+                                    <li><a href="causes-details.html">Donaciones</a></li>
+                                    <li><a href="causes-details.html">Hazte voluntario</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Animales perdidos</a></li>
+                            <li><a href="#">Galería</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <!-- Mobile Menu End -->
+                    <ul class="mobile-menu-info-list">
+                        <li>
+                            <i class="icon icofont-ui-call"></i>
+                            <a href="tel://5123602763" class="text">(512) 360-2763</a>
+                        </li>
+                        <li>
+                            <i class="icon icofont-envelope-open"></i>
+                            <a href="mailto://support@gamil.com" class="text">support@gamil.com</a>
+                        </li>
+                        <li>
+                            <i class="icon icofont-google-map"></i>
+                            <span class="text">Smithville, Texas(TX), 78957</span>
+                        </li>
+                        <li>
+                            <i class="icon icofont-clock-time"></i>
+                            <span class="text">Sun to Thu - 08:00 am to 09:00 pm</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </aside>
+        <!--== End: Aside Menu ==-->
+
     </div>
+    <!--== End: Wrapper ==-->
 
-     <section class="ftco-section ftco-no-pt bg-light">
-    	<div class="container">
-    		<div class="row no-gutters">
-    			<div class="col-md-12	featured-top">
-    				<div class="row no-gutters">
-	  					<div class="col-md-4 d-flex align-items-center">
-	  						<form action="#" class="request-form ftco-animate bg-primary">
-		          		<h2>Hacer una reserva</h2>
-			    				<div class="form-group">
-			    					<label for="" class="label">Lugar de recogida</label>
-			    					<input type="text" class="form-control" placeholder="Ciudad">
-			    				</div>
-			    				<div class="form-group">
-			    					<label for="" class="label">Lugar de devolución</label>
-			    					<input type="text" class="form-control" placeholder="Ciudad">
-			    				</div>
-			    				<div class="d-flex">
-			    					<div class="form-group mr-2">
-			                <label for="" class="label">Fecha de recogida</label>
-			                <input type="text" class="form-control" id="book_pick_date" placeholder="Fecha">
-			              </div>
-			              <div class="form-group ml-2">
-			                <label for="" class="label">Fecha de devolución</label>
-			                <input type="text" class="form-control" id="book_off_date" placeholder="Fecha">
-			              </div>
-		              </div>
-		              <div class="form-group">
-		                <label for="" class="label">Hora</label>
-		                <input type="text" class="form-control" id="time_pick" placeholder="Hora">
-		              </div>
-			            <div class="form-group">
-			              <input type="submit" value="Reservar un coche" class="btn btn-secondary py-3 px-4">
-			            </div>
-			    			</form>
-	  					</div>
-	  					<div class="col-md-8 d-flex align-items-center">
-	  						<div class="services-wrap rounded-right w-100">
-	  							<h3 class="heading-section mb-4">La mejor manera de alquilar un coche</h3>
-	  							<div class="row d-flex mb-4">
-					          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-					            <div class="services w-100 text-center">
-				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
-				              	<div class="text w-100">
-					                <h3 class="heading mb-2">Elija el lugar de recogida</h3>
-				                </div>
-					            </div>      
-					          </div>
-					          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-					            <div class="services w-100 text-center">
-				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-handshake"></span></div>
-				              	<div class="text w-100">
-					                <h3 class="heading mb-2">Seleccione la mejor oferta</h3>
-					              </div>
-					            </div>      
-					          </div>
-					          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-					            <div class="services w-100 text-center">
-				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
-				              	<div class="text w-100">
-					                <h3 class="heading mb-2">Reserve su coche</h3>
-					              </div>
-					            </div>      
-					          </div>
-					        </div>
-	
-	  						</div>
-	  					</div>
-	  				</div>
-				</div>
-  		</div>
-    </section>
+    <!-- JS Vendor, Plugins & Activation Script Files -->
 
+    <!-- Vendors JS -->
+    <script src="./assets/js/vendor/modernizr-3.11.7.min.js"></script>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
 
-    <section class="ftco-section ftco-no-pt bg-light">
-    	<div class="container">
-    		<div class="row justify-content-center">
-          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-            <h2 class="mb-2">Vehiculos destacados</h2>
-          </div>
-        </div>
-    		<div class="row">
-    			<div class="col-md-12">
-    				<div class="carousel-car owl-carousel">
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/seatIbiza.png);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Seat</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Ibiza</span>
-			    						<p class="price ml-auto">50€ <span>/día</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block justify-content-center"> <a href="#" class="btn btn-secondary py-6 ml-1">Detalles</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/polo.png);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Volkswagen</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Polo</span>
-			    						<p class="price ml-auto">42€ <span>/día</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block justify-content-center"> <a href="#" class="btn btn-secondary py-6 ml-1">Detalles</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/auto-gran-coupe-serie-8-gris.jpg);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">BMW</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Serie 3</span>
-			    						<p class="price ml-auto">120€ <span>/día</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block justify-content-center"> <a href="#" class="btn btn-secondary py-6 ml-1">Detalles</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/volvov60.png);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Audi</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">A4</span>
-			    						<p class="price ml-auto">72€ <span>/día</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block justify-content-center"> <a href="#" class="btn btn-secondary py-6 ml-1">Detalles</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+    <!-- Plugins JS -->
+    <script src="./assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="./assets/js/plugins/svg-inject.min.js"></script>
+    <script src="./assets/js/plugins/fancybox.min.js"></script>
 
-    <section class="ftco-section ftco-about">
-			<div class="container">
-				<div class="row no-gutters">
-					<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
-					</div>
-					<div class="col-md-6 wrap-about ftco-animate">
-	          <div class="heading-section heading-section-white pl-md-5">
-	          	<span class="subheading">About us</span>
-	            <h2 class="mb-4">Welcome to Carbook</h2>
+    <!-- Custom Main JS -->
+    <script src="./assets/js/main.js"></script>
 
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-	            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-	            <p><a href="#" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
-	          </div>
-					</div>
-				</div>
-			</div>
-		</section>
+</body>
 
-
-		<section class="ftco-section ftco-intro" style="background-image: url(images/bg_3.jpg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row justify-content-end">
-					<div class="col-md-6 heading-section heading-section-white ftco-animate">
-            <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
-            <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
-          </div>
-				</div>
-			</div>
-		</section>
-
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Novedades</span>
-            <h2>Ultimas novedades</h2>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text pt-4">
-              	<div class="meta mb-3">
-                  <div><a href="#">2 de Febrero de 2022</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="https://www.hibridosyelectricos.com/articulo/tecnologia/coches-electricos-alimentados-sol-tmb-grafeno/20220119113538053544.html">Los coches eléctricos solares, más cerca gracias al TMD y al grafeno</a></h3>
-                <p><a href="https://www.hibridosyelectricos.com/articulo/tecnologia/coches-electricos-alimentados-sol-tmb-grafeno/20220119113538053544.html" class="btn btn-primary">Leer más</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text pt-4">
-              	<div class="meta mb-3">
-                  <div><a href="#">21 de Enero de 2022</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="https://motor.elpais.com/coches-electricos/bmw-dejara-de-fabricar-el-i3-este-verano/">BMW dejará de fabricar el i3 este verano</a></h3>
-                <p><a href="https://motor.elpais.com/coches-electricos/bmw-dejara-de-fabricar-el-i3-este-verano/" class="btn btn-primary">Leer más</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text pt-4">
-              	<div class="meta mb-3">
-                  <div><a href="#">12 de Enero de 2022</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="https://www.hibridosyelectricos.com/articulo/actualidad/coches-electricos-hibridos-enchufables-volvo-mas-50-por-ciento-ventas/20220203100348054108.html">Más del 50 % de las ventas de Volvo han sido de sus coches eléctricos e híbridos enchufables</a></h3>
-                <p><a href="https://www.hibridosyelectricos.com/articulo/actualidad/coches-electricos-hibridos-enchufables-volvo-mas-50-por-ciento-ventas/20220203100348054108.html" class="btn btn-primary">Leer más</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>	
-	<section class="col-10 col-md-10 mx-auto">
-		<table class="table-responsive">
-			<thead>
-				<tr>
-					<th>Horario</th>
-					<th>Lunes</th>
-					<th>Martes</th>
-					<th>Miercoles</th>
-					<th>Jueves</th>
-					<th>Viernes</th>
-					<th>Sabado</th>
-					<th>Domingo</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>Mañana</th>
-					<th class="">8:00-13:00</th>
-					<th class="">8:00-13:00</th>
-					<th class="">8:00-13:00</th>
-					<th class="">8:00-13:00</th>
-					<th class="">8:00-12:00</th>
-					<th class="">8:00-12:00</th>
-					<th class="">Cerrado</th>
-				</tr>
-				<tr>
-					<th>Tarde</th>
-					<th class="">16:30-22:00</th>
-					<th class="">16:30-22:00</th>
-					<th class="">16:30-22:00</th>
-					<th class="">16:30-22:00</th>
-					<th class="">16:30-21:00</th>
-					<th class="">Cerrado</th>
-					<th class="">Cerrado</th>
-				</tr>
-				<tr>
-				</tr>
-			</tbody>
-		</table>
-	</section>
-
-    <section class="ftco-counter ftco-section img bg-light" id="section-counter">
-			<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row">
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="20">0</strong>
-                <span>Años de <br>experiencia</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="600">0</strong>
-                <span>Nº <br>Vehiculos</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="800">0</strong>
-                <span>Clientes <br>Satisfechos</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text d-flex align-items-center">
-                <strong class="number" data-number="67">0</strong>
-                <span>Total <br>Branches</span>
-              </div>
-            </div>
-          </div>
-        </div>
-    	</div>
-    </section>	
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2"><a href="#" class="logo">Cár<span>mara</span></a></h2>
-              <p>Empresa lider en nuestro sector. ¿A qué esperas para alquilar tu coche con nosotros?</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Información</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Acerca de</a></li>
-                <li><a href="#" class="py-2 d-block">Servicios</a></li>
-                <li><a href="#" class="py-2 d-block">Contacto</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Marcas con las que trabajamos</h2>
-              <ul class="list-unstyled">
-                <li><a href="https://www.bmw.es/es/home.html" class="py-2 d-block">BMW</a></li>
-                <li><a href="https://www.seat.es/" class="py-2 d-block">SEAT</a></li>
-                <li><a href="https://www.renault.es/" class="py-2 d-block">RENAULT</a></li>
-                <li><a href="https://www.audi.es/es/web/es.html" class="py-2 d-block">AUDI</a></li>
-                <li><a href="https://www.volvocars.com/es" class="py-2 d-block">VOLVO</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Contacto</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Jaén, Avenidad de Madrid Nº 90</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+34 657 32 24 23</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">carmara@gmail.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-  
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
-  </body>
 </html>

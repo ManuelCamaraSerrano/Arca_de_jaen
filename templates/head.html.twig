@@ -1,26 +1,32 @@
 <head>
     <meta charset="utf-8">
-    <title>Cármara</title>
+    <title>Arca de Jaén</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     {% block stylesheet%}
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+      <link rel="shortcut icon" type="image/x-icon" href="{{ asset('estilos/assets/images/favicon.png') }}">
 
-    <link href="{{ asset('estilos/css/open-iconic-bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('estilos/css/animate.css') }}" type="text/css" rel="stylesheet" />
-    
-    <link href="{{ asset('estilos/css/owl.carousel.min.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('estilos/css/owl.theme.default.min.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('estilos/css/magnific-popup.css') }}" type="text/css" rel="stylesheet" />
+      <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
 
+      <!-- Font CSS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
 
-    <link href="{{ asset('estilos/css/ionicons.min.css') }}" type="text/css" rel="stylesheet" />
+      <!-- Vendor CSS (Bootstrap & Icon Font) -->
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/vendor/bootstrap.min.css') }}">
 
-    <link href="{{ asset('estilos/css/bootstrap-datepicker.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('estilos/css/jquery.timepicker.css') }}" type="text/css" rel="stylesheet" />
+      <!-- Plugins CSS (All Plugins Files) -->
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/plugins/swiper-bundle.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/plugins/icofont.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/plugins/fancybox.min.css') }}">
 
-    <link href="{{ asset('estilos/css/flaticon.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('estilos/css/icomoon.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('estilos/css/style.css') }}" type="text/css" rel="stylesheet" />
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/style.css') }}">
+
     {% endblock%}
+
   </head>

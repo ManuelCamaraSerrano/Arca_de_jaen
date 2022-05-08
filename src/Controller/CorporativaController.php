@@ -19,4 +19,29 @@ class CorporativaController extends AbstractController
             
           ]);
       }
+
+
+    /**
+     * @Route("/addLostAnimal", name="addLostAnimal")
+     */
+    public function addLostAnimal(): Response
+    {
+        return $this->render('addLostAnimal.html.twig', [
+
+          
+        ]);
+    }
+
+
+    /**
+     * @Route("/viewLostAnimal", name="viewLostAnimal")
+     */
+    public function viewLostAnimal(): Response
+    {
+        return $this->render('viewLostAnimal.html.twig', [
+
+          
+        ]);
+    }
+    
 }

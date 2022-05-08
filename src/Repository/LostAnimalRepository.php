@@ -7,6 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method LostAnimal|null find($id, $lockMode = null, $lockVersion = null)
@@ -73,4 +74,38 @@ class LostAnimalRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    
+    public function insertLostAnimal($array, EntityManagerInterface $entityManager){
+        
+        $lostAnimal= new LostAnimal();
+        
+        $lostAnimal->setName($array[0]);
+
+        $lostAnimal->setColour($array[1]);
+
+        $lostAnimal->setLat($array[2]);
+
+        $lostAnimal->setLng($array[3]);
+
+        $lostAnimal->setDescription($array[4]);
+
+        $lostAnimal->setPhoto($array[5]);
+
+        $lostAnimal->setType($array[6]);
+
+        $lostAnimal->setRace($array[7]);
+
+        $lostAnimal->setUsuario($array[8]);
+
+        $entityManager->persist($lostAnimal);
+        
+        $entityManager->flush();
+          
+    }
+
+
+
+
+
 }

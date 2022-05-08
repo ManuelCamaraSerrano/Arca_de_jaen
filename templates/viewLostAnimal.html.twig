@@ -1,0 +1,71 @@
+<head>
+    <meta charset="utf-8">
+    <title>Arca de Jaén</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+      <link rel="shortcut icon" type="image/x-icon" href="{{ asset('estilos/assets/images/favicon.png') }}">
+
+      <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
+
+      <!-- Font CSS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+
+      <!-- Vendor CSS (Bootstrap & Icon Font) -->
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/vendor/bootstrap.min.css') }}">
+
+      <!-- Plugins CSS (All Plugins Files) -->
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/plugins/swiper-bundle.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/plugins/icofont.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/plugins/fancybox.min.css') }}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.Default.min.css" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+	
+	<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script> 
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+
+<!-- Style CSS -->
+      <link rel="stylesheet" href="{{ asset('estilos/assets/css/style.css') }}">
+
+  </head>
+
+  <!DOCTYPE html>
+<html>  
+    <body>
+        {% block nav %}
+             {% include 'nav.html.twig'  %}
+        {% endblock %}
+
+        {% block body %}
+
+            <div id='divMapa'></div>
+            
+        {% endblock %}
+
+
+
+        {% block footer %}
+            {% include 'footer.html.twig' %}
+        {% endblock %}
+
+    </body>
+</html>
+
+

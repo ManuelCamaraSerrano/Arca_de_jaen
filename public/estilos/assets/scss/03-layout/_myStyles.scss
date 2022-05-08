@@ -1,0 +1,82 @@
+// Estilos propios
+
+.ulMisionVision{
+    margin-top: 3%;
+
+    li{
+      margin-bottom: 2%;
+    }
+
+}
+
+
+// Estilos view Animals lost
+
+#divMapa {
+  height: 760px;
+  width: 100%;
+}
+
+
+.leaflet-popup-content-wrapper{
+  width: 360px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: height 0.25s linear;
+}
+
+.expanded{
+  height: 480px;
+}
+
+.leaflet-popup-content{
+  width: auto;
+  height: auto;
+}
+
+
+.masInfo{
+  width: auto;
+  height: auto;
+  background-color: white;
+  word-wrap: break-word;  
+}
+
+.masInfo p{
+  margin: 4px 0px;
+}
+
+.masIndo label{
+  margin: 4px 0px;
+}
+
+.imagen img{
+  margin-bottom: 10px;
+  height: 180px;
+}
+
+
+.masInfo label{
+  font-weight: bold;
+  color: #002b4c;
+}
+
+
+.masInfo h5{
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.masInfo i{
+  font-size: 26px;
+}
+
+.masInfo i:hover{
+  color: gray;
+}
+
+.description{
+  height: 80px;
+}

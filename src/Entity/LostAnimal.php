@@ -52,6 +52,16 @@ class LostAnimal
      */
     private $type;
 
+    /**
+     * @ORM\Column(type="float", length=255)
+     */
+    private $lat;
+
+    /**
+     * @ORM\Column(type="float", length=255)
+     */
+    private $lng;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +147,30 @@ class LostAnimal
     public function setType(?type $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getLat(): ?int
+    {
+        return $this->lat;
+    }
+
+    public function setLat(float $lat): self
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    public function getLng(): ?int
+    {
+        return $this->lng;
+    }
+
+    public function setLng(float $lng): self
+    {
+        $this->lng = $lng;
 
         return $this;
     }
