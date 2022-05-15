@@ -28,7 +28,7 @@
 }
 
 .expanded{
-  height: 480px;
+  height: 450px;
 }
 
 .leaflet-popup-content{
@@ -79,4 +79,121 @@
 
 .description{
   height: 80px;
+}
+
+label{
+  color: $primary;
+}
+
+// Estilos plantilla reset-password
+.resetPassword{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logoEmail{
+      width:200px;
+      height: 200px;
+      margin-right: 6%;
+    }
+    div{
+      text-align: center;
+      .h4-reset{
+        font-size: 22px;
+      }
+      a{
+        background-color: $primary;
+        color: white;
+        padding: 3%;
+        border-radius: 5px 5px 5px 5px;
+      }
+    }
+}
+
+
+// Estilos adoptionList
+
+.container-animals{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1900px;
+  .cont-animal{
+    width: 1450px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    gap: 80px;
+    .animal{
+      width: 300px;
+      height: 167px;
+      display: flex;
+      flex-flow: column;
+      color: black;
+      .cont-img{
+        width: 100%;
+        height: 200px;
+      }
+      .cont-info{
+        background: $secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        border-bottom: solid 8px $primary;
+        .info{
+          display: flex;
+          margin-top: 4%;
+          .name{
+            font-size: 32px;
+            font-weight: bold;
+          }
+          .fa-mars{
+            font-size: 28px;
+            margin-top: 16%;
+            margin-left: 20%;
+            color: $primary;
+          }
+          .fa-venus{
+            font-size: 28px;
+            margin-top: 16%;
+            margin-left: 20%;
+            color: deeppink;
+          }
+        }
+        .btn-masinfo{
+          background-color: $primary;
+          color: white;
+          padding: 3%;
+          font-size: 20px;
+          border: none;
+          margin-bottom: 8%;
+          width: 80%;
+        }
+      }
+
+    }
+  }
+}
+
+
+// Paginacion
+
+.container-paginator{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .pagination{
+    display: flex;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    button{
+      background-color: $primary;
+      color: white;
+      font-size: 16px;
+      padding: 8%;
+    }
+
+  }
 }

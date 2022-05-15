@@ -26,10 +26,11 @@ class RegistrationFormType extends AbstractType
             ->add('ap1',   TextType::class, array('label'=>'1º Apellido',          'attr'=> array('class'=>'input-control')))
             ->add('ap2',   TextType::class, array('label'=>'2º Apellido',          'attr'=> array('class'=>'input-control')))
             ->add('phone',   TextType::class, array('label'=>'Teléfono',          'attr'=> array('class'=>'input-control')))
-            ->add('photo', FileType::class)
+            ->add('photo', FileType::class, array('label'=>'Foto',          'attr'=> array('class'=>'input-control')))
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
+                'label'=>'Contraseña',
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [

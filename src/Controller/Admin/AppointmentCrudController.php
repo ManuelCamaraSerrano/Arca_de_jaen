@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Appointment;
+use App\Entity\Usuario;
+use App\Entity\Animal;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;

@@ -43,5 +43,17 @@ class CorporativaController extends AbstractController
           
         ]);
     }
+
+
+    /**
+     * @Route("/adoptionList", name="adoptionList")
+     */
+    public function adoptionList(): Response
+    {
+        return $this->render('adoptionList.html.twig', [
+
+          
+        ]);
+    }
     
 }

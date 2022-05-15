@@ -125,7 +125,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureAssets(): Assets
     {
-        return Assets::new()->addCssFile('cssDashboard.css');
+        return Assets::new()->addCssFile('estilos/assets/css/easyAdmin.css');
     }
 
     

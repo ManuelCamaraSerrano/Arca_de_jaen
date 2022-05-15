@@ -589,6 +589,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 
 .header-bottom {
   background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: solid 8px #002b4c;
 }
 
 .header-navigation {
@@ -2528,7 +2529,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 }
 
 .expanded {
-  height: 480px;
+  height: 450px;
 }
 
 .leaflet-popup-content {
@@ -2576,6 +2577,151 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 
 .description {
   height: 80px;
+}
+
+label {
+  color: #002b4c;
+}
+
+.resetPassword {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.resetPassword .logoEmail {
+  width: 200px;
+  height: 200px;
+  margin-right: 6%;
+}
+.resetPassword div {
+  text-align: center;
+}
+.resetPassword div .h4-reset {
+  font-size: 22px;
+}
+.resetPassword div a {
+  background-color: #002b4c;
+  color: white;
+  padding: 3%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.container-animals {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 1900px;
+}
+.container-animals .cont-animal {
+  width: 1450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 80px;
+}
+.container-animals .cont-animal .animal {
+  width: 300px;
+  height: 167px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  color: black;
+}
+.container-animals .cont-animal .animal .cont-img {
+  width: 100%;
+  height: 200px;
+}
+.container-animals .cont-animal .animal .cont-info {
+  background: #c3e3fd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  border-bottom: solid 8px #002b4c;
+}
+.container-animals .cont-animal .animal .cont-info .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 4%;
+}
+.container-animals .cont-animal .animal .cont-info .info .name {
+  font-size: 32px;
+  font-weight: bold;
+}
+.container-animals .cont-animal .animal .cont-info .info .fa-mars {
+  font-size: 28px;
+  margin-top: 16%;
+  margin-left: 20%;
+  color: #002b4c;
+}
+.container-animals .cont-animal .animal .cont-info .info .fa-venus {
+  font-size: 28px;
+  margin-top: 16%;
+  margin-left: 20%;
+  color: deeppink;
+}
+.container-animals .cont-animal .animal .cont-info .btn-masinfo {
+  background-color: #002b4c;
+  color: white;
+  padding: 3%;
+  font-size: 20px;
+  border: none;
+  margin-bottom: 8%;
+  width: 80%;
+}
+
+.container-paginator {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.container-paginator .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.container-paginator .pagination button {
+  background-color: #002b4c;
+  color: white;
+  font-size: 16px;
+  padding: 8%;
 }
 
 /*----------------------------------------*/
@@ -5864,7 +6010,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   cursor: pointer;
 }
 .account-form-wrap .required {
-  color: #f00;
+  color: #002b4c;
 }
 .account-form-wrap .register-now {
   color: #131b13;

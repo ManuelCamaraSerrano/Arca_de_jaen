@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 class UsuarioCrudController extends AbstractCrudController
 {
@@ -26,10 +27,10 @@ class UsuarioCrudController extends AbstractCrudController
             FieldTextField::new('Ap1')->setLabel("1º Apellido"),
             FieldTextField::new('Ap2')->setLabel("2º Apellido"),
             FieldTextField::new('Phone')->setLabel("Telefono"),
-            ImageField::new('Photo')->setBasePath('public/img')->setUploadDir("public/img")->setLabel("Foto"),
+            ImageField::new('photo')->setBasePath('public/estilos/assets/images/users')->setUploadDir("public/estilos/assets/images/users")->setLabel("Foto"),
             
         ];
     }
-
+    
 
 }

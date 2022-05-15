@@ -1,0 +1,39 @@
+@import "./01-helpers/index";
+
+
+.sidebar{
+    background-color: $primary;
+    .logo-compact i{
+        color: white;
+    }
+}
+
+.menu-icon{
+    color: white;
+}
+
+.content-top{
+    background-color: $primary;
+
+    .content-search .form-group .form-widget{
+
+        i{
+
+            color: white;
+            margin-right: 1%;
+
+        }
+
+    }
+    .user-name{
+        color: white;
+    }
+}
+
+
+.content-header{
+    a{
+        background-color: $primary;
+        
+    }
+}

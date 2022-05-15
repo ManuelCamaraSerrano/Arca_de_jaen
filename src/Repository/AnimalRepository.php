@@ -6,6 +6,7 @@ use App\Entity\Animal;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -45,32 +46,26 @@ class AnimalRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Animal[] Returns an array of Animal objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Animal[]
+     */
+    public function animalPaginado(int $pagina): array
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $inicio = ($pagina-1) * 12;
 
-    /*
-    public function findOneBySomeField($value): ?Animal
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $fila = 12;
+
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            "SELECT a
+            FROM App\Entity\Animal a"
+        )->setFirstResult($inicio)
+        ->setMaxResults($fila);
+        
+        // returns an array of Product objects
+        return $query->getResult();
     }
-    */
+
+
 }

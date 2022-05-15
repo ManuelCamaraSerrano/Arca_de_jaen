@@ -1,0 +1,28 @@
+/*----------------------------------------*/
+/*  Mixin CSS
+/*----------------------------------------*/
+.sidebar {
+  background-color: #002b4c;
+}
+.sidebar .logo-compact i {
+  color: white;
+}
+
+.menu-icon {
+  color: white;
+}
+
+.content-top {
+  background-color: #002b4c;
+}
+.content-top .content-search .form-group .form-widget i {
+  color: white;
+  margin-right: 1%;
+}
+.content-top .user-name {
+  color: white;
+}
+
+.content-header a {
+  background-color: #002b4c;
+}/*# sourceMappingURL=easyAdmin.css.map */

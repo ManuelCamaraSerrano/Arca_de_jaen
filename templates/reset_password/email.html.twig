@@ -1,9 +1,12 @@
-<h1>Bienvenido a Arca de Jaén</h1>
+{% apply inline_css(source('@styles/style.css')) %}
+    <div class='resetPassword'>
+        <img src="{{ email.image('@images/logo.png') }}" alt="Logo" class='logoEmail'>
+        <div>
+            <h4 class='h4-reset'>Bienvenido a Arca de Jaén</h4>
+            <a href="{{ url('app_reset_password', {token: resetToken.token}) }}" class='cambia-contraseña'>Cambiar Contraseña</a>
+            <p>Este link expira en 1 hora.</p>
+            <p>Un saludo.</p>
+        </div>
+    </div>
+{% endapply %}
 
-<p>Cambie su contraseña para poder iniciar sesión</p>
-
-<a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
-
-<p>Este link expira en {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
-
-<p>Un saludo.</p>

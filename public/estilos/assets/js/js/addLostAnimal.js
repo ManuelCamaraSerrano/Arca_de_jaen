@@ -4,6 +4,7 @@ $( document ).ready(function() {
     var lng = 0;
 
 
+
     // Rellenamos el comboBox de tipo de animal
     $.getJSON("/type",
     function(data){
@@ -71,13 +72,11 @@ $( document ).ready(function() {
         var animal = [$("#nombre").val(),$("#color").val(),lat,lng,$("#descripcion").val(),file[2],$("#tipo").val(),$("#raza").val(),usuario];
 
         $.get("/insertAnimal/"+JSON.stringify(animal),function( data ) {
-            alert("hola");
-        })
-      
-    
- 
+           alert("hola");
+        })      
         
     });
+
 
 });
 
