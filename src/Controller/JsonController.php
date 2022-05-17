@@ -54,9 +54,7 @@ class JsonController extends AbstractController
         $jsonContent = $serializer->serialize($razas, 'json');
         return new Response($jsonContent);
 
-        // or render a template
-        // in the template, print things with {{ product.name }}
-        // return $this->render('product/show.html.twig', ['product' => $product]);
+
     }
 
 
@@ -82,9 +80,7 @@ class JsonController extends AbstractController
         $jsonContent = $serializer->serialize($razas, 'json');
         return new Response($jsonContent);
 
-        // or render a template
-        // in the template, print things with {{ product.name }}
-        // return $this->render('product/show.html.twig', ['product' => $product]);
+
     }
 
 
@@ -135,9 +131,7 @@ class JsonController extends AbstractController
         
         return new Response(json_encode($animalesPerdidos));
 
-        // or render a template
-        // in the template, print things with {{ product.name }}
-        // return $this->render('product/show.html.twig', ['product' => $product]);
+
     }
 
 
@@ -170,9 +164,6 @@ class JsonController extends AbstractController
         return new Response(json_encode($animales));
 
 
-        // or render a template
-        // in the template, print things with {{ product.name }}
-        // return $this->render('product/show.html.twig', ['product' => $product]);
     }
 
 
@@ -184,13 +175,42 @@ class JsonController extends AbstractController
         
         $animales = $doctrine->getRepository(Animal::class)->findAll();
 
-        $page = round(count($animales)/12)+1;
-        
-        return new Response(json_encode($page));
+        $page = (count($animales)/2) % 1;
 
-        // or render a template
-        // in the template, print things with {{ product.name }}
-        // return $this->render('product/show.html.twig', ['product' => $product]);
+        if(!is_int($page)){
+
+            return new Response(json_encode(intval(count($animales)/2)));
+        }
+        else{
+
+            return new Response(json_encode(intval(count($animales)/2)+1));
+        }
+        
+
+
+    }
+
+
+    /**
+     * @Route("/getAnimal/{animal}", name="getAnimal")
+     */
+    public function getAnimal(ManagerRegistry $doctrine, int $animal): Response
+    {
+
+        $animal = $doctrine->getRepository(Animal::class)->find($animal);
+        
+        $encoder = new JsonEncoder();
+        $defaultContext = [
+            AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object, $format, $context) {
+                return $object->getId();
+            },
+        ];
+
+        $normalizer = new ObjectNormalizer(null, null, null, null, null, null, $defaultContext);
+
+        $serializer = new Serializer([$normalizer], [$encoder]);
+        $jsonContent = $serializer->serialize($animal, 'json');
+        return new Response($jsonContent);
 
     }
         

@@ -51,9 +51,9 @@ class AnimalRepository extends ServiceEntityRepository
      */
     public function animalPaginado(int $pagina): array
     {
-        $inicio = ($pagina-1) * 12;
+        $inicio = ($pagina-1) * 2;
 
-        $fila = 12;
+        $fila = 2;
 
         $entityManager = $this->getEntityManager();
 

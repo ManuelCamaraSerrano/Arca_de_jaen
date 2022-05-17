@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+        {% include 'nav.html.twig'  %}
+    {% endblock %}
+
+{% block body %}
+
+    <div class="container-info-animal">
+        
+    </div>
+
+{% endblock %}
+  {% block footer %}
+
+        {% include 'footer.html.twig' %}
+         <!-- JS -->
+         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script src="{{ asset('estilos/assets/js/js/infoAnimal.js') }}"></script>
+   {% endblock %}

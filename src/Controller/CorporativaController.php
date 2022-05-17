@@ -55,5 +55,16 @@ class CorporativaController extends AbstractController
           
         ]);
     }
+
+     /**
+     * @Route("/infoAnimal", name="infoAnimal")
+     */
+    public function infoAnimal(): Response
+    {
+        return $this->render('infoAnimal.html.twig', [
+
+          
+        ]);
+    }
     
 }
