@@ -90,22 +90,27 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
+
     .logoEmail{
       width:200px;
       height: 200px;
       margin-right: 6%;
     }
+
     div{
       text-align: center;
+
       .h4-reset{
         font-size: 22px;
       }
+
       a{
         background-color: $primary;
         color: white;
         padding: 3%;
         border-radius: 5px 5px 5px 5px;
       }
+
     }
 }
 
@@ -117,24 +122,30 @@ label{
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   max-width: 1900px;
+
   .cont-animal{
     width: 1450px;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 5%;
     flex-wrap: wrap;
     gap: 80px;
+
     .animal{
       width: 300px;
-      height: 167px;
       display: flex;
       flex-flow: column;
       color: black;
+      box-shadow: 0px 1px 5px 2px;
+
       .cont-img{
         width: 100%;
         height: 200px;
       }
+
       .cont-info{
         background: $secondary;
         display: flex;
@@ -142,26 +153,32 @@ label{
         align-items: center;
         flex-flow: column;
         border-bottom: solid 8px $primary;
+
         .info{
           display: flex;
           margin-top: 4%;
+
           .name{
             font-size: 32px;
             font-weight: bold;
           }
+
           .fa-mars{
             font-size: 28px;
             margin-top: 16%;
             margin-left: 20%;
             color: $primary;
           }
+
           .fa-venus{
             font-size: 28px;
             margin-top: 16%;
             margin-left: 20%;
             color: deeppink;
           }
+
         }
+
         .btn-masinfo{
           background-color: $primary;
           color: white;
@@ -171,6 +188,7 @@ label{
           margin-bottom: 8%;
           width: 80%;
         }
+
       }
 
     }
@@ -184,10 +202,12 @@ label{
   width: 100%;
   display: flex;
   justify-content: center;
+
   .pagination{
     display: flex;
     margin-top: 3%;
     margin-bottom: 3%;
+
     button{
       background-color: $primary;
       color: white;
@@ -198,6 +218,7 @@ label{
       padding-bottom:5% ;
       border: none;
     }
+
     .btn-activo{
       background-color: $secondary;
       color: black;
@@ -212,33 +233,47 @@ label{
 .container-info-animal{
   width: 100%;
   height: 100%;
+  min-width: 578px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 3%;
   padding-bottom: 8%;
+
   .container{
-    width: 1600px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
     flex-wrap: wrap;
+
     .cont-img{
       width: 550px;
       height: 100%;
       display: flex;
       flex-flow: column;
+
+      #img1{
+        border: solid 3px $primary;
+        padding: 0;
+      }
+
       .cont-images{
         display: flex;
         margin-top: 2%;
         width: 22%;
         height: 20%;
         gap: 18%;
+
         img{
           width: 506px;
           height: 140px;
+          border: solid 3px $primary;
+          padding: 0;
         }
+
       }
     }
     .cont-info{
@@ -250,19 +285,23 @@ label{
       padding: 1%;
       border-radius: 10px 10px 10px 10px;
       box-shadow: 0px 0px 5px 2px $primary;
+
       .group{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 40px;
         margin-bottom: 4%;
+
         .item-animal{
           width: 160px;
         }
+
         label{
           color: $primary;
           font-weight: 600;
         }
+
         .paragraph{
           background-color: white;
           padding-left: 6%;
@@ -271,10 +310,254 @@ label{
           border-radius: 5px 5px 5px 5px;
           box-shadow: 0px 0px 5px 1px;
         }
+
         .item-description{
           width: 90%;
         }
+
       }
     }
   }
+}
+
+
+// Estilos modal solicitud animal
+
+.modal-confirmacion{
+  z-index: 80;
+}
+
+.modal-soliEnviada{
+  z-index: 80;
+  .ui-dialog-buttonset{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.modal-solicitud{
+  z-index: 50;
+}
+
+.ui-dialog-buttonset{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  button{
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  button:first-child{
+    background-color: rgb(209, 42, 42);
+    color: white;
+  }
+
+  button:last-child{
+    background-color: $primary;
+    color: white;
+  }
+}
+
+.ui-dialog{
+  background-color: white;
+  border-radius: 5px 5px 0px 0px;
+  .ui-dialog-titlebar{
+    background-color: $primary;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .solicitud{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 2%;
+    padding-bottom: 4%;
+
+    .container-description{
+      width: 80%;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      margin-top: 2%;
+
+      .requerido{
+        color: red;
+        font-weight: bold;
+      }
+
+      .errorSolicitud{
+        background-color: rgb(214, 69, 69);
+        color: rgb(156, 4, 4);
+        margin-top: 1%;
+        margin-bottom: 3%;
+        border-radius: 8px 8px 8px 8px;
+        transition: 5s ease-in-out;
+      }
+
+      .descripcion{
+        background-color: #eff1f6;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+      }
+    }
+  }
+
+}
+
+
+// Estilos pantalla bloqueo modal
+
+.contenedorModal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: .5s ease;
+  z-index: -1;
+
+  &.active{
+    opacity: 0.5;
+    z-index: 40;
+  }
+
+  &.superActive{
+    opacity: 0.5;
+    z-index: 60;
+  }
+  
+}
+
+
+
+.container-addLostAnimal{
+  margin-top: 6%;
+  margin-bottom: 6%;
+}
+
+
+.oculto{
+  display: none;
+}
+
+
+.text{
+  width: 100%;
+  height: 90%;
+  padding-left: 5%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.textarea{
+  width: 100%;
+  height: 100%;
+  padding-left: 3%;
+  padding-top: 2%;
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+
+// Estilos para los errores
+
+.error{
+  text-align: start;
+  font-size: 14px;
+  color: darkred;
+}
+
+.fa-circle-exclamation{
+  margin-right: 2%;
+}
+
+
+.form-add{
+  .cont-descripcion{
+    margin-bottom: 8%;
+    @media (max-width: 650px) {
+      margin-bottom: 15%;
+    }
+  }
+  .cont-file{
+    margin-bottom: 3%;
+    @media (max-width: 650px) {
+      margin-bottom: 8%;
+    }
+  }
+}
+
+
+.flash-notice{
+  width: 50%;
+  height: 50%;
+  background-color: black;
+  z-index: 100;
+}
+
+
+
+
+.inputfile { // Añadido
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {  // Añadido
+  max-width: 80%;
+  font-size: 1.10rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+}
+
+.inputfile + label svg {  // Añadido
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  margin-right: 0.25em;
+}
+
+.inputfile-1 + label {  // Añadido
+  color: #fff;
+  background-color: $primary;
+}
+
+.inputfile-1:focus + label,   // Añadido
+.inputfile-1.has-focus + label,
+.inputfile-1 + label:hover {
+  background-color: $primary;
+}
+
+
+
+// Modal solicitud enviada
+
+.solicitud-enviada{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  margin-bottom: 3%;
 }

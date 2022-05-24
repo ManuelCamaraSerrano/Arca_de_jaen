@@ -2,27 +2,32 @@
 /*  Mixin CSS
 /*----------------------------------------*/
 .sidebar {
-  background-color: #002b4c;
+  background-color: #c3e3fd;
 }
 .sidebar .logo-compact i {
-  color: white;
+  color: #002b4c;
 }
 
 .menu-icon {
-  color: white;
+  color: #002b4c;
+}
+.menu-icon::before {
+  color: #002b4c;
 }
 
 .content-top {
-  background-color: #002b4c;
+  background-color: #c3e3fd;
+}
+.content-top .content-search {
+  color: black;
+}
+.content-top .content-search .form-group .content-search-label {
+  border-radius: 5px 5px 5px 5px;
 }
 .content-top .content-search .form-group .form-widget i {
-  color: white;
+  color: black;
   margin-right: 1%;
 }
 .content-top .user-name {
-  color: white;
-}
-
-.content-header a {
-  background-color: #002b4c;
+  color: black;
 }/*# sourceMappingURL=easyAdmin.css.map */

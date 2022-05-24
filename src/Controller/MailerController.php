@@ -1,9 +1,10 @@
 <?php
         namespace App\Controller;
 
-use Google\Service\Compute\Address;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use Symfony\Component\Mailer\MailerInterface;
+        use DateTime;
+        use Symfony\Component\Mime\Address;
+        use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+        use Symfony\Component\Mailer\MailerInterface;
         use Symfony\Component\Mime\Email;
         use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
         use Symfony\Component\HttpFoundation\Response;
@@ -18,17 +19,12 @@ class MailerController extends AbstractController
     public function sendEmail(MailerInterface $mailer): Response
     {
         $email = (new TemplatedEmail())
-            ->from('fabien@example.com')
-            ->to(new Address('ryan@example.com'))
-            ->subject('Thanks for signing up!')
-
-            // path of the Twig template to render
-            ->htmlTemplate('resert_password/email.html.twig')
-
-            // pass variables (name => value) to the template
+            ->from(new Address('manuelcs160@gmail.com', 'Arca de Jaén'))
+            ->to("manuelcs160@gmail.com")
+            ->subject('Your password reset request')
+            ->htmlTemplate('reset_password/email.html.twig')
             ->context([
-                'expiration_date' => new \DateTime('+7 days'),
-                'username' => 'foo',
+                'animalname' =>"sxsa",
             ])
         ;
 
@@ -38,25 +34,26 @@ class MailerController extends AbstractController
 
     }
 
-    /**
-    * @Route("/emailCita")
-    */
-    public function sendEmailCite(MailerInterface $mailer, $cita): Response
+
+    public function sendEmailCite(MailerInterface $mailer, $cita)
     {
-        $email = (new Email())
-            ->from('manuelcs160@gmail.com')
-            ->to('manuelcs160@gmail.com')          
-            ->subject('Cita para proceso de adopción')
-            ->text('Tutoriales Cursos y Más Contenido')
-            ->embed(fopen('C:\wamp64m\www\Arca_de_jaen\public\estilos\assets\images\logo.png', 'r'), 'footer-signature')
-             // reference images using the syntax 'cid:' + "image embed name"
-            ->html('<img src="cid:footer-signature">')
-            ->html('');
-        //dd($cita->getRequest()->getAnimal()->getName());
+
+        $email = (new TemplatedEmail())
+            ->from(new Address('manuelcs160@gmail.com', 'Arca de Jaén'))
+            ->to($cita->getRequest()->getUsuario()->getEmail())
+            ->subject('Cita para el proceso de adopción')
+            ->htmlTemplate('emailCite.html.twig')
+            ->context([
+                'animalName' => $cita->getRequest()->getAnimal()->getName(),
+                'userName' => $cita->getRequest()->getUsuario()->getName(),
+                'date' => date_format($cita->getDate(),'d/m/20y'),
+                'hour' =>  date_format($cita->getDate(),'h:i'),
+            ])
+        ;
 
         $mailer->send($email);
 
-        return $this->redirectToRoute('admin');
+        return true;
 
     }
 

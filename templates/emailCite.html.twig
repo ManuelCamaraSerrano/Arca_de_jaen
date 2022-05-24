@@ -1,0 +1,10 @@
+{% apply inline_css(source('@styles/style.css')) %}
+    <div class='resetPassword'>
+        <img src="{{ email.image('@images/logo.png') }}" alt="Logo" class='logoEmail'>
+        <div>
+            <h4 class='h4-reset'>Cita para la adopción de {{animalName}}</h4>
+            <p>Buenas {{userName}} su cita ha sido programada el {{date}} a las {{hour}}</p>
+            <p>Un saludo.</p>
+        </div>
+    </div>
+{% endapply %}

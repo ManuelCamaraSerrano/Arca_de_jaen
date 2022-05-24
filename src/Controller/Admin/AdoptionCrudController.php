@@ -21,18 +21,18 @@ class AdoptionCrudController extends AbstractCrudController
     {
         return [
 
-            AssociationField::new("usuario"),
+            AssociationField::new("usuario")->setColumns("col-5"),
 
-            AssociationField::new("animal"),
+            AssociationField::new("animal")->setColumns("col-5"),
 
-            Datefield::new("adoptionDate")->setLabel("Fecha adopción"),
-
-            ImageField::new('contract')->setBasePath('public/img')->setUploadDir("public/img")->setLabel("Contrato"),
+            ImageField::new('contract')->setBasePath('estilos/assets/pdf')->setUploadDir("public/estilos/assets/pdf")->setLabel("Contrato")->setColumns("col-5"),
 
             ChoiceField::new('state')->setChoices([
                 'Finalizada' => 'Finalizada',
                 'En curso' => 'En curso',
-            ]),
+            ])->setColumns("col-5"),
+
+            Datefield::new("adoptionDate")->setLabel("Fecha adopción"),
 
         ];
     }

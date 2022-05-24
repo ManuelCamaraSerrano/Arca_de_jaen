@@ -3,10 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Request;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method Request|null find($id, $lockMode = null, $lockVersion = null)
@@ -45,32 +47,24 @@ class RequestRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Request[] Returns an array of Request objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+    public function insertRequest($array, EntityManagerInterface $entityManager){  // Función para insertar una solicitud
 
-    /*
-    public function findOneBySomeField($value): ?Request
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $fecha = new DateTime($array[3]);
+        
+        $request= new Request();
+        
+        $request->setUsuario($array[0]);
+
+        $request->setAnimal($array[1]);
+
+        $request->setDescription($array[2]);
+
+        $request->setDate($fecha);
+
+        $entityManager->persist($request);
+        
+        $entityManager->flush();
+          
     }
-    */
+
 }

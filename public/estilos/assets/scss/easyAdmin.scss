@@ -2,38 +2,42 @@
 
 
 .sidebar{
-    background-color: $primary;
+    background-color: $secondary;
     .logo-compact i{
-        color: white;
+        color: $primary;
     }
 }
 
 .menu-icon{
-    color: white;
+    color: $primary;
+    &::before{
+        color: $primary;
+    }
 }
 
 .content-top{
-    background-color: $primary;
+    background-color: $secondary;
+    .content-search{
+        color: black;
+        .form-group{
+            .content-search-label{
+                border-radius: 5px 5px 5px 5px;
+            }
+            .form-widget{
 
-    .content-search .form-group .form-widget{
-
-        i{
-
-            color: white;
-            margin-right: 1%;
-
-        }
-
-    }
-    .user-name{
-        color: white;
-    }
-}
-
-
-.content-header{
-    a{
-        background-color: $primary;
+                i{
         
+                    color: black;
+                    margin-right: 1%;
+        
+                }
+        
+            }
+        } 
+
+    }
+
+    .user-name{
+        color: black;
     }
 }

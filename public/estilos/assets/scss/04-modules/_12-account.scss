@@ -24,46 +24,7 @@
     margin-top: 6%;
   }
 
-  .inputfile { // Añadido
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-  }
-
-  .inputfile + label {  // Añadido
-    max-width: 80%;
-    font-size: 1.10rem;
-    font-weight: 700;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-    display: inline-block;
-    overflow: hidden;
-    padding: 0.625rem 1.25rem;
-  }
-
-  .inputfile + label svg {  // Añadido
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
-    fill: currentColor;
-    margin-top: -0.25em;
-    margin-right: 0.25em;
-  }
-
-  .inputfile-1 + label {  // Añadido
-    color: #fff;
-    background-color: $primary;
-  }
-
-  .inputfile-1:focus + label,   // Añadido
-  .inputfile-1.has-focus + label,
-  .inputfile-1 + label:hover {
-    background-color: $primary;
-  }
+  
 
   & .form-control {
     background-color: #FFFFFF;

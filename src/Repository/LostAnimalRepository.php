@@ -84,19 +84,19 @@ class LostAnimalRepository extends ServiceEntityRepository
 
         $lostAnimal->setColour($array[1]);
 
-        $lostAnimal->setLat($array[2]);
+        $lostAnimal->setLat($array[6]);
 
-        $lostAnimal->setLng($array[3]);
+        $lostAnimal->setLng($array[7]);
 
         $lostAnimal->setDescription($array[4]);
 
-        $lostAnimal->setPhoto($array[5]);
+        $lostAnimal->setPhoto($array[8]);
 
-        $lostAnimal->setType($array[6]);
+        $lostAnimal->setType($array[2]);
 
-        $lostAnimal->setRace($array[7]);
+        $lostAnimal->setRace($array[3]);
 
-        $lostAnimal->setUsuario($array[8]);
+        $lostAnimal->setUsuario($array[5]);
 
         $entityManager->persist($lostAnimal);
         

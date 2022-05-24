@@ -11,11 +11,12 @@ use App\Entity\Usuario;
 use App\Repository\LostAnimalRepository;
 use App\Repository\AnimalRepository;
 use App\Repository\RaceRepository;
+use App\Repository\RequestRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-
+use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
@@ -85,29 +86,27 @@ class JsonController extends AbstractController
 
 
     /**
-     * @Route("/insertAnimal/{animal}", name="insertAnimal")
+     * @Route("/insertAnimal", name="insertAnimal")
      */
-    public function insertAnimal(EntityManagerInterface $entityManager, ManagerRegistry $doctrine, $animal): Response
+    public function insertAnimal(EntityManagerInterface $entityManager, ManagerRegistry $doctrine): Response
     {
 
-        $array = json_decode($animal);
+       $animal = [$_POST["nombre"],$_POST["color"],$_POST["tipo"],$_POST["raza"],$_POST["descripcion"],$_POST["usuario"],$_POST["lat"],$_POST["lng"],$_FILES['file-1']['name']];
 
-       // $foto = "img/".$_FILES['fichero']['name'];
+       move_uploaded_file($_FILES['file-1']['tmp_name'],"estilos/assets/images/animals/".$_FILES['file-1']['name']);
 
-       move_uploaded_file($_FILES['fichero']['tmp_name'],"public/images/animals/".$_FILES['fichero']['name']);
+        $tipo = $doctrine->getRepository(Type::class)->find($animal[2]);
+        $raza = $doctrine->getRepository(Race::class)->find($animal[3]);
+        $usuario = $doctrine->getRepository(Usuario::class)->find($animal[5]);
 
-        $tipo = $doctrine->getRepository(Type::class)->find($array[6]);
-        $raza = $doctrine->getRepository(Race::class)->find($array[7]);
-        $usuario = $doctrine->getRepository(Usuario::class)->find($array[8]);
-
-        $array[6] = $tipo;
-        $array[7] = $raza;
-        $array[8] = $usuario;
+        $animal[2] = $tipo;
+        $animal[3] = $raza;
+        $animal[5] = $usuario;
 
         $lostAnimalRepo = new LostAnimalRepository($doctrine);
-        $insert = $lostAnimalRepo->insertLostAnimal($array,$entityManager);
+        $insert = $lostAnimalRepo->insertLostAnimal($animal,$entityManager);
 
-        return new Response("ok");
+        return $this->redirectToRoute('index');;
 
     }
 
@@ -175,19 +174,17 @@ class JsonController extends AbstractController
         
         $animales = $doctrine->getRepository(Animal::class)->findAll();
 
-        $page = (count($animales)/2) % 1;
+        $page = (count($animales)/8) % 1;
 
         if(!is_int($page)){
 
-            return new Response(json_encode(intval(count($animales)/2)));
+            return new Response(json_encode(intval(count($animales)/8)));
         }
         else{
 
-            return new Response(json_encode(intval(count($animales)/2)+1));
+            return new Response(json_encode(intval(count($animales)/8)+1));
         }
         
-
-
     }
 
 
@@ -197,7 +194,7 @@ class JsonController extends AbstractController
     public function getAnimal(ManagerRegistry $doctrine, int $animal): Response
     {
 
-        $animal = $doctrine->getRepository(Animal::class)->find($animal);
+        $animal = $doctrine->getRepository(Animal::class)->find($animal);  // Leemos el animal en concreto
         
         $encoder = new JsonEncoder();
         $defaultContext = [
@@ -213,6 +210,31 @@ class JsonController extends AbstractController
         return new Response($jsonContent);
 
     }
+
+
+    /**
+     * @Route("/insertSolicitud/{solicitud}", name="insertSolicitud")
+     */
+    public function insertSolicitud(EntityManagerInterface $entityManager, ManagerRegistry $doctrine, $solicitud): Response
+    {
+
+        $array = json_decode($solicitud);
+
+        $array[3] = date("20y-m-d"); // Cogemos la fecha actual
+
+        $usuario = $doctrine->getRepository(Usuario::class)->find($array[0]);  // Leemos el usuario
+        $animal = $doctrine->getRepository(Animal::class)->find($array[1]);  // Leemos el animal
+
+        $array[0] = $usuario;
+        $array[1] = $animal;
+
+        $request = new RequestRepository($doctrine);
+        $insert = $request->insertRequest($array, $entityManager);  // Insertamos la solicitud
+
+        return new Response("ok");
+
+    }
+
         
 
 

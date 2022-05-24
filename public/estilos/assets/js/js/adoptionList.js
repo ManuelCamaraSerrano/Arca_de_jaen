@@ -13,12 +13,17 @@ $( document ).ready(function() {
         })
 
 
-    crearPaginacion();
+    crearPaginacion();  // Creamos la paginación
+
+
+
 
     function crearPaginacion(){
 
         var botonIni = $("<button>").text("<<").attr("class","anterior").click(function(){  // Gestionamos el click del botono anterior
+            
             var actualPage = parseInt($(".btn-activo").attr("id").substring(1)); // Cogemos la página actual
+            window.scrollTo(0, 0);
             if(actualPage != 1){  // Si la página es distinta a 1
 
                 $(".btn-activo").removeClass("btn-activo");  // Borramos la clase activo y se la asignamos al boton anterior
@@ -30,6 +35,7 @@ $( document ).ready(function() {
                     $(".cont-animal").empty();  // Vaciamos el contenedor
 
                     pintaAnimales(data);  // Pintamos los datos
+
                 })
             }
         });
@@ -46,6 +52,7 @@ $( document ).ready(function() {
 
                     var boton = $("<button>").text(i+1).attr("id","n"+(i+1)).addClass("btn-activo").click(function(){ // Controlamos el click
 
+                        window.scrollTo(0, 0);
                         $(".btn-activo").removeClass("btn-activo");  // Borramos la clase activo del boton antiguo y se la asignamos al que hemos pulsado
                         $(this).attr("class","btn-activo");
                         $.getJSON("/animalList/"+$(this).attr("id").substring(1),{},
@@ -65,6 +72,7 @@ $( document ).ready(function() {
 
 
                     var boton = $("<button>").text(i+1).attr("id","n"+(i+1)).click(function(){
+                        window.scrollTo(0, 0);
                         $(".btn-activo").removeClass("btn-activo");
                         $(this).attr("class","btn-activo");
                         $.getJSON("/animalList/"+$(this).attr("id").substring(1),{},
@@ -85,6 +93,7 @@ $( document ).ready(function() {
 
             var botonfin = $("<button>").text(">>").attr("class","posterior").click(function(){  // Gestionamos el click del botono posterior
 
+                window.scrollTo(0, 0);
                 var actualPage = parseInt($(".btn-activo").attr("id").substring(1)); // Cogemos la página actual
 
                 if(actualPage != data){  // Si la página es distinta al total de paginas
@@ -107,6 +116,8 @@ $( document ).ready(function() {
 
 
     }
+
+
 
 
 

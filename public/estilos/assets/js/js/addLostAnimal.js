@@ -61,21 +61,89 @@ $( document ).ready(function() {
     }
 
 
+    // Agregamos el usuario al input oculto
+    var usuario = $("img[id^='usu']").attr("id").substring(3);
+    $("#usuario").val(usuario);
+
+
     $( "#subir" ).click(function(ev) {
 
-        ev.preventDefault();
-
-        var usuario = $("img[id^='usu']").attr("id").substring(3);
-
-        var file = $("#file-1").val().split("\\"); // Cogemos el nombre del archivo
-
-        var animal = [$("#nombre").val(),$("#color").val(),lat,lng,$("#descripcion").val(),file[2],$("#tipo").val(),$("#raza").val(),usuario];
-
-        $.get("/insertAnimal/"+JSON.stringify(animal),function( data ) {
-           alert("hola");
-        })      
+        $("#lat").val(lat);
+        $("#lng").val(lng);
         
-    });
+        validador(ev);  // Función que valida los campos
+
+    })
+
+
+
+
+    
+    function validador(ev){
+
+        if($("#raza").val() == "Raza")
+        {
+            ev.preventDefault();
+            $("#e-raza").removeClass("oculto");
+        }
+        else{
+            $("#e-raza").addClass("oculto");
+        }
+
+        if($("#tipo").val() == "Especie")
+        {
+            ev.preventDefault();
+            $("#e-especie").removeClass("oculto");
+        }
+        else{
+            $("#e-especie").addClass("oculto");
+        }
+
+        if(lat == 0 && lng == 0){
+            ev.preventDefault();
+            $("#e-marcador").removeClass("oculto");
+        }
+        else{
+            $("#e-marcador").addClass("oculto");
+        }
+
+        if($("#descripcion").val() == "")
+        {
+            ev.preventDefault();
+            $("#e-descripcion").removeClass("oculto");
+        }
+        else{
+            $("#e-descripcion").addClass("oculto");
+        }
+
+        if($("#nombre").val() == "")
+        {
+            ev.preventDefault();
+            $("#e-nombre").removeClass("oculto");
+        }
+        else{
+            $("#e-nombre").addClass("oculto");
+        }
+
+        if($("#color").val() == "")
+        {
+            ev.preventDefault();
+            $("#e-color").removeClass("oculto");
+        }
+        else{
+            $("#e-color").addClass("oculto");
+        }
+        
+        if($("#file-1").val() == "")
+        {
+            ev.preventDefault();
+            $("#e-foto").removeClass("oculto");
+        }
+        else{
+            $("#e-foto").addClass("oculto");
+        }
+  
+    }
 
 
 });

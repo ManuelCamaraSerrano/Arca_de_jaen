@@ -5,7 +5,7 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto">
                             <div class="header-logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img class="logo-main" id="usu{{app.user.id}}" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
                                 </a>
                             </div>
@@ -13,8 +13,8 @@
                         <div class="col-auto d-none d-lg-block">
                             <div class="header-navigation">
                                 <ul class="main-nav justify-content-center">
-                                    <li><a href="index.html">Inicio</a></li>
-                                    <li><a href="about-us.html">Acerca de</a></li>
+                                    <li><a href="/">Inicio</a></li>
+                                    <li><a href="/about">Acerca de</a></li>
                                     <!-- <li class="has-submenu"><a href="causes.html">Causes</a>
                 <ul class="submenu-nav">
                   <li><a href="causes.html">Causes</a></li>
@@ -23,13 +23,16 @@
               </li> -->
                                     <li class="has-submenu"><a href="causes.html">Qué puedes hacer</a>
                                         <ul class="submenu-nav">
-                                            <li><a href="causes-details.html">Adopta</a></li>
+                                            <li><a href="/adoptionList">Adopta</a></li>
                                             <li><a href="causes-details.html">Donaciones</a></li>
                                             <li><a href="causes-details.html">Hazte voluntario</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu"><a href="events.html">Animales perdidos</a>
-    
+                                        <ul class="submenu-nav">
+                                            <li><a href="/viewLostAnimal">Ver animales perdidos</a></li>
+                                            <li><a href="/addLostAnimal">Subir mi mascota perdida</a></li>
+                                        </ul>
                                     </li>
 
                                     <li><a href="contact.html">Galería</a></li>
@@ -39,7 +42,7 @@
                             </div>
                         </div>
                         <div class="col-auto d-flex align-items-center gap-6 gap-lg-0">
-                            <a class="btn btn-primary header-donate-btn" href="donate.html">Donate Now</a>
+                            <a class="btn btn-primary header-donate-btn" href="/login">Login</a>
                             <button class="btn-menu d-flex d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                 <span></span>
                                 <span></span>
@@ -49,5 +52,54 @@
                     </div>
                 </div>
             </div>
+
+
+            <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h6 class="d-none" id="offcanvasExampleLabel">Aside Menu</h6>
+                <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-rounded-left"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="mobile-menu-action">
+                    <!-- Mobile Menu Start -->
+                    <div class="mobile-menu-items">
+                        <ul class="nav-menu">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="about-us.html">Acerca de</a></li>
+                            <li><a href="#">Qué puedes hacer</a>
+                                <ul class="sub-menu">
+                                    <li><a href="causes-details.html">Adopta</a></li>
+                                    <li><a href="causes-details.html">Donaciones</a></li>
+                                    <li><a href="causes-details.html">Hazte voluntario</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Animales perdidos</a></li>
+                            <li><a href="#">Galería</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <!-- Mobile Menu End -->
+                    <ul class="mobile-menu-info-list">
+                        <li>
+                            <i class="icon icofont-ui-call"></i>
+                            <a href="tel://5123602763" class="text">(512) 360-2763</a>
+                        </li>
+                        <li>
+                            <i class="icon icofont-envelope-open"></i>
+                            <a href="mailto://support@gamil.com" class="text">support@gamil.com</a>
+                        </li>
+                        <li>
+                            <i class="icon icofont-google-map"></i>
+                            <span class="text">Smithville, Texas(TX), 78957</span>
+                        </li>
+                        <li>
+                            <i class="icon icofont-clock-time"></i>
+                            <span class="text">Sun to Thu - 08:00 am to 09:00 pm</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </aside>
 	 <!--== End: Header Top ==-->
 </header>

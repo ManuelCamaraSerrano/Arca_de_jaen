@@ -19,7 +19,7 @@ class PhotoCrudController extends AbstractCrudController
     {
         return [
 
-            ImageField::new('photo')->setBasePath('public/estilos/assets/images/animals')->setUploadDir("public/estilos/assets/images/animals")->setLabel("Foto"),
+            ImageField::new('photo')->setBasePath('estilos/assets/images/animals')->setUploadDir("public/estilos/assets/images/animals")->setLabel("Foto"),
             AssociationField::new("animal"),
 
         ];

@@ -23,33 +23,33 @@ class AnimalCrudController extends AbstractCrudController
     {
         return [
 
-            AssociationField::new("type")->setLabel("Tipo"),
+            AssociationField::new("type")->setLabel("Tipo")->setColumns("col-4"),
 
-            AssociationField::new("race")->setLabel("Raza"),
+            AssociationField::new("race")->setLabel("Raza")->setColumns("col-4"),
 
-            AssociationField::new("physicalSpace")->setLabel("Espacio Físico"),
+            AssociationField::new("physicalSpace")->setLabel("Espacio Físico")->setColumns("col-4"),
 
-            FieldTextField::new('Name')->setLabel("Nombre"),
+            FieldTextField::new('Name')->setLabel("Nombre")->setColumns("col-4"),
 
-            Datefield::new("birth_date")->setLabel("Fecha nacimiento"),
+            NumberField::new('weigth')->setLabel("Peso")->setColumns("col-4"),
 
-            Datefield::new("entry_date")->setLabel("Fecha entrada"),
+            NumberField::new('height')->setLabel("Altura")->setColumns("col-4"),
 
-            NumberField::new('weigth')->setLabel("Peso"),
+            FieldTextField::new('colour')->setLabel("Color")->setColumns("col-4"),
 
-            NumberField::new('height')->setLabel("Altura"),
-
-            FieldTextField::new('colour')->setLabel("Color"),
-
-            FieldTextField::new('chip'),
-
-            TextareaField::new("description")->setLabel("Descripción"),
-
+            FieldTextField::new('chip')->setColumns("col-4"),
 
             ChoiceField::new('sex')->setChoices([
                 'Macho' => 'Macho',
                 'Hembra' => 'Hembra',
-            ])->setLabel("Sexo"),            
+            ])->setLabel("Sexo")->setColumns("col-4"),       
+            
+            Datefield::new("birth_date")->setLabel("Fecha nacimiento")->setColumns("col-4"),
+
+            Datefield::new("entry_date")->setLabel("Fecha entrada")->setColumns("col-4"),
+
+            TextareaField::new("description")->setLabel("Descripción")->setColumns("col-12 col-md-5"),
+
 
 
             

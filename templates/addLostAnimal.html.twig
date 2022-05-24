@@ -6,40 +6,53 @@
 
 {% block body %}
 
-
-    <div class="col-lg-10 col-md-8 col-8 mx-auto">
-            <form id="account-form" class="col-lg-12 text-center" action="#">
+    <div class="col-lg-10 col-md-8 col-8 mx-auto container-addLostAnimal">
+            <form id="account-form" class="col-lg-12 text-center form-add" action="/insertAnimal" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="row col-lg-6 ">
                         <div class="form-group mb-4 col-lg-6 col-md-6 col-12">
-                            <input class="form-control" type="text" placeholder="Nombre" id="nombre">
+                            <input class="text col-12" type="text" placeholder="Nombre *" id="nombre" name="nombre">
+                            <p class="error col-12 oculto" id="e-nombre"><i class="fas fa-circle-exclamation"></i>Introduzca un nombre</p>
                         </div>
                         <div class="form-group mb-4 col-lg-6 col-md-6 col-12">
-                            <input class="form-control" type="text" placeholder="Color" id="color">
+                            <input class="text" type="text" placeholder="Color *" id="color" name="color">
+                            <p class="error oculto" id="e-color"><i class="fas fa-circle-exclamation"></i>Introduzca un color</p>
                         </div>
 
                         <div class="form-group mb-4 col-lg-6 col-md-6 col-12">
-                            <select name="tipo" id="tipo" class="form-control">
+                            <select name="tipo" id="tipo" class="text">
                                 <option>Especie</option>
                             </select>
+                            <p class="error oculto" id="e-especie"><i class="fas fa-circle-exclamation"></i>Seleccione una especie</p>
                         </div>
-                        <div class="form-group mb-5 col-lg-6 col-md-6 col-12">
-                            <select name="raza" id="raza" class="form-control" >
+                        <div class="form-group mb-4 col-lg-6 col-md-6 col-12">
+                            <select name="raza" id="raza" class="text">
                                 <option>Raza</option>
                             </select>
+                            <p class="error oculto" id="e-raza"><i class="fas fa-circle-exclamation"></i>Seleccione una raza</p>
                         </div>
 
-                        <div class="form-group mb-4 col-lg-12 col-md-12 col-12">
-                            <textarea name="descripcion" id="descripcion" cols="30" rows="4" class="form-control" placeholder="Descripcion" id="descripcion"></textarea>
+                        <div class="form-group col-lg-12 col-md-12 col-12 cont-descripcion">
+                            <textarea name="descripcion" id="descripcion" cols="30" rows="3" class="textarea" placeholder="Descripcion *"></textarea>
+                            <p class="error oculto" id="e-descripcion"><i class="fas fa-circle-exclamation"></i>Introduzca una descripcion</p>
                         </div>
 
-
-                        <div class="form-group mb-5 col-lg-12 col-md-10 col-12">
-                            <input type="file" id="foto" name="file-1" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" />
+                        <div class="form-group mb-4 col-lg-6 col-md-6 col-12 oculto">
+                            <input class="form-control" type="text" placeholder="Usuario" id="usuario" name="usuario">
+                        </div>
+                        <div class="form-group mb-4 col-lg-6 col-md-6 col-12 oculto">
+                            <input class="form-control" type="text" placeholder="Nombre" id="lat" name="lat" >
+                        </div>
+                        <div class="form-group mb-4 col-lg-6 col-md-6 col-12 oculto">
+                            <input class="form-control" type="text" placeholder="Nombre" id="lng" name="lng">
+                        </div>
+                        <div class="form-group col-lg-12 col-md-10 col-12 d-flex justify-content-start cont-file">
+                            <input type="file" name="file-1" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
                             <label for="file-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
                                 <span class="iborrainputfile">Seleccionar foto</span>
                             </label>
+                            <p class="error col-lg-8 oculto offset-1" id="e-foto"><i class="fas fa-circle-exclamation"></i>Seleccione una foto</p>
                         </div>
 
                     </div>
@@ -47,16 +60,15 @@
 
 
                     <div class="row col-lg-6">
-                        <div class="col-lg-10 col-12">
-                            <h3>¿Indique la zona?</h3>
-                        </div>
-                        <div id="map" class="form-group mb-6 col-lg-10 col-md-12 col-12"></div>
+                        <h3 class="col-lg-10">¿En que zona se perdió?</h3>
+                        <div id="map" class="col-lg-10 col-md-12 col-12"></div>
+                        <p class="error oculto" id="e-marcador"><i class="fas fa-circle-exclamation"></i>Debe marcar en que zona se perdio el animal</p>
                     </div>
 
                 </div>
 
-                <div class="form-group col-lg-3 col-md-3">
-                    <a class="btn btn-primary w-100" href="" id="subir">Subir</a>
+                <div class="form-group col-lg-12 col-12">
+                    <input type="submit" class="btn btn-primary col-lg-3 col-10" value="subir" id="subir">
                 </div>
             </form>
         </div>

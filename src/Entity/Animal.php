@@ -84,15 +84,6 @@ class Animal
      */
     private $photos;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Request::class, mappedBy="animal")
-     */
-    private $requests;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Adoption::class, mappedBy="animal")
-     */
-    private $adoptions;
 
     public function __construct()
     {
@@ -280,65 +271,6 @@ class Animal
         return $this;
     }
 
-    /**
-     * @return Collection<int, Request>
-     */
-    public function getRequests(): Collection
-    {
-        return $this->requests;
-    }
-
-    public function addRequest(Request $request): self
-    {
-        if (!$this->requests->contains($request)) {
-            $this->requests[] = $request;
-            $request->setAnimal($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRequest(Request $request): self
-    {
-        if ($this->requests->removeElement($request)) {
-            // set the owning side to null (unless already changed)
-            if ($request->getAnimal() === $this) {
-                $request->setAnimal(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Adoption>
-     */
-    public function getAdoptions(): Collection
-    {
-        return $this->adoptions;
-    }
-
-    public function addAdoption(Adoption $adoption): self
-    {
-        if (!$this->adoptions->contains($adoption)) {
-            $this->adoptions[] = $adoption;
-            $adoption->setAnimal($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAdoption(Adoption $adoption): self
-    {
-        if ($this->adoptions->removeElement($adoption)) {
-            // set the owning side to null (unless already changed)
-            if ($adoption->getAnimal() === $this) {
-                $adoption->setAnimal(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function __toString()
     {

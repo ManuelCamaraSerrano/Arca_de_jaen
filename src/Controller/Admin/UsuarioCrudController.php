@@ -21,13 +21,13 @@ class UsuarioCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            FieldTextField::new('Dni'),
-            EmailField::new('email'),
-            FieldTextField::new('Name')->setLabel("Nombre"),
-            FieldTextField::new('Ap1')->setLabel("1º Apellido"),
-            FieldTextField::new('Ap2')->setLabel("2º Apellido"),
-            FieldTextField::new('Phone')->setLabel("Telefono"),
-            ImageField::new('photo')->setBasePath('public/estilos/assets/images/users')->setUploadDir("public/estilos/assets/images/users")->setLabel("Foto"),
+            FieldTextField::new('Dni')->setColumns("col-4"),
+            EmailField::new('email')->setColumns("col-4 offset-1"),
+            FieldTextField::new('Name')->setLabel("Nombre")->setColumns("col-4"),
+            FieldTextField::new('Ap1')->setLabel("1º Apellido")->setColumns("col-4 offset-1"),
+            FieldTextField::new('Ap2')->setLabel("2º Apellido")->setColumns("col-4"),
+            FieldTextField::new('Phone')->setLabel("Telefono")->setColumns("col-4 offset-1"),
+            ImageField::new('photo')->setBasePath('estilos/assets/images/users')->setUploadDir("public/estilos/assets/images/users")->setLabel("Foto")->setColumns("col-4"),
             
         ];
     }
