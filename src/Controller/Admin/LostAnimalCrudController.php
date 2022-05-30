@@ -21,23 +21,23 @@ class LostAnimalCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            AssociationField::new("type")->setLabel("Tipo"),
+            AssociationField::new("type")->setLabel("Tipo")->setColumns("col-4"),
 
-            AssociationField::new("race")->setLabel("Raza"),
+            AssociationField::new("race")->setLabel("Raza")->setColumns("col-4"),
 
-            AssociationField::new("usuario")->setLabel("Usuario"),
+            AssociationField::new("usuario")->setLabel("Usuario")->setColumns("col-4"),
 
-            FieldTextField::new('Name')->setLabel("Nombre"),
+            FieldTextField::new('Name')->setLabel("Nombre")->setColumns("col-4"),
 
-            FieldTextField::new('colour')->setLabel("Color"),
+            FieldTextField::new('colour')->setLabel("Color")->setColumns("col-4"),    
 
-            TextareaField::new("description")->setLabel("Descripción"),    
+            NumberField::new("lat")->setLabel("Latitud")->setColumns("col-4"),
 
-            NumberField::new("lat")->setLabel("Latitud"),
+            NumberField::new("lng")->setLabel("Longitud")->setColumns("col-4"),
 
-            NumberField::new("lng")->setLabel("Longitud"),
+            TextareaField::new("description")->setLabel("Descripción")->setColumns("col-7"),
             
-            ImageField::new('photo')->setBasePath('estilos/assets/images/animals')->setUploadDir("public/estilos/assets/images/animals")->setLabel("Foto"),
+            ImageField::new('photo')->setBasePath('estilos/assets/images/animals')->setUploadDir("public/estilos/assets/images/animals")->setLabel("Foto")->setColumns("col-5"),
 
 
         ];

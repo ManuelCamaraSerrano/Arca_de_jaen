@@ -4,7 +4,6 @@ $( document ).ready(function() {
     var lng = 0;
 
 
-
     // Rellenamos el comboBox de tipo de animal
     $.getJSON("/type",
     function(data){

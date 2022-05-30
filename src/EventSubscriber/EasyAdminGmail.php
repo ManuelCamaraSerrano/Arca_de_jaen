@@ -3,12 +3,14 @@
   namespace App\EventSubscriber;
 
 use App\Controller\MailerController;
+use App\Controller\PdfController;
 use App\Entity\Usuario;
   use Doctrine\ORM\EntityManagerInterface;
   use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
   use Symfony\Component\EventDispatcher\EventSubscriberInterface;
   use Symfony\Component\Mailer\MailerInterface;
   use App\Controller\ResetPasswordController;
+use App\Entity\Adoption;
 use App\Entity\Appointment;
 use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
 
@@ -32,6 +34,7 @@ use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
           return [
               BeforeEntityPersistedEvent::class => ['enviarGmail'],
               BeforeEntityPersistedEvent::class => ['enviarGmailCita'],
+              BeforeEntityPersistedEvent::class => ['generarPdf']
           ];
       }
 
@@ -61,6 +64,21 @@ use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
           $this->entityManager->flush();
           $gmail = new MailerController($this->mailer);
           $gmail->sendEmailCite($this->mailer, $entity);
+      }
+
+
+      public function generarPdf(BeforeEntityPersistedEvent $event)
+      {
+          $entity = $event->getEntityInstance();
+
+          if (!($entity instanceof Adoption)) {
+              return;
+          }
+        
+          $this->entityManager->persist($entity);
+          $this->entityManager->flush();
+          $gmail = new PdfController();
+          $gmail->generatePdf($entity);
       }
 
   }

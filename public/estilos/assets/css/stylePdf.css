@@ -1,0 +1,197 @@
+.cabecera-pdf{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 719px;
+    height: 160px;
+    background-color: #002b4c;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  h1{
+    float: left;
+    color: white;
+    margin-left: 14%;
+    margin-top: 8%;
+  }
+
+  img{
+    float: left;
+    margin-left: 4%;
+    margin-top: 4%;
+    width: 100px;
+    height: 100px;
+  }
+
+  h2{
+      text-align: center;
+      color: black;
+  }
+
+  .body-pdf{
+      position: absolute;
+      top: 130px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  .body-pdf h1{
+    color: black;
+}
+
+.body-content{
+    width: 100%;
+    height: 100%;
+}
+
+
+.datos{
+    background-color: red;
+    width: 100%;
+    height: 60px;
+    margin-top: 6%;
+}
+
+.dato{
+    width: 200px;
+    height: 60px;
+    float: left;
+}
+
+.text{
+    color: rgb(87, 87, 87);
+}
+
+.container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image{
+    position: absolute;
+    margin: 0;
+    top: 120;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    margin-left: 45px;
+}
+
+
+.nombre{
+    position: absolute;
+    top: 205;
+    left: 200;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.color{
+    position: absolute;
+    top: 205;
+    left: 420;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.especie{
+    position: absolute;
+    top: 231;
+    left: 200;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.sexo{
+    position: absolute;
+    top: 255;
+    left: 185;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.fechanac{
+    position: absolute;
+    top: 255;
+    left: 503;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.chip{
+    position: absolute;
+    top: 279;
+    left: 239;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.raza{
+    position: absolute;
+    top: 305;
+    left: 180;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.peso{
+    position: absolute;
+    top: 305;
+    left: 415;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.peligroso{
+    position: absolute;
+    top: 335;
+    left: 495;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.nombreUsu{
+    position: absolute;
+    top: 414;
+    left: 270;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.dni{
+    position: absolute;
+    top: 439;
+    left: 176;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.fechanacUsu{
+    position: absolute;
+    top: 439;
+    left: 505;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.correo{
+    position: absolute;
+    top: 465;
+    left: 258;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+.telefono{
+    position: absolute;
+    top: 490;
+    left: 215;
+    font-size: 13px;
+    color: rgb(84, 84, 84);
+}
+
+

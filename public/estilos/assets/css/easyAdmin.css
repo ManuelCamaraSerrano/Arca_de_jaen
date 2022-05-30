@@ -30,4 +30,45 @@
 }
 .content-top .user-name {
   color: black;
+}
+
+.form-widget {
+  border: none;
+}
+.form-widget input[type=text] {
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+.form-widget input[type=email] {
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+.form-widget input[type=date] {
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+.form-widget textarea {
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+.form-widget .ea-fileupload {
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.ts-control {
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.form-select {
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
 }/*# sourceMappingURL=easyAdmin.css.map */
