@@ -7,15 +7,13 @@ $( document ).ready(function() {
             $.getJSON("/animalList/1",{},
                 function(data){
                      
-                    pintaAnimales(data);
+                    pintaAnimales(data); // Función que carga la información y pinta la plantilla
 
                 })
         })
 
 
-    crearPaginacion();  // Creamos la paginación
-
-
+    crearPaginacion();  // Función que crea la paginación
 
 
     function crearPaginacion(){
@@ -24,6 +22,7 @@ $( document ).ready(function() {
             
             var actualPage = parseInt($(".btn-activo").attr("id").substring(1)); // Cogemos la página actual
             window.scrollTo(0, 0);
+
             if(actualPage != 1){  // Si la página es distinta a 1
 
                 $(".btn-activo").removeClass("btn-activo");  // Borramos la clase activo y se la asignamos al boton anterior
@@ -38,6 +37,7 @@ $( document ).ready(function() {
 
                 })
             }
+
         });
 
         $(".pagination").append(botonIni);  // Añadimos el boton
@@ -126,24 +126,35 @@ $( document ).ready(function() {
         var modelo = cont.find("div[id^=animal]:first");
         //creo las cajas
         $.each(data,function(ind,valor){
-            var animal = modelo.clone(true);
-            animal.attr("id","animal_"+data[ind][0]);
-            animal.find(".name").text(data[ind][1]);
 
-            if(data[ind][3] == "Macho"){
+            var animal = modelo.clone(true);
+
+            animal.attr("id","animal_"+data[ind][0]);  // Asignamos un id al contenedor
+
+            animal.find(".name").text(data[ind][1]);  // Rellenamos el nombre
+
+            if(data[ind][3] == "Macho"){ // Asignamos el signo
+
                 animal.find(".sex").attr("class","fas fa-mars");
+
             }
             else{
+
                 animal.find(".sex").attr("class","fas fa-venus");
+
             }
-            animal.find(".image").attr("src","/estilos/assets/images/animals/"+data[ind][2]);
+
+            animal.find(".image").attr("src","/estilos/assets/images/animals/"+data[ind][2]);  // Asignamos la imagen
            
             // Cuando pulse el enlace aparecerá el modal
             animal.find(".btn-masinfo").attr("id","a"+data[ind][0]).click(function(){
+                
                window.location = "/infoAnimal?a="+$(this).attr("id").substring(1);
+
             })
             
-            $(".cont-animal").append(animal);
+            $(".cont-animal").append(animal);  // Añadimos el modelo al contenedor
+
         })
     }
 

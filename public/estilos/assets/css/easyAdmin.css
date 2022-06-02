@@ -71,4 +71,16 @@
   background-color: #eff1f6;
   border: none;
   border-radius: 5px 5px 5px 5px;
+}
+
+.ea-fileupload .custom-file-label {
+  background-color: #eff1f6;
+}
+
+.ea-fileupload .input-group .btn {
+  background-color: #eff1f6;
+}
+
+.ea-fileupload .input-group-text {
+  background-color: #eff1f6;
 }/*# sourceMappingURL=easyAdmin.css.map */

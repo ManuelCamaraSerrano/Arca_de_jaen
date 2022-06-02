@@ -6,19 +6,19 @@
     {% for flashError in app.flashes('reset_password_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
-    <div class="container">
-        <div class="login">
-            {{ form_start(requestForm) }}
-            <h1 class="navbar-brand">Cambie su contraseña</h1>
-                {{ form_row(requestForm.email, {'attr':{'class':'form-control'}}) }}
-                <div>
-                    <small>
-                        Introduzca su email para poder mandarle un correo con el link para restablecer la contraseña.
-                    </small>
-                </div>
+    <div class="reset-password">
+        <div class="content">
+            <div class="cont-img">
+                <img src="{{ asset('estilos/assets/images/logo.png') }}" alt="Image">
+            </div>        
+            <div class="content-form">
+                {{ form_start(requestForm) }}
+                    {{ form_row(requestForm.email, {'attr':{'class':'form-control'}}) }}
+                    
 
-                <button class="btn btn-primary">Enviar</button>
-            {{ form_end(requestForm) }}
+                    <button class="btn btn-primary">Enviar</button>
+                {{ form_end(requestForm) }}
+            </div>
         </div>
     </div>
 {% endblock %}

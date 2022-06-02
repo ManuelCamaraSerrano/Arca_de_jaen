@@ -34,10 +34,10 @@ class LostAnimalCrudController extends AbstractCrudController
             NumberField::new("lat")->setLabel("Latitud")->setColumns("col-4"),
 
             NumberField::new("lng")->setLabel("Longitud")->setColumns("col-4"),
+            
+            ImageField::new('photo')->setBasePath('estilos/assets/images/animals')->setUploadDir("public/estilos/assets/images/animals")->setLabel("Foto")->setColumns("col-4"),
 
             TextareaField::new("description")->setLabel("Descripción")->setColumns("col-7"),
-            
-            ImageField::new('photo')->setBasePath('estilos/assets/images/animals')->setUploadDir("public/estilos/assets/images/animals")->setLabel("Foto")->setColumns("col-5"),
 
 
         ];

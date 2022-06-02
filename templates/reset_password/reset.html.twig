@@ -3,10 +3,14 @@
 {% block title %}Cambie su contraseña{% endblock %}
 
 {% block body %}
-    <h1>Cambie su contraseña</h1>
+    <div class="cont-reset">
+        <div class="container">
+            <h1>Cambie su contraseña</h1>
 
-    {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class="btn btn-primary">Cambiar contraseña</button>
-    {{ form_end(resetForm) }}
+            {{ form_start(resetForm) }}
+                {{ form_row(resetForm.plainPassword) }}
+                <button class="btn btn-primary">Cambiar contraseña</button>
+            {{ form_end(resetForm) }}
+        </div>
+    </div>
 {% endblock %}

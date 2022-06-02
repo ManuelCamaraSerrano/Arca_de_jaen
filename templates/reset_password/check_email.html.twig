@@ -3,9 +3,18 @@
 {% block title %}Email reset{% endblock %}
 
 {% block body %}
-    <p>
-        Si existe una cuenta que coincide con su correo electrónico, entonces se acaba de enviar un correo electrónico que contiene un enlace que puede usar para restablecer su contraseña.
-        Este link expira en {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
-    </p>
-    <p>Si no recibe un correo electrónico, verifique su carpeta de correo no deseado o <a href="{{ path('app_forgot_password_request') }}">intentelo de nuevo</a>.</p>
+    <div class="cont-message-reset">
+        <div class="container">
+            <div class="cont-img">
+                <img src="{{ asset('estilos/assets/images/logo.png') }}" alt="Image">
+            </div>   
+            <div class="notificacion">
+                <p>
+                    Si existe una cuenta que coincide con su correo electrónico, entonces se acaba de enviar un correo electrónico que contiene un enlace que puede usar para restablecer su contraseña.
+                    Este link expira en {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+                </p>
+                <p>Si no recibe un correo electrónico, verifique su carpeta de correo no deseado o <a href="{{ path('app_forgot_password_request') }}">intentelo de nuevo</a>.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

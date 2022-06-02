@@ -582,3 +582,90 @@ label{
     margin-right: 8%;
   }
 }
+
+
+// Estilos para el reset-password
+
+.reset-password{
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 5%;
+    .content-form{
+      form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        margin-top: 3%;
+        input{
+          width: 400px;
+          margin-bottom: 5%;
+        }
+      }
+    }
+  }
+  .cont-img img{
+    width: 160px;
+    height: 160px;
+  }
+
+  small{
+    color: gray;
+  } 
+}
+
+// Estilos notificación reset-password
+
+.cont-message-reset{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 5%;
+    .cont-img img{
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20%;
+    }
+    .notificacion{
+      border-radius: 5px 5px 5px 5px;
+      padding: 2%;
+      background-color: $secondary;
+      color: $primary;
+      width: 60%;
+      box-shadow: 0px 1px 5px 2px;
+    }
+  }
+}
+
+
+// Estilos reset
+
+.cont-reset{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        margin-top: 10%;
+    }
+}

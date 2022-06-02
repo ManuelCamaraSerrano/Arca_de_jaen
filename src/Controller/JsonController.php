@@ -225,13 +225,13 @@ class JsonController extends AbstractController
         $usuario = $doctrine->getRepository(Usuario::class)->find($array[0]);  // Leemos el usuario
         $animal = $doctrine->getRepository(Animal::class)->find($array[1]);  // Leemos el animal
 
-        $array[0] = $usuario;
+        $array[0] = $usuario;  // Modificamos el array
         $array[1] = $animal;
 
         $request = new RequestRepository($doctrine);
         $insert = $request->insertRequest($array, $entityManager);  // Insertamos la solicitud
 
-        return new Response("ok");
+        return new Response("ok");  // Devolvemos un ok si todo ha funcionado correctamente
 
     }
 

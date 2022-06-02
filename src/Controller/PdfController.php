@@ -41,30 +41,16 @@ class PdfController extends AbstractController
                         <p class="correo">'.$adopcion->getUsuario()->getEmail().'</p>
                         <p class="telefono">'.$adopcion->getUsuario()->getPhone().'</p>
                         ');
-                        $mpdf->WriteHTML('
-                        <div class="container">
-                            <div class="cabecera-pdf">
-                                <img src="logo_white_large.png" alt="">
-                                <h1>Contrato de Adopción</h1>
-                            </div> 
-                            <img src="fondo_contrato.jpg" alt="" class="image">
-                        </div> 
-                        <p class="nombre">Yogui</p>
-                        <p class="color">Blanco</p>
-                        <p class="especie">Perro</p> 
-                        <p class="sexo">Macho</p>
-                        <p class="fechanac">16/06/2002</p> 
-                        <p class="chip">243526372516253</p>
-                        <p class="raza">Labrador</p>
-                        <p class="peso">2000 g</p> 
-                        <p class="peligroso">-No-</p>
-                        <p class="nombreUsu">Manuel Cámara Serrano</p>
-                        <p class="dni">77694654X</p>
-                        <p class="fechanacUsu">16/06/2002</p>
-                        <p class="correo">manuelcs160@gmail.com</p>
-                        <p class="telefono">657 44 33 23</p>
-                        ');
-        $mpdf->Output("Contrato-Adopcion".$adopcion->getAnimal()->getName().".pdf","D");
+                        
+        $mpdf->AddPage();
+
+        $mpdf->WriteHTML('<img src="estilos/assets/images/contratopg2.png" alt="" class="image">');
+
+        $mpdf->AddPage();
+
+        $mpdf->WriteHTML('<img src="estilos/assets/images/contratopg3.jpg" alt="" class="image">');
+                   
+        $mpdf->Output();
 
     }
 
