@@ -53,9 +53,9 @@ class DashboardController extends AbstractDashboardController
             MenuItem::subMenu('Animal', 'fa fa-crow')->setSubItems([
                
                 MenuItem::linkToCrud('Animal', 'fa fa-dog', Animal::class),
-                MenuItem::linkToCrud('Tipo Animal', 'public/img/about.jpg', Type::class),
-                MenuItem::linkToCrud('Raza', 'fa fa-hand-heart', Race::class),
-                MenuItem::linkToCrud('Espacios Físicos', 'fas fa-house', PhysicalSpace::class),
+                MenuItem::linkToCrud('Tipo Animal', 'fas fa-t', Type::class),
+                MenuItem::linkToCrud('Raza', 'fa fa-r-project', Race::class),
+                MenuItem::linkToCrud('Espacios Físicos', 'fas fa-warehouse', PhysicalSpace::class),
                 MenuItem::linkToCrud('Fotos', 'fa fa-images', Photo::class),
                 MenuItem::linkToCrud('Animales Perdidos', 'fa fa-cat', LostAnimal::class),
 
@@ -64,9 +64,9 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::subMenu('Adopcion', 'fas fa-hand-holding-heart')->setSubItems([
                
-                MenuItem::linkToCrud('Adopción', 'fa fa-hand-heart', Adoption::class),
-                MenuItem::linkToCrud('Cita', 'fa fa-envelope', Appointment::class),
-                MenuItem::linkToCrud('Solicitud', 'fa fa-message', Request::class),
+                MenuItem::linkToCrud('Adopción', 'fa fa-hand-holding-heart', Adoption::class),
+                MenuItem::linkToCrud('Cita', 'fa fa-user-clock', Appointment::class),
+                MenuItem::linkToCrud('Solicitud', 'fa fa-envelope', Request::class),
 
 
             ]),
@@ -89,8 +89,6 @@ class DashboardController extends AbstractDashboardController
             // the name visible to end users
             ->setTitle('Arca de Jaén')
             // you can include HTML contents too (e.g. to link to an image)
-            ->setTitle('<p>aaaaaaaaaaa</p>')
-
             
             // the path defined in this method is passed to the Twig asset() function
             ->setFaviconPath('favicon.svg')

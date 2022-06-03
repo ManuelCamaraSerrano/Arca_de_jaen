@@ -74,9 +74,6 @@ $( document ).ready(function() {
 
     })
 
-
-
-
     
     function validador(ev){
 

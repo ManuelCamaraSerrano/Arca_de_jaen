@@ -84,6 +84,11 @@ class Animal
      */
     private $photos;
 
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $adopted;
+
 
     public function __construct()
     {
@@ -275,5 +280,17 @@ class Animal
     public function __toString()
     {
         return $this->chip." ".$this->name;
+    }
+
+    public function getAdopted(): ?string
+    {
+        return $this->adopted;
+    }
+
+    public function setAdopted(string $adopted): self
+    {
+        $this->adopted = $adopted;
+
+        return $this;
     }
 }

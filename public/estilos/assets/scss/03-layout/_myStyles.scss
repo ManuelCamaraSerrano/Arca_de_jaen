@@ -669,3 +669,26 @@ label{
         margin-top: 10%;
     }
 }
+
+
+
+// Estilos autocompletar
+
+#colores{
+    list-style: none;
+    position: absolute;
+    background-color: #eff1f6;
+    border-radius: 0px 0px 10px 10px;
+    border-bottom: solid 2px gray;
+    .activo{
+        background-color: $secondary;
+        transition: background-color 0.5s ease-in-out;
+    }
+    li{
+        padding: 1%;
+        span{
+            background-color: yellow;
+            font-size: bold;
+        }
+    }
+}

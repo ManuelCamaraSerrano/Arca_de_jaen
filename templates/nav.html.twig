@@ -6,7 +6,11 @@
                         <div class="col-auto">
                             <div class="header-logo">
                                 <a href="/">
-                                    <img class="logo-main" id="usu{{app.user.id}}" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
+                                    {% if app.user %}
+                                        <img class="logo-main" id="usu{{app.user.id}}" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
+                                    {% else %}
+                                        <img class="logo-main" id="usu" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
+			                        {% endif %}
                                 </a>
                             </div>
                         </div>
@@ -37,7 +41,7 @@
 
                                     <li><a href="contact.html">Galería</a></li>
 
-                                    <li><a href="contact.html">Contacto</a></li>
+                                    <li><a href="/contact">Contacto</a></li>
                                 </ul>
                             </div>
                         </div>

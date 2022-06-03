@@ -1,0 +1,11 @@
+{% apply inline_css(source('@styles/style.css')) %}
+    <div class='resetPassword'>
+        <img src="{{ email.image('@images/logo.png') }}" alt="Logo" class='logoEmail'>
+        <div>
+            <h4 class='h4-reset'>Enhorabuena usted ha adoptado a {{animalName}}</h4>
+            <p>Gracias por colaborar y adoptar un animal en nuestra protectora</p>
+            <p>Le adjuntamos el contrado de adopción</p>
+            <p>Un saludo.</p>
+        </div>
+    </div>
+{% endapply %}

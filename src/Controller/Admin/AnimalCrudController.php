@@ -48,6 +48,11 @@ class AnimalCrudController extends AbstractCrudController
 
             Datefield::new("entry_date")->setLabel("Fecha entrada")->setColumns("col-4"),
 
+            ChoiceField::new('adopted')->setChoices([
+                'Si' => 'Si',
+                'No' => 'No',
+            ])->setLabel("Adoptado")->setColumns("col-4"),
+
             TextareaField::new("description")->setLabel("Descripción")->setColumns("col-12 col-md-5"),
 
 

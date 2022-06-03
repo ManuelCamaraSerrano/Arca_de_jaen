@@ -22,10 +22,8 @@ class MailerController extends AbstractController
             ->from(new Address('manuelcs160@gmail.com', 'Arca de Jaén'))
             ->to("manuelcs160@gmail.com")
             ->subject('Your password reset request')
-            ->htmlTemplate('reset_password/email.html.twig')
-            ->context([
-                'animalname' =>"sxsa",
-            ])
+            ->attachFromPath('Contrato-Adopcionjose.pdf')
+            ->html('<h1>JSSICNDE</h1>')
         ;
 
         $mailer->send($email);
@@ -35,6 +33,7 @@ class MailerController extends AbstractController
     }
 
 
+    // Funcion que envia un correo con la cita para el proceso de adopcion
     public function sendEmailCite(MailerInterface $mailer, $cita)
     {
 
@@ -48,6 +47,28 @@ class MailerController extends AbstractController
                 'userName' => $cita->getRequest()->getUsuario()->getName(),
                 'date' => date_format($cita->getDate(),'d/m/20y'),
                 'hour' =>  date_format($cita->getDate(),'h:i'),
+            ])
+        ;
+
+        $mailer->send($email);
+
+        return true;
+
+    }
+
+
+     // Función que envia un correo con la confirmación de que el animal ha sido adoptado y adjunta el pdf del contrato
+    public function sendEmailAnimalAdopted(MailerInterface $mailer, $adoption)
+    {
+
+        $email = (new TemplatedEmail())
+            ->from(new Address('manuelcs160@gmail.com', 'Arca de Jaén'))
+            ->to($adoption->getUsuario()->getEmail())
+            ->subject('Animal adoptado')
+            ->attachFromPath('estilos/assets/pdf/'.$adoption->getContract())
+            ->htmlTemplate('emailAnimalAdopted.html.twig')
+            ->context([
+                'animalName' => $adoption->getAnimal()->getName(),
             ])
         ;
 

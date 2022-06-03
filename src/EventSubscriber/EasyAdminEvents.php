@@ -81,11 +81,15 @@
 
          if ($entity instanceof Adoption) {  // Controlamos cuando se actualiza una adopción
 
-            dd($entity);
-            $this->entityManager->persist($entity);
-            $this->entityManager->flush();
-            $gmail = new PdfController();
-            $gmail->generatePdf($entity);
+
+            if($entity->getState() == "Finalizada"){
+                $animal = $entity->getAnimal();
+                $animal->setAdopted("Si");
+
+                $gmail = new MailerController($this->mailer);
+                $gmail->sendEmailAnimalAdopted($this->mailer, $entity);
+            }
+
 
           }
 
