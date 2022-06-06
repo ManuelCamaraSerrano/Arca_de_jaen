@@ -1,3 +1,16 @@
+
+// Estilos logo
+
+.logo{
+  &:hover{
+    transform: rotate(-10deg);
+  }
+}
+
+
+
+
+
 // Estilos propios
 
 .ulMisionVision{
@@ -85,6 +98,7 @@ label{
   color: $primary;
 }
 
+
 // Estilos plantilla reset-password
 .resetPassword{
     display: flex;
@@ -113,6 +127,8 @@ label{
 
     }
 }
+
+
 
 
 // Estilos adoptionList
@@ -608,6 +624,9 @@ label{
         input{
           width: 400px;
           margin-bottom: 5%;
+          background-color: #eff1f6;
+          border: none;
+          padding: 2%;
         }
       }
     }
@@ -663,10 +682,34 @@ label{
     flex-flow: column;
     .container{
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-flow: column;
         margin-top: 10%;
+        .cont-img img{
+            width: 200px;
+            height: 160px;
+        }
+        form{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-flow: column;
+          input{
+            margin-bottom: 2%;
+            background-color: #eff1f6;
+            border: none;
+            border-radius: 5px 5px 5px 5px;
+            padding: 2%;
+          }
+          button{
+            margin-top: 2%;
+          }
+          div{
+            width: 350px;
+            display: flex;
+            flex-flow: column;
+          }
+        }
     }
 }
 
@@ -691,4 +734,17 @@ label{
             font-size: bold;
         }
     }
+}
+
+
+.titleAnimal{
+  text-align: center;
+}
+
+// Estilos foto usuario
+
+.fotousu{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }

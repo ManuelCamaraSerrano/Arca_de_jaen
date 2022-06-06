@@ -7,9 +7,9 @@
                             <div class="header-logo">
                                 <a href="/">
                                     {% if app.user %}
-                                        <img class="logo-main" id="usu{{app.user.id}}" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
+                                        <img class="logo-main logo" id="usu{{app.user.id}}" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
                                     {% else %}
-                                        <img class="logo-main" id="usu" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
+                                        <img class="logo-main logo" id="usu" src="{{ asset('estilos/assets/images/logo.png') }}" width="108" height="38" alt="Logo" />
 			                        {% endif %}
                                 </a>
                             </div>
@@ -46,7 +46,16 @@
                             </div>
                         </div>
                         <div class="col-auto d-flex align-items-center gap-6 gap-lg-0">
+                        {% if app.user %}
+                            {% if app.user.photo %}
+                                <img src="estilos/assets/images/users/{{app.user.photo}}" class="fotousu" alt="Imagen del usuario">
+                            {% else %}
+                                <img src="estilos/assets/images/users/sinFoto.png" class="fotousu" alt="Imagen del usuario">
+                            {% endif %}
+                        {% else %}
                             <a class="btn btn-primary header-donate-btn" href="/login">Login</a>
+                        {% endif %}
+           
                             <button class="btn-menu d-flex d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                 <span></span>
                                 <span></span>

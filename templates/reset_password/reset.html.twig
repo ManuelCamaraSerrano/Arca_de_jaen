@@ -5,7 +5,9 @@
 {% block body %}
     <div class="cont-reset">
         <div class="container">
-            <h1>Cambie su contraseña</h1>
+            <div class="cont-img">
+                <img src="{{ asset('estilos/assets/images/logo.png') }}" alt="Image">
+            </div>
 
             {{ form_start(resetForm) }}
                 {{ form_row(resetForm.plainPassword) }}

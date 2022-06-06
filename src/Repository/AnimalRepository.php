@@ -67,5 +67,23 @@ class AnimalRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    /**
+     * @return Animal[]
+     */
+    public function getAnimalsRandom(): array
+    {
+
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            "SELECT a
+            FROM App\Entity\Animal a"
+        )->setMaxResults(3);
+        
+        // returns an array of Product objects
+        return $query->getResult();
+
+    }
+
 
 }

@@ -235,6 +235,28 @@ class JsonController extends AbstractController
 
     }
 
+
+    /**
+     * @Route("/animalsRandom", name="insertSolicitud")
+     */
+    public function animalsRandom(EntityManagerInterface $entityManager, ManagerRegistry $doctrine): Response
+    {
+
+        $animalRepo = new AnimalRepository($doctrine);
+
+        $animals = $animalRepo->getAnimalsRandom();
+
+        $jsonAnimal = [];
+
+        for( $i = 0; $i < count($animals); $i++){
+            array_push($jsonAnimal,[$animals[$i]->getId(),$animals[$i]->getName(),$animals[$i]->getPhotos()[0]->getPhoto()]);
+        }
+
+
+        return new Response(json_encode($jsonAnimal));
+
+    }
+
         
 
 

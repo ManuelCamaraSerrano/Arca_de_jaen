@@ -2259,10 +2259,6 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   }
 }
 
-.breadcrumb-item .active {
-  color: #c3e3fd;
-}
-
 /*----------------------------------------*/
 /*  Offcanvas Header Css
 /*----------------------------------------*/
@@ -2504,6 +2500,11 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 .mobail-header-donate-btn {
   padding: 9px 17px 8px !important;
   width: 100%;
+}
+
+.logo:hover {
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
 }
 
 .ulMisionVision {
@@ -3168,6 +3169,9 @@ label {
 .reset-password .content .content-form form input {
   width: 400px;
   margin-bottom: 5%;
+  background-color: #eff1f6;
+  border: none;
+  padding: 2%;
 }
 .reset-password .cont-img img {
   width: 160px;
@@ -3240,6 +3244,23 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-top: 10%;
+}
+.cont-reset .container .cont-img img {
+  width: 200px;
+  height: 160px;
+}
+.cont-reset .container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3250,7 +3271,26 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  margin-top: 10%;
+}
+.cont-reset .container form input {
+  margin-bottom: 2%;
+  background-color: #eff1f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  padding: 2%;
+}
+.cont-reset .container form button {
+  margin-top: 2%;
+}
+.cont-reset .container form div {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
 }
 
 #colores {
@@ -3271,6 +3311,16 @@ label {
 #colores li span {
   background-color: yellow;
   font-size: bold;
+}
+
+.titleAnimal {
+  text-align: center;
+}
+
+.fotousu {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 /*----------------------------------------*/
