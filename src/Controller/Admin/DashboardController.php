@@ -6,6 +6,7 @@ use App\Entity\Usuario;
 use App\Entity\Adoption;
 use App\Entity\Animal;
 use App\Entity\Appointment;
+use App\Entity\Gallery;
 use App\Entity\Job;
 use App\Entity\LostAnimal;
 use App\Entity\Photo;
@@ -79,6 +80,8 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Tarea', 'fa fa-book', Job::class),
 
             ]),
+
+            MenuItem::linkToCrud('Galería', 'fa fa-images', Gallery::class),
            
         ];
     }

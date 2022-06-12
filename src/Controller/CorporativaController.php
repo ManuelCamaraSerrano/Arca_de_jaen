@@ -90,5 +90,17 @@ class CorporativaController extends AbstractController
           
         ]);
     }
+
+
+    /**
+     * @Route("/gallery", name="gallery")
+     */
+    public function gallery(): Response
+    {
+        return $this->render('gallery.html.twig', [
+
+          
+        ]);
+    }
     
 }

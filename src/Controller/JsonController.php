@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Animal;
+use App\Entity\Gallery;
 use App\Entity\LostAnimal;
 use App\Entity\Photo;
 use App\Entity\Race;
@@ -11,6 +12,7 @@ use App\Entity\Usuario;
 use App\Repository\LostAnimalRepository;
 use App\Repository\AnimalRepository;
 use App\Repository\RaceRepository;
+use App\Repository\GalleryRepository;
 use App\Repository\RequestRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -189,6 +191,51 @@ class JsonController extends AbstractController
 
 
     /**
+     * @Route("/nPageGallery", name="nPageGallery")
+     */
+    public function nPageGallery(ManagerRegistry $doctrine): Response
+    {
+        
+        $gallery = $doctrine->getRepository(Gallery::class)->findAll();
+
+        $page = (count($gallery)/9) % 1;
+
+        if(!is_int($page)){
+
+            return new Response(json_encode(intval(count($gallery)/9)));
+        }
+        else{
+
+            return new Response(json_encode(intval(count($gallery)/9)+1));
+        }
+        
+    }
+
+
+    /**
+     * @Route("/galleryList/{page}", name="galleryList")
+     */
+    public function galleryList(ManagerRegistry $doctrine, int $page): Response
+    {
+        $galleryRepository= new GalleryRepository($doctrine);
+
+        $gallery = $galleryRepository->galeriaPaginado(intval($page));
+
+        $galleries = [];
+
+        for($i = 0; $i < count($gallery); $i++){
+
+            $galleries[$i] = [$gallery[$i]->getPhoto()];        
+        }
+        
+                
+        return new Response(json_encode($galleries));
+
+
+    }
+
+
+    /**
      * @Route("/getAnimal/{animal}", name="getAnimal")
      */
     public function getAnimal(ManagerRegistry $doctrine, int $animal): Response
@@ -237,7 +284,7 @@ class JsonController extends AbstractController
 
 
     /**
-     * @Route("/animalsRandom", name="insertSolicitud")
+     * @Route("/animalsRandom", name="animalsRandom")
      */
     public function animalsRandom(EntityManagerInterface $entityManager, ManagerRegistry $doctrine): Response
     {

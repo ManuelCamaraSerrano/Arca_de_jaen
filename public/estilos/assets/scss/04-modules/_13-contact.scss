@@ -1,9 +1,14 @@
 /*----------------------------------------*/
 /*  Contact CSS
 /*----------------------------------------*/
-
-.contact-section {
+.background-secondary{
 	background-color: $secondary;
+	padding: 6%;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0px 0px 4px 1px;
+}
+.contact-section {
+	margin-top: 5%;
 	margin-bottom: 15%;
 }
 

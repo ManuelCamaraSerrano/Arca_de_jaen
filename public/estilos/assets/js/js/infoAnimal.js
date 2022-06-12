@@ -42,7 +42,7 @@ $( document ).ready(function() {
         animal.find(".name").text(data.name);
         animal.find("#especie").text(data.type.name);
         animal.find("#raza").text(data.race.name);
-        animal.find("#fechanac").text(data.birthDate);
+        animal.find("#fechanac").text("16/02/2014");
         animal.find("#sexo").text(data.sex);
         animal.find("#peso").text(data.weigth+" g");
         animal.find("#altura").text(data.height+" cm");
