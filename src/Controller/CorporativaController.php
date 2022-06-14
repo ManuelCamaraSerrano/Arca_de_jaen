@@ -102,5 +102,16 @@ class CorporativaController extends AbstractController
           
         ]);
     }
+
+
+    /**
+     * @Route("/reserve", name="reserve")
+     */
+    public function reserve(): Response
+    {
+        return $this->render('reserve.html.twig', [
+
+        ]);
+    }
     
 }

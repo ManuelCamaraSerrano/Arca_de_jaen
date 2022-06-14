@@ -3,7 +3,7 @@ $( document ).ready(function() {
     lightGallery(document.getElementById('lightgallery'));
 
     // Cargamos las fotos
-    $.getJSON("/galleryList/1",{},
+    $.getJSON("/galleryList/1",{},  // Rellenamos siempre al entrar con la primera página
         function(data){
                  
             rellenaGaleria(data);
@@ -109,7 +109,7 @@ $( document ).ready(function() {
     }
 
 
-    function rellenaGaleria(data){
+    function rellenaGaleria(data){  // Está funcion se encarga de cambiar el src y el href de las fotos de la galería
 
         for(let i = 0; i < 9 ; i++){
 

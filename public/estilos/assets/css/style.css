@@ -2938,13 +2938,10 @@ label {
   font-weight: bold;
 }
 .ui-dialog .solicitud .container-description .errorSolicitud {
-  background-color: rgb(214, 69, 69);
-  color: rgb(156, 4, 4);
-  margin-top: 1%;
+  text-align: start;
+  font-size: 14px;
+  color: darkred;
   margin-bottom: 3%;
-  border-radius: 8px 8px 8px 8px;
-  -webkit-transition: 5s ease-in-out;
-  transition: 5s ease-in-out;
 }
 .ui-dialog .solicitud .container-description .descripcion {
   background-color: #eff1f6;
@@ -3378,6 +3375,93 @@ label {
 
 a#lg-download {
   display: none;
+}
+
+table {
+  text-align: center;
+  margin: 0 auto 5rem;
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 1.5rem;
+  font-size: 17px;
+  border: solid 2px #002b4c;
+}
+table tr {
+  color: black;
+}
+table thead tr {
+  background-color: #002b4c;
+  color: white;
+}
+table tbody tr {
+  -webkit-transition: background-color 1s linear;
+  transition: background-color 1s linear;
+}
+table tbody th:hover {
+  background-color: #c3e3fd;
+}
+table .job {
+  background-color: #002b4c;
+  color: white;
+}
+table .job:hover {
+  background-color: #002b4c;
+}
+table .reservado {
+  background-color: rgb(215, 5, 5);
+}
+table .reservado:hover {
+  background-color: rgb(215, 5, 5);
+}
+
+.container-reserve {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.container-reserve .container-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+.container-reserve .container-date .date {
+  background-color: #eff1f6;
+  border: none;
+  padding: 8px;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 1%;
+}
+.container-reserve .container-date .error {
+  text-align: center;
+}
+.container-reserve .container-table {
+  overflow-x: auto;
+}
+.container-reserve .container-table::-webkit-scrollbar {
+  display: none;
+}
+.container-reserve h1 {
+  text-align: center;
 }
 
 /*----------------------------------------*/

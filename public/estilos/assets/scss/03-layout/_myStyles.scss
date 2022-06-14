@@ -406,12 +406,10 @@ label{
       }
 
       .errorSolicitud{
-        background-color: rgb(214, 69, 69);
-        color: rgb(156, 4, 4);
-        margin-top: 1%;
+        text-align: start;
+        font-size: 14px;
+        color: darkred;
         margin-bottom: 3%;
-        border-radius: 8px 8px 8px 8px;
-        transition: 5s ease-in-out;
       }
 
       .descripcion{
@@ -793,4 +791,85 @@ label{
 
 a#lg-download{
   display: none;
+}
+
+
+
+// Estilos para las tablas
+
+table { 
+	text-align: center;
+	margin: 0 auto 5rem; 
+	border-collapse: collapse;
+	th, td { 
+		padding: 1.5rem; 
+		font-size: 17px; 
+    border: solid 2px $primary;
+	}
+	tr {
+		color: black; 
+	}
+	thead tr{
+		background-color: $primary;
+		color: white;
+	}
+	tbody tr{
+		-moz-transition: background-color 1s linear;
+		-webkit-transition: background-color 1s linear;
+		transition: background-color 1s linear;
+	}
+	tbody th:hover{
+		
+		background-color: $secondary;
+	}
+
+  .job{
+    background-color: #002b4c;
+    color: white;
+    &:hover{
+      background-color: #002b4c;
+    }
+  }
+  .reservado{
+    background-color: rgb(215, 5, 5);
+    &:hover{
+      background-color: rgb(215, 5, 5);
+    }
+  }
+}
+
+
+.container-reserve{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  .container-date{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    .date{
+      background-color: #eff1f6;
+      border: none;
+      padding: 8px;
+      border-radius: 5px 5px 5px 5px;
+      margin-bottom: 1%;
+    }
+    .error{
+      text-align: center;
+    }
+  }
+  .container-table{
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+      }
+  }
+  h1{
+    text-align: center;
+  }
 }

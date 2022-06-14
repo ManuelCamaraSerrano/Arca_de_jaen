@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+        {% include 'nav.html.twig'  %}
+    {% endblock %}
+
+{% block body %}
+
+    <div class="container-reserve">
+            <h1>Reserva de Tareas</h1>
+            <div class="container-date">
+                <input type="date" class="date">
+                <p class="error oculto" id="e-raza"><i class="fas fa-circle-exclamation"></i>Seleccione una fecha para poder reservar</p>
+            </div>
+            <div class="container-table">
+                <table class="table-responsive">
+                    <thead>
+                        <tr>
+                            <td>Reserva</td>
+                            <td>8:00 - 9:00</td>
+                            <td>9:00 - 10:00</td>
+                            <td>10:00 - 11:00</td>
+                            <td>11:00 - 12:00</td>
+                            <td>16:00 - 17:00</td>
+                            <td>17:00 - 18:00</td>
+                            <td>18:00 - 19:00</td>
+                            <td>19:00 - 20:00</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="job">Limpieza</td>
+                            <th id="job1tramo1" class=""></th>
+                            <th id="job1tramo2"class=""></th>
+                            <th id="job1tramo3" class=""></th>
+                            <th id="job1tramo4" class=""></th>
+                            <th id="job1tramo5" class=""></th>
+                            <th id="job1tramo6" class=""></th>
+                            <th id="job1tramo7" class=""></th>
+                            <th id="job1tramo8"></th>
+                        </tr>
+                        <tr>
+                            <td class="job">Alimentación</td>
+                            <th id="job2tramo1" class=""></th>
+                            <th id="job2tramo2" class=""></th>
+                            <th id="job2tramo3" class=""></th>
+                            <th id="job2tramo4" class=""></th>
+                            <th id="job2tramo5" class=""></th>
+                            <th id="job2tramo6" class=""></th>
+                            <th id="job2tramo7" class=""></th>
+                            <th id="job2tramo8"></th>
+                        </tr>
+                        <tr>
+                            <td class="job">Entretenimiento</td>
+                            <th id="job3tramo1" class=""></th>
+                            <th id="job3tramo2" class=""></th>
+                            <th id="job3tramo3" class=""></th>
+                            <th id="job3tramo4" class=""></th>
+                            <th id="job3tramo5" class=""></th>
+                            <th id="job3tramo6" class=""></th>
+                            <th id="job3tramo7" class=""></th>
+                            <th id="job3tramo8"></th>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="contenedorModal"></div>
+
+{% endblock %}
+  {% block footer %}
+        {% include 'footer.html.twig' %}
+        <script src="{{ asset('estilos/assets/js/js/reserve.js') }}"></script>
+  {% endblock %}

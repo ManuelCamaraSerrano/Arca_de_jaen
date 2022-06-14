@@ -3,10 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Reserve;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method Reserve|null find($id, $lockMode = null, $lockVersion = null)
@@ -73,4 +75,41 @@ class ReserveRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    public function insertReserva($array, EntityManagerInterface $entityManager){
+
+        $fecha = new DateTime($array[3]);
+        
+        $reserve= new Reserve();
+
+        $reserve->setUsuario($array[0]);
+
+        $reserve->setDate($fecha);
+
+        $reserve->setJob($array[2]);
+
+        $reserve->setStretch($array[1]);
+
+        $entityManager->persist($reserve);
+        
+        $entityManager->flush();
+          
+    }
+
+
+    public function reservasPordía($date){
+
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            "SELECT r
+            FROM App\Entity\Reserve r
+            WHERE r.date = '".$date."'"
+        );
+
+        return $query->getResult();
+          
+    }
+    
 }

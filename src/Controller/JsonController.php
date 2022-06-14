@@ -4,9 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Animal;
 use App\Entity\Gallery;
+use App\Entity\Job;
 use App\Entity\LostAnimal;
 use App\Entity\Photo;
 use App\Entity\Race;
+use App\Entity\Stretch;
 use App\Entity\Type;
 use App\Entity\Usuario;
 use App\Repository\LostAnimalRepository;
@@ -14,6 +16,7 @@ use App\Repository\AnimalRepository;
 use App\Repository\RaceRepository;
 use App\Repository\GalleryRepository;
 use App\Repository\RequestRepository;
+use App\Repository\ReserveRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -304,7 +307,52 @@ class JsonController extends AbstractController
 
     }
 
-        
 
+
+    /**
+     * @Route("/insertReserva/{reserva}", name="insertReserva")
+     */
+    public function insertReserva(EntityManagerInterface $entityManager, ManagerRegistry $doctrine, $reserva): Response
+    {
+
+        $array = json_decode($reserva);
+
+        $usuario = $doctrine->getRepository(Usuario::class)->find($array[0]);  // Leemos el usuario
+        $tramo = $doctrine->getRepository(Stretch::class)->find($array[1]);  // Leemos el tramo
+        $tarea = $doctrine->getRepository(Job::class)->find($array[2]);  // Leemos la tarea
+
+        $reservaFinal = [$usuario, $tramo, $tarea, $array[3]];
+
+        $request = new ReserveRepository($doctrine);
+        $insert = $request->insertReserva($reservaFinal, $entityManager);  // Insertamos la reserva
+
+        return new Response("ok");  // Devolvemos un ok si todo ha funcionado correctamente
+
+    }
+
+
+    /**
+     * @Route("/getReservedDay/{date}", name="getReservedDay")
+     */
+    public function getReservedDay(ManagerRegistry $doctrine, string $date): Response
+    {
+
+        $reserveRepo = new ReserveRepository($doctrine);
+
+        $reserves = $reserveRepo->reservasPordía($date);  // Está función nos devuelve las reservas que hay realizadas dicho día
+        
+        $array = [];
+
+        for($i = 0; $i < count($reserves); $i++){
+
+            // Rellenamos array con el id del tramo y de la tarea
+            array_push($array,[$reserves[$i]->getJob()->getId(),$reserves[$i]->getStretch()->getId()]); 
+        }
+
+
+        return new Response(json_encode($array));
+
+    }
+    
 
 }
