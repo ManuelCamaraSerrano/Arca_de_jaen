@@ -24,6 +24,10 @@ $( document ).ready(function() {
     var modalconfirm = $("<div>").load("/estilos/assets/js/js/templates/modalConfirmReserve.html",
     function(){})
 
+    // Cargamos el modal de confirmación
+    var modalReservaRealizada = $("<div>").load("/estilos/assets/js/js/templates/reservaRealizada.html",
+    function(){})
+
     $("th").on("click", function(){
         if($(this).attr("class") != "reservado" && $(".date").val() != ""){
 
@@ -74,7 +78,27 @@ $( document ).ready(function() {
                         
                         th.addClass("reservado");
 
-                        $(".contenedorModal").removeClass("active");
+                        $(modalReservaRealizada).dialog({
+                          resizable: false,
+                          height: "auto",
+                          width: 500,
+                          modal: true,
+                          dialogClass: "modal-soliEnviada",
+                          show:{
+                              effect: "puff",
+                              duration: 1000
+                          },
+                          hide:{
+                              effect: "fade",
+                              duration: 1000
+                          },
+                          buttons: {
+                            "Confirmar": function() { 
+                                  $( this ).dialog( "close" ); // Cerramos el modal
+                                  $(".contenedorModal").removeClass("active");
+                            },
+                          }
+                        });
                         
                      })   
 

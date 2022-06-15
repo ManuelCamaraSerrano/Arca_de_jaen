@@ -1,0 +1,11 @@
+{% apply inline_css(source('@styles/style.css')) %}
+    <div class='resetPassword'>
+        <img src="{{ email.image('@images/logo.png') }}" alt="Logo" class='logoEmail'>
+        <div>
+            <h4 class='h4-reset'>Consulta de {{name}}</h4>
+            <p>{{mensaje}}</p>
+            <p>Correo de {{name}}: {{correo}}</p>
+            <p>Un saludo.</p>
+        </div>
+    </div>
+{% endapply %}

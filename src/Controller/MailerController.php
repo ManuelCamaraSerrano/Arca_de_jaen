@@ -57,6 +57,33 @@ class MailerController extends AbstractController
     }
 
 
+    /**
+     * @Route("/emailContact/{array}", name="emailContact")
+     */
+    public function sendEmailContact(MailerInterface $mailer, $array):Response
+    {
+
+        $datosEmail = json_decode($array);
+
+        $email = (new TemplatedEmail())
+            ->from(new Address('manuelcs160@gmail.com', 'Arca de Jaén'))
+            ->to('manuelcs160@gmail.com')
+            ->subject($datosEmail[0])
+            ->htmlTemplate('emailContact.html.twig')
+            ->context([
+                'name' => $datosEmail[1],
+                'correo' => $datosEmail[2],
+                'mensaje' => $datosEmail[3],
+            ])
+        ;
+
+        $mailer->send($email);
+
+        return new Response("ok");
+
+    }
+
+
      // Función que envia un correo con la confirmación de que el animal ha sido adoptado y adjunta el pdf del contrato
     public function sendEmailAnimalAdopted(MailerInterface $mailer, $adoption)
     {
