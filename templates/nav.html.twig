@@ -49,8 +49,10 @@
                         {% if app.user %}
                             {% if app.user.photo %}
                                 <img src="estilos/assets/images/users/{{app.user.photo}}" class="fotousu" alt="Imagen del usuario">
+                                <a href="/logout" class="icon-logout"><i class="fas fa-person-running"></i></a>
                             {% else %}
                                 <img src="estilos/assets/images/users/sinFoto.png" class="fotousu" alt="Imagen del usuario">
+                                <a href="/logout"><i class="fas fa-person-running"></i></a>
                             {% endif %}
                         {% else %}
                             <a class="btn btn-primary header-donate-btn" href="/login">Login</a>
@@ -95,6 +97,9 @@
                             <li><a href="/gallery">Galería</a></li>
                             <li><a href="/contact">Contacto</a></li>
                         </ul>
+                        {% if app.user %}
+                            <a href="/logout" class="logout-mobile"><i class="fas fa-person-running"></i> Cerrar Sesión</a>
+                        {% endif %}
                     </div>
                     <!-- Mobile Menu End -->
                     <ul class="mobile-menu-info-list">

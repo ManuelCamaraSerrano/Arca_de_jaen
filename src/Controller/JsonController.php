@@ -117,6 +117,33 @@ class JsonController extends AbstractController
 
 
     /**
+     * @Route("/updateUser", name="updateUser")
+     */
+    public function updateUser(EntityManagerInterface $entityManager, ManagerRegistry $doctrine): Response
+    {
+
+        $usuario = $doctrine->getRepository(Usuario::class)->find($_POST["id"]);
+
+        if($_FILES['file-1']['name'] != ""){
+            move_uploaded_file($_FILES['file-1']['tmp_name'],"estilos/assets/images/users/".$_FILES['file-1']['name']);
+            $usuario->setPhoto($_FILES['file-1']['name']);
+        }
+
+        $usuario->setName($_POST["name"]);
+        $usuario->setAp1($_POST["ap1"]);
+        $usuario->setAp2($_POST["ap2"]);
+        $usuario->setPhone($_POST["phone"]);
+        $usuario->setEmail($_POST["email"]);
+
+        $entityManager->persist($usuario);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('editUser');;
+
+    }
+
+
+    /**
      * @Route("/lostAnimal", name="lostAnimal")
      */
     public function getLostAnimals(ManagerRegistry $doctrine): Response

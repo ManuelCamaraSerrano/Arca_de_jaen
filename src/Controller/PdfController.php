@@ -50,7 +50,7 @@ class PdfController extends AbstractController
 
         $mpdf->WriteHTML('<img src="estilos/assets/images/contratopg3.jpg" alt="" class="image">');
                    
-        $mpdf->Output();
+        $mpdf->Output('ContratoAdopción_'.$adopcion->getAnimal()->getName().".pdf","D");
 
     }
 

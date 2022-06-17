@@ -113,5 +113,16 @@ class CorporativaController extends AbstractController
 
         ]);
     }
+
+
+    /**
+     * @Route("/editUser", name="editUser")
+     */
+    public function editUser(): Response
+    {
+        return $this->render('editUser.html.twig', [
+
+        ]);
+    }
     
 }

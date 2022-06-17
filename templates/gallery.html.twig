@@ -6,9 +6,9 @@
 
 {% block body %}
 
-    <div class="container-gallery">
-        <h1>Galería</h1>
-            <div id="lightgallery">
+    <article class="container-gallery">
+        <h1 class="titulos">Galería</h1>
+            <section id="lightgallery">
                 <a href="" id="foto1">
                     <img src="" class="foto1 animate__animated animate__fadeInTopLeft animate__delay-1s" />
                 </a>
@@ -36,12 +36,12 @@
                 <a href="" id="foto9">
                     <img src="" class="foto9 animate__animated animate__fadeInBottomRight animate__delay-1s"/>
                 </a>
-            </div>
+            </section>
 
-             <div class="container-paginator">
-                <div class="pagination"></div>
-             </div>
-        </div>
+             <section class="container-paginator">
+                <section class="pagination"></section>
+             </section>
+        </article>
 
     <script src="{{ asset('estilos/assets/js/plugins/lightgallery.min.js') }}"></script>
 
