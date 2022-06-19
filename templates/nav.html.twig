@@ -42,9 +42,11 @@
                                     <li><a href="/gallery">Galería</a></li>
 
                                     <li><a href="/contact">Contacto</a></li>
-                                    {% if app.user.roles[0]=='ROLE_ADMIN' %}
-			                            <li class="nav-item"><a href="/admin" class="nav-link">Admin</a></li>
-			                        {% endif %}
+                                    {% if app.user %}
+                                        {% if app.user.roles[0]=='ROLE_ADMIN' %}
+                                            <li class="nav-item"><a href="/admin" class="nav-link">Admin</a></li>
+                                        {% endif %}
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>

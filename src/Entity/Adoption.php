@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AdoptionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AdoptionRepository::class)
@@ -19,11 +20,17 @@ class Adoption
 
     /**
      * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="adoptions")
+     *  @Assert\NotNull(
+     *      message = "El usuario no puede dejarlo vacio"
+     * )
      */
     private $usuario;
 
     /**
      * @ORM\ManyToOne(targetEntity=Animal::class, inversedBy="adoptions")
+     *  @Assert\NotNull(
+     *      message = "El animal no puede dejarlo vacio"
+     * )
      */
     private $animal;
 

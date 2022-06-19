@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UsuarioRepository::class)
@@ -25,6 +26,15 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     ** @Assert\Email(
+     *     message = "El email '{{ value }}' no es un email valido."
+     * )
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 70,
+     *      minMessage = "El email debe tener mínimo {{ limit }} caracteres",
+     *      maxMessage = "El email no puede tener más de {{ limit }} caracteres"
+     * )
      */
     private $email;
 
@@ -41,26 +51,54 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=9)
+     * @Assert\Length(
+     *      min = 8,
+     *      max = 9,
+     *      minMessage = "El dni debe tener mínimo {{ limit }} caracteres",
+     *      maxMessage = "El dni no puede tener más de {{ limit }} caracteres"
+     * )
      */
     private $dni;
 
     /**
      * @ORM\Column(type="string", length=70)
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 50,
+     *      minMessage = "El nombre debe tener mínimo {{ limit }} caracteres",
+     *      maxMessage = "El nombre no puede tener más de {{ limit }} caracteres"
+     * )
+     * @Assert\NotNull(
+     *      message = "El dni no puede dejarlo vacio"
+     * )
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 50,
+     *      minMessage = "El 1º Apellido debe tener mínimo {{ limit }} caracteres",
+     *      maxMessage = "El 1º Apellido no puede tener más de {{ limit }} caracteres"
+     * )
+     * @Assert\NotNull(
+     *      message = "El nombre no puede dejarlo vacio"
+     * )
      */
     private $ap1;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * @Assert\NotNull(
+     *      message = "El 1º Apellido no puede dejarlo vacio"
+     * )
      */
     private $ap2;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * 
      */
     private $photo;
 
@@ -71,6 +109,9 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Reserve::class, mappedBy="usuario")
+     * @Assert\NotNull(
+     *      message = "El telefono no puede dejarlo vacio"
+     * )
      */
     private $reserves;
 

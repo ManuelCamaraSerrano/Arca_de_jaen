@@ -6,6 +6,7 @@ use App\Repository\AnimalRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AnimalRepository::class)
@@ -21,61 +22,97 @@ class Animal
 
     /**
      * @ORM\Column(type="string", length=60)
+     * @Assert\NotNull(
+     *      message = "El nombre no puede dejarlo vacio"
+     * )
      */
     private $name;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotNull(
+     *      message = "La fecha de nacimiento no puede dejarla vacia"
+     * )
      */
     private $birthDate;
 
     /**
      * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="animals")
+     * @Assert\NotNull(
+     *      message = "La especie no puede dejarla vacia"
+     * )
      */
     private $type;
 
     /**
      * @ORM\ManyToOne(targetEntity=Race::class, inversedBy="animals")
+     * * @Assert\NotNull(
+     *      message = "La raza no puede dejarla vacia"
+     * )
      */
     private $race;
 
     /**
      * @ORM\Column(type="string", length=30)
+     * @Assert\NotNull(
+     *      message = "El sexo no puede dejarlo vacio"
+     * )
      */
     private $sex;
 
     /**
      * @ORM\Column(type="integer")
+    * @Assert\NotNull(
+     *      message = "El peso no puede dejarlo vacio"
+     * )
      */
     private $weigth;
 
     /**
      * @ORM\Column(type="string", length=50)
+     *  @Assert\NotNull(
+     *      message = "El color no puede dejarlo vacio"
+     * )
      */
     private $colour;
 
     /**
      * @ORM\Column(type="string", length=70)
+     *  @Assert\NotNull(
+     *      message = "El chip no puede dejarlo vacio"
+     * )
      */
     private $chip;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\NotNull(
+     *      message = "La descripcion no puede dejarla vacia"
+     * )
      */
     private $description;
 
     /**
      * @ORM\Column(type="integer")
+     *  @Assert\NotNull(
+     *      message = "El altura no puede dejarla vacia"
+     * )
      */
     private $height;
 
     /**
      * @ORM\Column(type="date")
+     *  @Assert\NotNull(
+     *      message = "La fecha de entrada no puede dejarla vacia"
+     * )
      */
     private $entryDate;
 
     /**
      * @ORM\ManyToOne(targetEntity=PhysicalSpace::class, inversedBy="animals")
+     *  @Assert\NotNull(
+     *      message = "El espacio fisico no puede dejarlo vacio"
+     * )
      */
     private $physicalSpace;
 
