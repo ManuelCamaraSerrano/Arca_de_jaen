@@ -2976,6 +2976,11 @@ label {
   margin-top: 6%;
   margin-bottom: 6%;
 }
+@media (max-width: 992px) {
+  .container-addLostAnimal .boton-subir {
+    margin-top: 10%;
+  }
+}
 
 .oculto {
   display: none;

@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 
     map.addLayer(markers);  // Añadimos los marcadores al mapa
-
+    
 
     $( ".leaflet-popup-pane" ).on( 'click', ".subir" ,function() {  // Controlamos el click del icono de expandir
 
@@ -46,6 +46,44 @@ $(document).ready(function(){
        
 
     });
+
+
+    $(".icon-filter").on("click", function(){
+
+        if($(this).attr("id") == "perros"){
+
+            filtrarPorEspecie(1);
+
+        }
+
+        if($(this).attr("id") == "gatos"){
+
+            filtrarPorEspecie(2);
+
+        }
+
+        if($(this).attr("id") == "todos"){
+
+            map.remove();  // Borramos el mapa
+
+            markers = L.markerClusterGroup();  // Creamos el grupo de marcadores
+
+            map = L.map('divMapa').setView([40.4167, -3.70325], 6.4); // Creamos el mapa  [lat, lng, zoom]
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map); // Añadimos el layer
+
+            $.getJSON("/lostAnimal",  // Recogemos todos los animales perdidos
+            function(data){
+                $.each(data,function(ind,valor){
+
+                    pintaMarcador(valor, markers);  // Pintamos los marcadores
+
+                })
+            })
+
+            map.addLayer(markers);  // Añadimos los marcadores al mapa
+        }
+
+    })
 
 
 
@@ -105,6 +143,29 @@ $(document).ready(function(){
 
 
                 markers.addLayer(marker);  // Añadimos al grupo el marcador
+
+    }
+
+
+    function filtrarPorEspecie($idEspecie){
+
+        map.remove();  // Borramos el mapa
+
+            markers = L.markerClusterGroup();  // Creamos el grupo de marcadores
+
+            map = L.map('divMapa').setView([40.4167, -3.70325], 6.4); // Creamos el mapa  [lat, lng, zoom]
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map); // Añadimos el layer
+
+            $.getJSON("/lostAnimalsForType/"+$idEspecie,  // Recogemos todos los animales perdidos
+            function(data){
+                $.each(data,function(ind,valor){
+
+                    pintaMarcador(valor, markers);  // Pintamos los marcadores
+
+                })
+            })
+
+            map.addLayer(markers);  // Añadimos los marcadores al mapa
 
     }
 

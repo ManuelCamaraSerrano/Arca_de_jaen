@@ -334,6 +334,28 @@ class JsonController extends AbstractController
 
     }
 
+    /**
+     * @Route("/lostAnimalsForType/{type}", name="lostAnimalfortype")
+     */
+    public function lostAnimalForType(EntityManagerInterface $entityManager, ManagerRegistry $doctrine, $type): Response
+    {
+
+        $animalRepo = new LostAnimalRepository($doctrine);
+
+        $animals = $animalRepo->animalesPorEspecie(intval($type));
+
+        $animalesPerdidos = [];
+
+        for($i = 0; $i < count($animals); $i++){
+
+            $animalesPerdidos[$i] = [$animals[$i]->getLat(),$animals[$i]->getLng(),$animals[$i]->getName(), $animals[$i]->getPhoto(), $animals[$i]->getColour(), $animals[$i]->getDescription(), $animals[$i]->getType()->getName(), $animals[$i]->getRace()->getName(), $animals[$i]->getUsuario()->getEmail(), $animals[$i]->getUsuario()->getPhone()];
+        }
+        
+        
+        return new Response(json_encode($animalesPerdidos));
+
+    }
+
 
 
     /**

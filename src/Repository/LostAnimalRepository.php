@@ -76,7 +76,7 @@ class LostAnimalRepository extends ServiceEntityRepository
     */
 
     
-    public function insertLostAnimal($array, EntityManagerInterface $entityManager){
+    public function insertLostAnimal($array, EntityManagerInterface $entityManager){  // Función para insertar animales perdidos
         
         $lostAnimal= new LostAnimal();
         
@@ -104,6 +104,20 @@ class LostAnimalRepository extends ServiceEntityRepository
           
     }
 
+
+    public function animalesPorEspecie($especie){  // Función para filtrar por especie
+
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            "SELECT l
+            FROM App\Entity\LostAnimal l
+            WHERE l.type = '".$especie."'"
+        );
+
+        return $query->getResult();
+          
+    }
 
 
 
