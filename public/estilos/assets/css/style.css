@@ -2518,6 +2518,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 #divMapa {
   height: 760px;
   width: 100%;
+  z-index: 2;
 }
 
 .leaflet-popup-content-wrapper {
@@ -3477,8 +3478,9 @@ table .reservado:hover {
   background-color: #002b4c;
   color: #c3e3fd;
   border-radius: 50%;
+  width: 30px;
   font-size: 18px;
-  padding-left: 7%;
+  padding-left: 18%;
   padding-right: 7%;
   margin-left: 8%;
 }
@@ -3600,6 +3602,49 @@ table .reservado:hover {
       -ms-flex-flow: column;
           flex-flow: column;
   height: 82px;
+}
+
+.cont-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 5px;
+}
+
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 15px;
+  position: absolute;
+  top: 250;
+  left: 10;
+  z-index: 100;
+  background-color: white;
+  border-radius: 2px 2px 2px 2px;
+  padding: 8px;
+  -webkit-box-shadow: 0px 0px 3px 2px;
+          box-shadow: 0px 0px 3px 2px;
+}
+.filters .icon-filter {
+  font-size: 20px;
+}
+.filters .icon-filter:hover {
+  color: #002b4c;
+}
+.filters .icon-all {
+  font-size: 16px;
+}
+.filters .icon-all:hover {
+  color: #002b4c;
 }
 
 /*----------------------------------------*/

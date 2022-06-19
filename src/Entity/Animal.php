@@ -279,7 +279,7 @@ class Animal
 
     public function __toString()
     {
-        return $this->chip." ".$this->name;
+        return $this->name." Chip: ".$this->chip;
     }
 
     public function getAdopted(): ?string

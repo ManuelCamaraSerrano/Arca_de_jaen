@@ -388,7 +388,7 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __toString()
     {
-        return $this->dni." ".$this->name;
+        return $this->name." ".$this->ap1;
     }
 
     

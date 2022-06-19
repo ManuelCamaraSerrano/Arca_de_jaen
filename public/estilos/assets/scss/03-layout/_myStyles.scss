@@ -28,6 +28,7 @@
 #divMapa {
   height: 760px;
   width: 100%;
+  z-index: 2;
 }
 
 
@@ -889,8 +890,9 @@ table {
   background-color: $primary;
   color: $secondary;
   border-radius: 50%;
+  width: 30px;
   font-size: 18px;
-  padding-left: 7%;
+  padding-left: 18%;
   padding-right:7% ;
   margin-left: 8%;
   &:hover{
@@ -972,6 +974,42 @@ table {
           height: 82px;
         }
       }
+    }
+  }
+}
+
+
+.cont-icon{
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+
+// Filtros ver animales perdidos
+
+.filters{
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  position:absolute;
+  top: 250;
+  left: 10;
+  z-index: 100;
+  background-color: white;
+  border-radius: 2px 2px 2px 2px;
+  padding: 8px;
+  box-shadow: 0px 0px 3px 2px;
+  .icon-filter{
+      font-size: 20px;
+      &:hover{
+        color: $primary;
+      }
+  }
+  .icon-all{
+    font-size: 16px;
+    &:hover{
+      color: $primary;
     }
   }
 }

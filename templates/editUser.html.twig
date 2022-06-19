@@ -25,18 +25,18 @@
                         </section>
                         <section class="itemInfo">
                             <label for="">Email:</label>
-                            <input type="text" value="{{app.user.email}}" class="text" name="email">
-                            <p class="error col-12 oculto" id="e-nombre"><i class="fas fa-circle-exclamation"></i>Email invalido</p>
+                            <input type="text" value="{{app.user.email}}" class="text" name="email" id="email">
+                            <p class="error col-12 oculto" id="e-email"><i class="fas fa-circle-exclamation"></i>Email invalido</p>
                         </section>
                         <section class="itemInfo">
                             <label for="">Nombre:</label>
-                            <input type="text" value="{{app.user.name}}" class="text" name="name">
-                            <p class="error col-12 oculto" id="e-nombre"><i class="fas fa-circle-exclamation"></i>Introduzca un Nombre</p>
+                            <input type="text" value="{{app.user.name}}" class="text" name="name" id="name">
+                            <p class="error col-12 oculto" id="e-name"><i class="fas fa-circle-exclamation"></i>Introduzca un Nombre</p>
                         </section>
                         <section class="itemInfo">
                             <label for="">1º Apellido:</label>
-                            <input type="text" value="{{app.user.ap1}}" class="text" name="ap1">
-                            <p class="error col-12 oculto" id="e-nombre"><i class="fas fa-circle-exclamation"></i>Introduzca su 1º Apellido</p>
+                            <input type="text" value="{{app.user.ap1}}" class="text" name="ap1" id="ap1">
+                            <p class="error col-12 oculto" id="e-ap1"><i class="fas fa-circle-exclamation"></i>Introduzca su 1º Apellido</p>
                         </section>
                         <section class="itemInfo">
                             <label for="">2º Apellido:</label>
@@ -44,8 +44,8 @@
                         </section>
                         <section class="itemInfo">
                             <label for="">Teléfono:</label>
-                            <input type="text" value="{{app.user.phone}}" class="text" name="phone">
-                            <p class="error col-12 oculto" id="e-nombre"><i class="fas fa-circle-exclamation"></i>Introduzca un Teléfono</p>
+                            <input type="text" value="{{app.user.phone}}" class="text" name="phone" id="phone">
+                            <p class="error col-12 oculto" id="e-phone"><i class="fas fa-circle-exclamation"></i>Teléfono incorrecto</p>
                         </section>
                     </section>
                     <input type="file" name="file-1" id="file-1" class="inputfile inputfile-1" value="{{app.user.photo}}" data-multiple-caption="{count} archivos seleccionados" multiple />
@@ -62,5 +62,5 @@
 {% endblock %}
 {% block footer %}
     {% include 'footer.html.twig' %}
-    <script src="{{ asset('estilos/assets/js/js/home.js') }}"></script>
+    <script src="{{ asset('estilos/assets/js/js/editUser.js') }}"></script>
 {% endblock %}

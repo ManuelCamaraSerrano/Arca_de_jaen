@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var map = L.map('divMapa').setView([40.4167, -3.70325], 6.4); // Creamos el mapa
+    var map = L.map('divMapa').setView([40.4167, -3.70325], 6.4); // Creamos el mapa  [lat, lng, zoom]
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map); // Añadimos el layer
 
@@ -18,7 +18,43 @@ $(document).ready(function(){
         function(data){
             $.each(data,function(ind,valor){
 
-                const marker = L.marker([  // Creamos el marcador
+                pintaMarcador(valor, markers);  // Pintamos los marcadores
+
+            })
+        })
+
+
+
+    map.addLayer(markers);  // Añadimos los marcadores al mapa
+
+
+    $( ".leaflet-popup-pane" ).on( 'click', ".subir" ,function() {  // Controlamos el click del icono de expandir
+
+        $(".leaflet-popup-content-wrapper").toggleClass("expanded"); // Cambiamos la clase del contenedor
+
+        if($(".subir").attr("class") == "fas fa-caret-down subir"){  // Cambiamos el icono cuando se pulse
+
+            $(".subir").attr("class","fas fa-caret-up subir");
+
+        }
+        else{
+
+            $(".subir").attr("class","fas fa-caret-down subir");
+
+        }
+
+       
+
+    });
+
+
+
+
+
+
+    function pintaMarcador(valor, markers){
+
+        const marker = L.marker([  // Creamos el marcador
                     valor[0], 
                     valor[1]
                 ],{icon: customIcon})
@@ -70,32 +106,7 @@ $(document).ready(function(){
 
                 markers.addLayer(marker);  // Añadimos al grupo el marcador
 
-            })
-        })
-
-
-
-    map.addLayer(markers);
-
-
-    $( ".leaflet-popup-pane" ).on( 'click', ".subir" ,function() {  // Controlamos el click del icono de expandir
-
-        $(".leaflet-popup-content-wrapper").toggleClass("expanded"); // Cambiamos la clase del contenedor
-
-        if($(".subir").attr("class") == "fas fa-caret-down subir"){  // Cambiamos el icono cuando se pulse
-
-            $(".subir").attr("class","fas fa-caret-up subir");
-
-        }
-        else{
-
-            $(".subir").attr("class","fas fa-caret-down subir");
-
-        }
-
-       
-
-    });
+    }
 
 
 
